@@ -21,6 +21,6 @@ private:
 
 
 
-}
+};
 
 #endif
