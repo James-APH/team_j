@@ -10,16 +10,54 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 
+/**
+ * @class Item in Item.hpp "Item.hpp"
+ * @brief Abstract superclass for different item types:
+ */ 
+class Item {
+  public:
+  Item();
+
+  Item(std::string name, std::string fileName);
+
+  template<class T>
+  virtual ostream& createOstream(ostream& out, const T&);
+  
+  void setDescription();
+
+  virtual void inspectItem();
+
+  protected:
+  std::string name;
+  std::string description;
+};
 
 
-class item {
-public:
+class clueItem : Item {
+  public:
 
+  clueItem();
 
+  ostream& createOstream(ostream& out, const clueItem&);
 
-private:
+  friend ostream& operator<<(ostream& os, const clueItem&);
+
+  void inspectItem();  
+};
+
+class secretItem : Item {
+  public:
+
+  clueItem();
+
+  ostream& createOstream(ostream& out, const secretItem&);
+
+  friend ostream& operator<<(ostream& os, const secretItem&);
+
+  void inspectItem();
 };
 
 #endif
