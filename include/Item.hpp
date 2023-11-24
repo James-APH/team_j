@@ -23,6 +23,8 @@ class Item {
 
   Item(std::string name, std::string fileName);
 
+  virtual ~Item();
+
   template<class T>
   virtual ostream& createOstream(ostream& out, const T&);
   
@@ -36,26 +38,30 @@ class Item {
 };
 
 
-class clueItem : Item {
+class ClueItem : Item {
   public:
+  
+  ClueItem();
+  
+  ~SecretItem();
 
-  clueItem();
+  ostream& createOstream(ostream& out, const ClueItem&);
 
-  ostream& createOstream(ostream& out, const clueItem&);
-
-  friend ostream& operator<<(ostream& os, const clueItem&);
+  friend ostream& operator<<(ostream& os, const ClueItem&);
 
   void inspectItem();  
 };
 
-class secretItem : Item {
+class SecretItem : Item {
   public:
 
-  clueItem();
+  SecretItem();
 
-  ostream& createOstream(ostream& out, const secretItem&);
+  ~SecretItem();
 
-  friend ostream& operator<<(ostream& os, const secretItem&);
+  ostream& createOstream(ostream& out, const SecretItem&);
+
+  friend ostream& operator<<(ostream& os, const SecretItem&);
 
   void inspectItem();
 };
