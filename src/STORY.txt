@@ -1,0 +1,172 @@
+Arrival:
+
+Garden:
+We arrive at a mansion after receiving a call about someone being murdered. 
+The air smells fresh from the flowers and fountain in the garden of the mansion. 
+We are greeted by one of the security staff at the entrance and they fill us in on what they know.
+-	The husband and wife were killed
+-	We must find out who the killer is
+-	We only get to pick once else we fail
+(RETURN HERE TO MAKE YOUR GUESS)
+
+
+Ballroom:
+We enter the building straight into the ball room and we see a room full of people dancing. 
+The music is modern, up-beat, and loud. 
+It is possible no one saw anything happen even though he is laying there on the floor with a pool of blood slowly forming around her body. 
+You notice there is someone sitting alone not far away. It looks like they are for the party. 
+(OPTION) what do you do:
+
+1.	Approach and ask what happened. You find out the man laying on the ground was the owner of the estate and his name is Scott. 
+    You find out just before Scott fell to the floor he was in an argument with someone but no body was able to hear what it was about. 
+    A few minutes later when everything seemed fine and figured walked quickly past Scott and disappeared into the crowd of dancers.
+2.	Approach and comfort them. 
+    (MAYBE THIS FAILS IT SINCE IT TAKES TO LONG???)
+3.	Leave them in peace and continue looking around. 
+    (THIS FAILS IT SINCE CRUTIAL INFO IS LOST)
+
+You notice there are four doors around the room. 
+One on each wall including the door you entered from. 
+You know there are clues somewhere around the building. 
+Where do you want to go?
+
+1.	The door to the left (staircase)
+2.	The door to the right (library)
+3.	The door straight ahead (bedroom)
+4.	The door you came through (garden)
+
+
+Library:
+You go through the door to the right and entered a library. 
+The room is organized but dusty. You look around:
+
+1.	You notice a desk with the dust cleared away and an open book laying there. (KEY???)
+2.	There are faint yet discernible footprints left in the dust coming out from behind a bookcase.
+3.	There is an open door to your right.
+
+
+Study:
+You enter the study only to find papers and book everywhere. 
+It is obvious someone was looking for something. You know finding anything in this room is going to be nightmare but there might be something here…  
+(NEED A PUZZLE HERE)
+
+1.	Look around and see if there are any clues left behind.
+a.	(MISSING PAPERS FROM OPEN FOLDER???)
+2.	Leave knowing there is little to find here.
+
+
+Bedroom:
+You enter the bedroom and look around. 
+You can there is a 4-poster bed with thick, luxurious blankets and pillows. 
+The bed looks recently used with the blankets falling off the side and the pillows thrown around the room. 
+There is an armoire sitting to your right with a door open. As you look down you see a body on the floor.  
+As you look around you see someone sitting in the corner.
+
+1.	Look at the body and notice there is a gash on their neck. You also notice it is a woman, 
+    laying there partially clothes with a pool of blood that was still spreading slowly over the floor.
+    a.	Check the body.
+        i.	It is still warm leaving little time between when it happened and when you walked in the door.
+    b.	Examine the bed.
+        i.	The pillows are missing, and you find them laying around the room almost like they were being thrown at someone.
+        ii.	The blanket is laying half off the bed but there are slice marks in it. Maybe this was being used as a shield of sorts.
+2.	Look at the armoire since the door is partially open.
+    a.	You notice there is an odd separation between the clothes hanging there and you can see there is a panel in the back. Upon further inspection you notice a code is needed to open what it locks
+        i.	Enter a code (CODE NEEDED something simple like a 3-digit code limit number of inputs to lockout the passage)
+
+
+Secret Passage:
+You found your way into a secret passage. 
+You wonder where it leads. 
+The passage goes straight from the door to the end where it turns right. 
+Go back through the armoire and continue the investigation.
+
+1.	Follow the passage to see where it goes.
+    a.	You turn the corner and look down. 
+        You see there is a knife on the ground with blood on the blade. 
+        You pick it up and notice there is a crest and bloody fingerprints. 
+        The knife is large. 
+        The crest looks like a rearing lion over crossed swords. 
+        It looks like there would only be a few people are this party who could use it.
+    b.	You continue through the passage only to find a closed door. 
+        As you push through it you notice it was a secret door leading to the library. 
+        There are footprints leading from the door through the library.
+
+
+Staircase:
+You found your way to a central hub. 
+You notice a few things in this room. 
+There are two doors. 
+One up the stairs likely leading to an attic and another door at the bottom of the stairs probably leading to a cellar. 
+There is someone sitting on the stairs shaking. 
+You notice he is wearing expensive clothing, but something is missing. 
+
+1.	Go upstairs.
+2.	Go downstairs.
+3.	Talk to the stranger (NOTE: You need to talk to Brent here or else he leaves, and the true ending can’t be had)
+    a.	You ask for his name and find out it is Brent.
+    b.	You ask if he is doing alright, and you are told that they are scared about the future. 
+    You notice a small badge on his lapel with a unique crest on it. It looks like a rearing lion over crossed swords. 
+    Interesting.
+4.	You ask if there is anything you can do to help him, and he just shakes his head without saying anything.
+
+
+Attic:
+(BEFORE KEY) You climbed the stairs to the attic door. 
+You try to turn the doorknob, but it doesn’t move. 
+You notice a key is needed to get in. 
+You go back down the stairs.
+(AFTER KEY) You climbed the stairs and tried to turn to doorknob, but it didn’t move. 
+You remember you picked up a key and place it in the lock. 
+The key opens the door. 
+As you enter the room you notice a thick layer of dust over everything. 
+Nothing looks out of place. 
+No one has been in this room in a very long time. 
+It must be filled with lots of treasured memories long forgotten. 
+1.	You go over to a trunk and open it. 
+    You find a picture on top of everything else. 
+    In this picture there are three people. 
+    It looks like two brothers and a father in the middle. 
+    The boys were wearing school uniforms with name tags. 
+    The name tag on the older brother was Scott and the name tag on the younger brother was Brent. 
+    Very interesting.
+2.	There is a piece of torn paper wedged into the frame of the picture. 
+    It has 3 numbers written on it. 
+    6-3- the last number it torn off, but it looks like it might 6 or 8. (PUT THIS IN THE HELP SECTION AS IT IS FOUND OR FORCE THEM TO REMEMBER IT)
+
+
+Cellar:
+You walk into the cellar. 
+There is no door, but it feels cool and damp. 
+It smells like wood and something slowly rotting. 
+You walk in and notice there are pieced of paper strewn over the top of one of the wine barrels. 
+You approach and you notice on the top of the stack was what appears to be a will. 
+It looks like it was drafted some time ago. 
+As you read through the pages you notice the Scott was main beneficiary of most of the father’s estate. 
+You wonder if this could be related to why you are there. 
+You turn around to leave and notice there is a lock box on the ground with the lid open. 
+1.	You approach the lockbox to see if there is anything left inside. 
+    It is empty but there was a rust pattern on the bottom indicating there was key in there at some point. 
+    Probably not to long ago. 
+    The way it was laying there and forced used to open box makes you think the key could be somewhere in this room. 
+        a.	You look under the barrels just in front of where the lockbox was laying and find nothing.
+        b.	You look under the workbench nearby and find nothing.
+        c.	You think the key is gone but something catches the corner of your eye as you turn to leave. 
+            The key was sitting next the door and was barely visible against the floor (KEY FOR THE ATTIC)
+2.	You leave (FAILLING SINCE THE WILL IS NEEDED FOR MOTIVE)
+
+
+FOR INHERITANCE ENDING:
+Need to find:
+1.	the will in the cellar
+2.	family picture in the attic
+3.	talk to the witness in the ballroom
+4.	talk to the man sitting on the stairs in the stairway
+5.	find the knife in the secret passage
+
+DETECTIVE FIRED
+1.	nothing is found, no work done = no clues
+
+FOR LOVE INTEREST ENDING:
+1.	find the wife in the bedroom
+2.	talk to the witness in the ballroom
+
