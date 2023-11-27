@@ -19,17 +19,31 @@
  */ 
 class Item {
   public:
+  /**
+  * @brief Default Constructor
+  */
   Item();
 
-  Item(std::string name, std::string fileName);
+  /**
+  * @brief Constructor initializes name, and image of item
+  * @ param[in] name the name of the item
+  * @ param[in] itemImage the name of the itemImage file
+  */
+  Item(std::string name, std::string itemImage);
 
+  /**
+  * @brief Default Destructor
+  */
   virtual ~Item();
 
-  template<class T>
-  virtual ostream& createOstream(ostream& out, const T&);
   
-  void setDescription();
 
+
+  virtual void setDescription();
+
+  /**
+  * @brief shows the image of the item;
+  */
   virtual void inspectItem();
 
   protected:
@@ -38,20 +52,48 @@ class Item {
 };
 
 
+/**
+ * @class ClueItem in Item.hpp "Item.hpp"
+ * @brief Item type for hints and evidence
+ * related to solving the murder in the game.
+ */
 class ClueItem : Item {
   public:
-  
+  /**
+  * @brief Default Constructor
+  */
   ClueItem();
   
+  /**
+  * @brief Default Destructor
+  */
   ~SecretItem();
+  
+  /**
+   *
+   *
+   */
+  void toString();
 
-  ostream& createOstream(ostream& out, const ClueItem&);
+  /**
+  * @brief
+  *
+  */
+  void getDescription();
 
-  friend ostream& operator<<(ostream& os, const ClueItem&);
-
+  /**
+  * @brief
+  *
+  */
   void inspectItem();  
 };
 
+
+/**
+ * @class SecretItem in Item.hpp "Item.hpp"
+ * @brief Item type for secrets not related 
+ * to finishing the game
+ */
 class SecretItem : Item {
   public:
 
@@ -62,6 +104,8 @@ class SecretItem : Item {
   ostream& createOstream(ostream& out, const SecretItem&);
 
   friend ostream& operator<<(ostream& os, const SecretItem&);
+
+  void setDescription();
 
   void inspectItem();
 };
