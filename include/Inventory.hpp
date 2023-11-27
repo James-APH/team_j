@@ -3,12 +3,12 @@
 *
 */
 
-#ifndef INVENTORY.HPP
-#define INVENTORY.HPP
+#ifndef INVENTORY_HPP_INCLUDED
+#define INVENTORY_HPP_INCLUDED
 
 #include <iostream>
 #include <vector>
-
+#include <string>
 #include "Item.hpp"
 
 /**
@@ -17,8 +17,7 @@
 * any user has access to.
 */
 class Inventory {
-  public:
-
+ public:
   /**
   * @brief default constructor
   */
@@ -74,7 +73,7 @@ class Inventory {
   void display();
 
 
-  private:
+ private:
   std::vector<Item> itemList;
   int size;
 

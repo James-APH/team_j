@@ -5,8 +5,8 @@
  *
 */
 
-#ifndef ITEM.HPP
-#define ITEM.HPP
+#ifndef ITEM_HPP_INCLUDED
+#define ITEM_HPP_INCLUDED
 
 #include <iostream>
 #include <string>
@@ -18,7 +18,7 @@
  * @brief Abstract superclass for different item types:
  */ 
 class Item {
-  public:
+ public:
   /**
   * @brief Default Constructor
   */
@@ -41,7 +41,7 @@ class Item {
   */
   void setItem(std::string name, std::string description);
 
-  
+
   /**
   * @brief gets the name of the item
   * @return string the name of the item
@@ -59,7 +59,7 @@ class Item {
   */
   void inspectItem();
 
-  private:
+ private:
   std::string name;
   std::string description;
 
@@ -67,7 +67,7 @@ class Item {
   * @brief puts the information in from item into a string
   * @return string string of item details
   */
-  std::string toString(); 
+  std::string toString();
 };
 
 #endif

@@ -9,21 +9,10 @@
 *
 */
 
-#ifndef GAME.HPP
-#define GAME.HPP
+#ifndef GAME_HPP_INCLUDED
+#define GAME_HPP_INCLUDED
 
-class Game {
-public:
-
-
-
-
-
-private:
-
-
-
-};
+class Game {};
 
 
 #endif

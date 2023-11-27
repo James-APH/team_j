@@ -8,21 +8,9 @@
 *
 */
 
-#ifndef ROOMLIST.HPP
-#define ROOMLIST.HPP
+#ifndef ROOMLIST_HPP_INCLUDED
+#define ROOMLIST_HPP_INCLUDED
 
-class {
-public:
-
-
-
-
-private:
-
-
-
-
-
-};
+class {};
 
 #endif

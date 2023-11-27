@@ -2,8 +2,8 @@
  * @author James Huston [huston@uleth.ca]
  * @date 2023-11
  */
-#ifndef ROOMSTATE.HPP
-#define ROOMSTATE.HPP
+#ifndef ROOMSTATE_HPP_INCLUDED
+#define ROOMSTATE_HPP_INCLUDED
 
 /**
  * @class RoomState in roomstate.hpp "roomstate.hpp"
@@ -14,7 +14,7 @@ class RoomState {
   * @brief DefaultConstructor
   */
   RoomState();
-  
+
   /**
   * @brief Default Destructor
   */

@@ -8,22 +8,9 @@
 *
 */
 
-#ifndef PLAYER.HPP
-#define PLAYER.HPP
+#ifndef PLAYER_HPP_INCLUDED
+#define PLAYER_HPP_INCLUDED
 
-class Player {
-public:
-
-
-
-
-
-private:
-
-
-
-
-
-};
+class Player {};
 
 #endif

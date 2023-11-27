@@ -7,21 +7,9 @@
 *
 */
 
-#ifndef ROOM.HPP
-#define ROOM.HPP
+#ifndef ROOM_HPP_INCLUDED
+#define ROOM_HPP_INCLUDED
 
-class Room {
-public:
-
-
-
-
-
-
-private:
-
-
-
-};
+class Room {};
 
 #endif
