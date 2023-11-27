@@ -54,3 +54,6 @@ obj/
 # Eclipse files
 .project
 .settings
+
+# VS Code files
+team_j.code-workspace
