@@ -9,22 +9,10 @@
 */
 
 
-#ifndef NPC.HPP
-#define NPC.HPP
+#ifndef NPC_HPP_INCLUDED
+#define NPC_HPP_INCLUDED
 
-class NPC {
-public:
-
-
-
-
-
-
-private:
-
-
-
-};
+class NPC {};
 
 
 #endif

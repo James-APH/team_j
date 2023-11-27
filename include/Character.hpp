@@ -7,21 +7,10 @@
 *
 */
 
-#ifndef CHARACTER.HPP
-#define CHARACTER.HPP
+#ifndef CHARACTER_HPP_INCLUDED
+#define CHARACTER_HPP_INCLUDED
 
 
-class Character {
-public:
-
-
-
-private:
-
-
-
-};
+class Character {};
 
 #endif
-
-
