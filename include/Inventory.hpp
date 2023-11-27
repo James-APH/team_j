@@ -6,19 +6,43 @@
 #ifndef INVENTORY.HPP
 #define INVENTORY.HPP
 
+#include <iostream>
+#include <vector>
+
+#include "Item.hpp"
+
+
 class Inventory {
-public:
+  public:
+
+  Inventory();
 
 
+  Inventory(std::vector<Item> itemList);
 
 
+  void Inspect(std::string itemName);
 
 
-
-private:
-
+  void pickUpItem(std::string itemName);
 
 
+  void deleteItem(std::string itemName);
+
+
+  bool hasItem(std::string itemName);
+
+
+  Item& useItem(std::string itemName);
+
+  
+  private:
+  std::vector<Item> itemList;
+  int size;
+
+  std::toString();
+
+  void addItem(std::string fileName);
 
 
 };
