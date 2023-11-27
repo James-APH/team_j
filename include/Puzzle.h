@@ -138,7 +138,7 @@ class ItemPuzzle {
   * puzzle
   * @throw bad_input if item is nullptr
   */
-  Puzzle(std::string description, Item& item);
+  Puzzle(std::string description, const Item &item);
 
   /**
   * @brief destructor for ItemPuzzle
@@ -153,7 +153,7 @@ class ItemPuzzle {
   * set to true and the item will be removed from 
   * the players inventory
   */
-  void checkItem(Item& item);
+  void checkItem(const Item &item);
 
   /**
   * @brief getter for solved
