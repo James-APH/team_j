@@ -34,80 +34,40 @@ class Item {
   /**
   * @brief Default Destructor
   */
-  virtual ~Item();
+  ~Item();
+
+  /**
+  * @brief sets the name and description of the item
+  */
+  void setItem(std::string name, std::string description);
 
   
+  /**
+  * @brief gets the name of the item
+  * @return string the name of the item
+  */
+  std::string getName();
 
-
-  virtual void setDescription();
+  /**
+  * @brief gets the description of the item
+  * @return string the description of the item
+  */
+  std::string getDescription();
 
   /**
   * @brief shows the image of the item;
   */
-  virtual void inspectItem();
+  void inspectItem();
 
-  protected:
+  private:
   std::string name;
   std::string description;
-};
 
-
-/**
- * @class ClueItem in Item.hpp "Item.hpp"
- * @brief Item type for hints and evidence
- * related to solving the murder in the game.
- */
-class ClueItem : Item {
-  public:
   /**
-  * @brief Default Constructor
+  * @brief puts the information in from item into a string
+  * @return string string of item details
   */
-  ClueItem();
-  
-  /**
-  * @brief Default Destructor
-  */
-  ~SecretItem();
-  
-  /**
-   *
-   *
-   */
-  void toString();
-
-  /**
-  * @brief
-  *
-  */
-  void getDescription();
-
-  /**
-  * @brief
-  *
-  */
-  void inspectItem();  
-};
-
-
-/**
- * @class SecretItem in Item.hpp "Item.hpp"
- * @brief Item type for secrets not related 
- * to finishing the game
- */
-class SecretItem : Item {
-  public:
-
-  SecretItem();
-
-  ~SecretItem();
-
-  ostream& createOstream(ostream& out, const SecretItem&);
-
-  friend ostream& operator<<(ostream& os, const SecretItem&);
-
-  void setDescription();
-
-  void inspectItem();
+  std::string toString(); 
 };
 
 #endif
