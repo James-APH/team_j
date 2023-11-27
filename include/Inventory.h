@@ -3,17 +3,17 @@
 *
 */
 
-#ifndef INVENTORY_HPP_INCLUDED
-#define INVENTORY_HPP_INCLUDED
+#ifndef INVENTORY_H_INCLUDED
+#define INVENTORY_H_INCLUDED
 
 #include <iostream>
 #include <vector>
 #include <string>
 
-#include "Item.hpp"
+#include "Item.h"
 
 /**
-* @class Inventory in Inventory.hpp "Inventory.hpp"
+* @class Inventory in Inventory.h "Inventory.h"
 * @brief class for monitoring and maintaining the items
 * any user has access to.
 */

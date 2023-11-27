@@ -6,15 +6,15 @@
 */
 
 
-#ifndef PUZZLE_HPP_INCLUDED
-#define PUZZLE_HPP_INCLUDED
+#ifndef PUZZLE_H_INCLUDED
+#define PUZZLE_H_INCLUDED
 
 #include <iostream>
 #include <string>
 
-#include "Item.hpp"
+#include "Item.h"
 /**
- * @class Puzzle in Puzzle.hpp "Puzzle.hpp"
+ * @class Puzzle in Puzzle.h "Puzzle.h"
  * @brief Abstract superclass for different puzzle types
  */
 class Puzzle {
@@ -54,7 +54,7 @@ class Puzzle {
 
 
 /**
- * @class DialoguePuzzle in Puzzle.hpp "Puzzle.hpp"
+ * @class DialoguePuzzle in Puzzle.h "Puzzle.h"
  * @brief derived class of Puzzle, for puzzles that require
  * dialogue answers
  */
@@ -124,7 +124,7 @@ class DialoguePuzzle {
 };
 
 /**
- * @class ItemPuzzle in Puzzle.hpp "Puzzle.hpp"
+ * @class ItemPuzzle in Puzzle.h "Puzzle.h"
  * @brief derived class of Puzzle for puzzles that require
  * Items to solve them.
  */

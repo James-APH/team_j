@@ -9,8 +9,8 @@
 */
 
 
-#ifndef NPC_HPP_INCLUDED
-#define NPC_HPP_INCLUDED
+#ifndef NPC_H_INCLUDED
+#define NPC_H_INCLUDED
 
 class NPC {};
 

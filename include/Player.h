@@ -8,8 +8,8 @@
 *
 */
 
-#ifndef PLAYER_HPP_INCLUDED
-#define PLAYER_HPP_INCLUDED
+#ifndef PLAYER_H_INCLUDED
+#define PLAYER_H_INCLUDED
 
 class Player {};
 

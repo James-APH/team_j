@@ -7,8 +7,8 @@
 *
 */
 
-#ifndef CHARACTER_HPP_INCLUDED
-#define CHARACTER_HPP_INCLUDED
+#ifndef CHARACTER_H_INCLUDED
+#define CHARACTER_H_INCLUDED
 
 
 class Character {};

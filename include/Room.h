@@ -7,8 +7,8 @@
 *
 */
 
-#ifndef ROOM_HPP_INCLUDED
-#define ROOM_HPP_INCLUDED
+#ifndef ROOM_H_INCLUDED
+#define ROOM_H_INCLUDED
 
 class Room {};
 

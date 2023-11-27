@@ -2,11 +2,11 @@
  * @author James Huston [huston@uleth.ca]
  * @date 2023-11
  */
-#ifndef ROOMSTATE_HPP_INCLUDED
-#define ROOMSTATE_HPP_INCLUDED
+#ifndef ROOMSTATE_H_INCLUDED
+#define ROOMSTATE_H_INCLUDED
 
 /**
- * @class RoomState in roomstate.hpp "roomstate.hpp"
+ * @class RoomState in roomstate.h "roomstate.h"
  * @brief Interface for all the possible room states after exploring a room
  */
 class RoomState {
@@ -34,7 +34,7 @@ class RoomState {
 };
 
 /**
- * @class FullyExploredRoom roomstate.hpp "roomstate.hpp"
+ * @class FullyExploredRoom roomstate.h "roomstate.h"
  * @brief State of a room that has been fully explored
  */
 class FullyExploredRoom : RoomState {
@@ -63,7 +63,7 @@ class FullyExploredRoom : RoomState {
 
 
 /**
- * @class ExploredRoom roomstate.hpp "roomstate.hpp"
+ * @class ExploredRoom roomstate.h "roomstate.h"
  * @brief State of a room that has been entered, but not explored
  */
 class ExploredRoom : RoomState {
@@ -91,7 +91,7 @@ class ExploredRoom : RoomState {
 };
 
 /**
- * @class UnexploredRoom roomstate.hpp "roomstate.hpp"
+ * @class UnexploredRoom roomstate.h "roomstate.h"
  * @brief State of a roomthat has not been explored
  */
 class UnexploredRoom : RoomState {

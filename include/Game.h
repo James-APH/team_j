@@ -9,8 +9,8 @@
 *
 */
 
-#ifndef GAME_HPP_INCLUDED
-#define GAME_HPP_INCLUDED
+#ifndef GAME_H_INCLUDED
+#define GAME_H_INCLUDED
 
 class Game {};
 

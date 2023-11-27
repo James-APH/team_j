@@ -5,8 +5,8 @@
  *
 */
 
-#ifndef ITEM_HPP_INCLUDED
-#define ITEM_HPP_INCLUDED
+#ifndef ITEM_H_INCLUDED
+#define ITEM_H_INCLUDED
 
 #include <iostream>
 #include <string>
@@ -14,7 +14,7 @@
 
 
 /**
- * @class Item in Item.hpp "Item.hpp"
+ * @class Item in Item.h "Item.h"
  * @brief Abstract superclass for different item types:
  */ 
 class Item {
