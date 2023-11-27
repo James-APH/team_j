@@ -35,7 +35,7 @@ class Item {
   * @brief copy constructor
   * @param[in] item, the item that is being copied
   */
-  Item(Item& item);
+  Item(const Item &item);
 
   /**
   * @brief Default Destructor
@@ -70,6 +70,7 @@ class Item {
   * @return true if the items are equivalent
   */ 
   bool operator==(const Item item&);
+
  private:
   std::string name;
   std::string description;
