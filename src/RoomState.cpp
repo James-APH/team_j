@@ -3,7 +3,7 @@
 * @date 11/2023
 */
 
-#include "include/RoomState.hpp"
+#include "RoomState.hpp"
 
 
 FullyExploredRoom::FullyExploredRoom() {}
