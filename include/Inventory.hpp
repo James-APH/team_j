@@ -10,7 +10,7 @@
 #include <vector>
 #include <string>
 
-#include "include/Item.hpp"
+#include "Item.hpp"
 
 /**
 * @class Inventory in Inventory.hpp "Inventory.hpp"
