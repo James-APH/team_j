@@ -72,8 +72,9 @@ class DialoguePuzzle {
   * @throw bad_input if attemptLimit is less than or
   * equal to zero.
   */
-  Puzzle(std::string description, std::string expectedInput, int attemptLimit = 1);
-  
+  Puzzle(std::string description, std::string expectedInput
+         , int attemptLimit = 1);
+
   /**
   * @brief gets the input from the user to compare with expectedInput
   * @detail gets the input from the user, checks if the user
@@ -106,7 +107,7 @@ class DialoguePuzzle {
   int attemptLimit;
   int attempts = 0;
   bool solved;
-  
+
   /*
   * @brief function to check if the user still has attempts
   * left.
@@ -138,7 +139,7 @@ class ItemPuzzle {
   * @throw bad_input if item is nullptr
   */
   Puzzle(std::string description, Item& item);
- 
+
   /**
   * @brief destructor for ItemPuzzle
   */
@@ -169,7 +170,7 @@ class ItemPuzzle {
   Item expectedItem;
   std::string description;
   bool solved;
-  
+
   /**
   * @brief puts all of the puzzle information into a string
   * @return string string of puzzle information
