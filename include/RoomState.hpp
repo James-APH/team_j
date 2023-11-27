@@ -31,7 +31,6 @@ class RoomState {
   * @return true if all secrets have been found, false otherwise
   */
   virtual bool allSecretsFound() = 0;
-
 };
 
 /**
@@ -43,7 +42,7 @@ class FullyExploredRoom : RoomState {
   * @brief DefaultConstructor
   */
   FullyExploredRoom();
-  
+
   /**
   * @brief Default Destructor
   */
@@ -72,7 +71,7 @@ class ExploredRoom : RoomState {
   * @brief DefaultConstructor
   */
   ExploredRoom();
-  
+
   /**
   * @brief Default Destructor
   */
@@ -100,7 +99,7 @@ class UnexploredRoom : RoomState {
   * @brief DefaultConstructor
   */
   UnexploredRoom();
-  
+
   /**
   * @brief Default Destructor
   */
@@ -112,7 +111,7 @@ class UnexploredRoom : RoomState {
   */
   bool isExplored();
 
-  
+
   /**
   * @brief In this state the no secretes have been found
   * @return false
