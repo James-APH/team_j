@@ -32,6 +32,12 @@ class Item {
   Item(std::string name, std::string itemImage);
 
   /**
+  * @brief copy constructor
+  * @param[in] item, the item that is being copied
+  */
+  Item(Item& item);
+
+  /**
   * @brief Default Destructor
   */
   ~Item();
@@ -59,6 +65,11 @@ class Item {
   */
   void inspectItem();
 
+  /**
+  * @brief checks if two items are equivalent
+  * @return true if the items are equivalent
+  */ 
+  bool operator==(const Item item&);
  private:
   std::string name;
   std::string description;
