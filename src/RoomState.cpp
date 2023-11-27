@@ -3,7 +3,12 @@
 * @date 11/2023
 */
 
-#include "RoomState.hpp"
+
+#include "RoomState.h"
+
+RoomState::RoomState() {}
+
+RoomState::~RoomState() {}
 
 
 FullyExploredRoom::FullyExploredRoom() {}
@@ -44,6 +49,6 @@ bool UnexploredRoom::isExplored() {
 }
 
 bool UnexploredRoom::allSecretsFound() {
-  return false
+  return false;
 }
 

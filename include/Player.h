@@ -5,11 +5,12 @@
 *
 *
 *
+*
 */
 
-#ifndef ROOM_HPP_INCLUDED
-#define ROOM_HPP_INCLUDED
+#ifndef PLAYER_H_INCLUDED
+#define PLAYER_H_INCLUDED
 
-class Room {};
+class Player {};
 
 #endif

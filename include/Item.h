@@ -5,8 +5,8 @@
  *
 */
 
-#ifndef ITEM_HPP_INCLUDED
-#define ITEM_HPP_INCLUDED
+#ifndef ITEM_H_INCLUDED
+#define ITEM_H_INCLUDED
 
 #include <iostream>
 #include <string>
@@ -14,7 +14,7 @@
 
 
 /**
- * @class Item in Item.hpp "Item.hpp"
+ * @class Item in Item.h "Item.h"
  * @brief Abstract superclass for different item types:
  */ 
 class Item {
@@ -30,6 +30,12 @@ class Item {
   * @ param[in] itemImage the name of the itemImage file
   */
   Item(std::string name, std::string itemImage);
+
+  /**
+  * @brief copy constructor
+  * @param[in] item, the item that is being copied
+  */
+  Item(const Item &item);
 
   /**
   * @brief Default Destructor
@@ -58,6 +64,12 @@ class Item {
   * @brief shows the image of the item;
   */
   void inspectItem();
+
+  /**
+  * @brief checks if two items are equivalent
+  * @return true if the items are equivalent
+  */ 
+  bool operator==(const Item item&);
 
  private:
   std::string name;

@@ -5,12 +5,14 @@
 *
 *
 *
+*
 */
 
-#ifndef CHARACTER_HPP_INCLUDED
-#define CHARACTER_HPP_INCLUDED
 
+#ifndef NPC_H_INCLUDED
+#define NPC_H_INCLUDED
 
-class Character {};
+class NPC {};
+
 
 #endif
