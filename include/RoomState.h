@@ -10,6 +10,7 @@
  * @brief Interface for all the possible room states after exploring a room
  */
 class RoomState {
+ public:
   /**
   * @brief DefaultConstructor
   */
@@ -38,6 +39,7 @@ class RoomState {
  * @brief State of a room that has been fully explored
  */
 class FullyExploredRoom : RoomState {
+ public:
  /**
   * @brief DefaultConstructor
   */
@@ -67,6 +69,7 @@ class FullyExploredRoom : RoomState {
  * @brief State of a room that has been entered, but not explored
  */
 class ExploredRoom : RoomState {
+ public:
  /**
   * @brief DefaultConstructor
   */
@@ -95,6 +98,7 @@ class ExploredRoom : RoomState {
  * @brief State of a roomthat has not been explored
  */
 class UnexploredRoom : RoomState {
+ public:
  /**
   * @brief DefaultConstructor
   */
