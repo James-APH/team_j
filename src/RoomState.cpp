@@ -3,7 +3,12 @@
 * @date 11/2023
 */
 
+
 #include "RoomState.h"
+
+RoomState::RoomState() {}
+
+RoomState::~RoomState() {}
 
 
 FullyExploredRoom::FullyExploredRoom() {}
