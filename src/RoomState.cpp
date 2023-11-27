@@ -15,7 +15,7 @@ bool FullyExploredRoom::isExplored() {
 }
 
 bool FullyExploredRoom::allSecretsFound() {
-  return true; 
+  return true;
 }
 
 
