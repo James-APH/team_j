@@ -44,6 +44,6 @@ bool UnexploredRoom::isExplored() {
 }
 
 bool UnexploredRoom::allSecretsFound() {
-  return false
+  return false;
 }
 
