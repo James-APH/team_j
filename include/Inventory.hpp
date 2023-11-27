@@ -24,7 +24,7 @@ class Inventory {
   void Inspect(std::string itemName);
 
 
-  void pickUpItem(std::string itemName);
+  void addItem(std::string itemName);
 
 
   void deleteItem(std::string itemName);
@@ -33,7 +33,7 @@ class Inventory {
   bool hasItem(std::string itemName);
 
 
-  Item& useItem(std::string itemName);
+  Item& getItem(std::string itemName);
 
   
   private:
@@ -42,7 +42,7 @@ class Inventory {
 
   std::toString();
 
-  void addItem(std::string fileName);
+  void addItemDescription(std::string fileName);
 
 
 };
