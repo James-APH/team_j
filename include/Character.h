@@ -125,6 +125,7 @@ class Player : protected Character {
    * @brief function to allow user to drop items
    * @param [in] name the name of the item that 
    * the user would like to drop
+   * @throw bad_input if the name is empty
    */
   void drop(std::string name);
 
