@@ -20,16 +20,11 @@
 class Item {
  public:
   /**
-  * @brief Default Constructor
-  */
-  Item();
-
-  /**
   * @brief Constructor initializes name, and image of item
   * @ param[in] name the name of the item
-  * @ param[in] itemImage the name of the itemImage file
+  * @ param[in] description the description of the item
   */
-  Item(std::string name, std::string itemImage);
+  Item(std::string name, std::string description);
 
   /**
   * @brief copy constructor
@@ -43,12 +38,6 @@ class Item {
   ~Item();
 
   /**
-  * @brief sets the name and description of the item
-  */
-  void setItem(std::string name, std::string description);
-
-
-  /**
   * @brief gets the name of the item
   * @return string the name of the item
   */
@@ -59,11 +48,6 @@ class Item {
   * @return string the description of the item
   */
   std::string getDescription();
-
-  /**
-  * @brief shows the image of the item;
-  */
-  void inspectItem();
 
   /**
   * @brief checks if two items are equivalent
