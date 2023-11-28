@@ -10,7 +10,22 @@
 #ifndef CHARACTER_H_INCLUDED
 #define CHARACTER_H_INCLUDED
 
+#include <string>
 
-class Character {};
+
+
+class Character {
+ public:
+  
+
+
+
+
+
+
+
+
+
+};
 
 #endif
