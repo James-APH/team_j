@@ -17,9 +17,8 @@
  * @class Room in Room.h "Room.h"
  * @brief abstract super class for Room types
  */
-class Room
-{
-public:
+class Room {
+ public:
   /**
    * @brief constructor
    * @param [in] title the title of the room
@@ -61,7 +60,7 @@ public:
    */
   virtual void display() = 0;
 
-private:
+ private:
   std::string title;
   std::string description;
   RoomState *state;
@@ -230,7 +229,7 @@ class PuzzleRoom : Room {
  * to use their brains
  */
 class ThinkingPuzzleRoom : Room {
-public:
+ public:
   /**
    * @brief constructor
    * @param [in] title the title of the room
@@ -273,7 +272,7 @@ public:
    */
   void display();
 
-private:
+ private:
   std::string title;
   std::string description;
   Puzzle *puzzle;

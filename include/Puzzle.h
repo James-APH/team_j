@@ -138,7 +138,7 @@ class ItemPuzzle {
   * puzzle
   * @throw bad_input if item is nullptr
   */
-  Puzzle(std::string description, const Item &item) 
+  Puzzle(std::string description, const Item &item)
          : Puzzle(description) {}
 
   /**

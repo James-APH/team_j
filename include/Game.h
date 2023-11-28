@@ -25,19 +25,7 @@
  * a list of all of the rooms (I may use 
  * another class to manage this)
  */
-class Game {
- public:
-  /**
-   * @brief default constructor
-   */
-  Game();
- 
-
- private:
-
-
-
-};
+class Game {};
 
 
 #endif
