@@ -23,12 +23,15 @@ class Item {
   * @brief Constructor initializes name, and image of item
   * @ param[in] name the name of the item
   * @ param[in] description the description of the item
+  * @throw bad_input if name is empty
+  * @throw bad_input if description is empty
   */
   Item(std::string name, std::string description);
 
   /**
   * @brief copy constructor
   * @param[in] item, the item that is being copied
+  * @throw bad_input if item is nullptr
   */
   Item(const Item &item);
 
@@ -52,6 +55,7 @@ class Item {
   /**
   * @brief checks if two items are equivalent
   * @return true if the items are equivalent
+  * @throw bad_input if item is nullptr
   */ 
   bool operator==(const Item item&);
 
