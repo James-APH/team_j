@@ -24,12 +24,15 @@ class Room {
 
   /**
    * @brief constructor
+   * @detail by default sets the player to nullptr
+   * sets the state to unexplored.
    * @param title the title of the room
    * @param description the description of the room
    * @throw bad_input if title is empty
    * @throw bad_input if description is empty
    */
-  virtual Room(std::sring title, std::string description)
+  virtual Room(std::string title
+               , std::string description);
   
   /**
    * @brief destructor
@@ -41,16 +44,46 @@ class Room {
    */
   virtual void display();
 
+  /**
+   * @brief
+   */
+  virtual RoomState& getState();
+
+  /**
+   * 
+   */
+  virtual void addPlayerToRoom(const Player &player);
+
+  /**
+   * @brief function to getInput from the player
+   * called after display
+   * @return char
+   * @detail, will either return 
+   * q for quit game,
+   * n for next room
+   * b for previous room
+   * ...more may be added
+   * in the case of puzzle 
+   * p for puzzle
+   * this function will call another inside of player
+   * to get their input
+   */
+  virtual char getPlayerInput();
+
+  
  private:
   std::string title;
   std::string description;
   RoomState* _state;
+  Player* player;
+
+  virtual void setState();
 
   /**
    * @brief puts the attributes of a room into a string
    * @return string the string of room attributes
    */
-  std::string toString();
+  virtual std::string toString();
 
 };
 
@@ -60,18 +93,39 @@ class Room {
  */
 class PuzzleRoom : Room {
  public:
+  PuzzleRoom(std::string title
+             , std::string roomDescription
+             , std::string puzzleDescription);
 
+  ~PuzzleRoom();
+
+  virtual display();
+ 
  private:
+  Puzzle* puzzle;
+
+  virtual std::string toString();
 };
 
 /**
  * @class ThinkingPuzzleRoom in Room.h "Room.h"
- * @brief
+ * @brief tells the details of the room and 
  */
 class ThinkingPuzzleRoom : PuzzleRoom {
  public:
+  ThinkingPuzzleRoom(std::string title
+                     , std::string roomDescription
+                     , std::string puzzleDescription
+                     , const std::string expectedInput);
+
+  ~ThinkingPuzzleRoom();
+
+  void display();
 
  private:
+  std::string expectedInput;
+
+  std::string toString();
 };
 
 /**
@@ -80,8 +134,20 @@ class ThinkingPuzzleRoom : PuzzleRoom {
  */
 class ItemPuzzleRoom : PuzzleRoom {
  public:
+  ItemPuzzleRoom(std::string title
+                 , std::string roomDescription
+                 , std::string puzzleDescription
+                 , const ItemPuzzle &ip, const Item &item);
+  
+  ~ItemPuzzleRoom();
+
+  void display();
+  
 
  private:
+  Item* item;
+
+  std::string toString();
 };
 
 /**
@@ -90,10 +156,22 @@ class ItemPuzzleRoom : PuzzleRoom {
  */
 class DialogueRoom : Room {
  public:
+  DialogueRoom(std::string title
+               , std::string roomDescription
+               , std::string dialogue);
+
+ ~ItemPuzzleRoom();
+
+ void display();
 
 
  private:
+  NPC* fella;
+
+ std::string toString();
 };
+
+
 
 
 
