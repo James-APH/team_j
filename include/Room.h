@@ -17,162 +17,124 @@
  */
 class Room {
  public:
-  /**
-   * @brief default constructor
-   */
-  virtual Room();
+  Room(std::string title, std::string description);
+  ~Room();
+  virtual RoomState& getState() = 0;
+  virtual void addPlayerToRoom(const Player& player) = 0;
+  virtual void removePlayerFromRoom() = 0;
+  virtual void playerTakeAction() = 0;
+  virtual void display() = 0;
 
-  /**
-   * @brief constructor
-   * @detail by default sets the player to nullptr
-   * sets the state to unexplored.
-   * @param title the title of the room
-   * @param description the description of the room
-   * @throw bad_input if title is empty
-   * @throw bad_input if description is empty
-   */
-  virtual Room(std::string title
-               , std::string description);
-  
-  /**
-   * @brief destructor
-   */
-  virtual ~Room();
-
-  /**
-   * @brief outputs the attributes of a room
-   */
-  virtual void display();
-
-  /**
-   * @brief
-   */
-  virtual RoomState& getState();
-
-  /**
-   * 
-   */
-  virtual void addPlayerToRoom(const Player &player);
-
-  /**
-   * @brief function to getInput from the player
-   * called after display
-   * @return char
-   * @detail, will either return 
-   * q for quit game,
-   * n for next room
-   * b for previous room
-   * ...more may be added
-   * in the case of puzzle 
-   * p for puzzle
-   * this function will call another inside of player
-   * to get their input
-   */
-  virtual char getPlayerInput();
-
-  
  private:
   std::string title;
   std::string description;
-  RoomState* _state;
+  RoomState* state;
   Player* player;
-
-  virtual void setState();
-
-  /**
-   * @brief puts the attributes of a room into a string
-   * @return string the string of room attributes
-   */
-  virtual std::string toString();
-
+  virtual void setState() = 0;
+  virtual string toString() = 0;
 };
 
-/**
- * @class PuzzleRoom in Room.h "Room.h"
- * @brief
- */
-class PuzzleRoom : Room {
- public:
-  PuzzleRoom(std::string title
-             , std::string roomDescription
-             , std::string puzzleDescription);
-
-  ~PuzzleRoom();
-
-  virtual display();
- 
- private:
-  Puzzle* puzzle;
-
-  virtual std::string toString();
-};
-
-/**
- * @class ThinkingPuzzleRoom in Room.h "Room.h"
- * @brief tells the details of the room and 
- */
-class ThinkingPuzzleRoom : PuzzleRoom {
- public:
-  ThinkingPuzzleRoom(std::string title
-                     , std::string roomDescription
-                     , std::string puzzleDescription
-                     , const std::string expectedInput);
-
-  ~ThinkingPuzzleRoom();
-
-  void display();
-
- private:
-  std::string expectedInput;
-
-  std::string toString();
-};
-
-/**
- * @class ItemPuzzleRoom in Room.h "Room.h"
- * @brief
- */
-class ItemPuzzleRoom : PuzzleRoom {
- public:
-  ItemPuzzleRoom(std::string title
-                 , std::string roomDescription
-                 , std::string puzzleDescription
-                 , const ItemPuzzle &ip, const Item &item);
-  
-  ~ItemPuzzleRoom();
-
-  void display();
-  
-
- private:
-  Item* item;
-
-  std::string toString();
-};
 
 /**
  * @class DialogueRoom in Room.h "Room.h"
- * @brief
+ * @brief players will recieve hints and items
+ * from npcs
  */
 class DialogueRoom : Room {
  public:
-  DialogueRoom(std::string title
-               , std::string roomDescription
-               , std::string dialogue);
-
- ~ItemPuzzleRoom();
-
- void display();
-
+  DialogueRoom(std::string title, std::string description
+               , const NPC &fella);
+  ~DialogueRoom();
+  RoomState& getState();
+  void addPlayerToRoom(const Player& player);
+  void removePlayerFromRoom();
+  void playerTakeAction();
+  void display();
 
  private:
+  std::string title;
+  std::string description;
   NPC* fella;
+  RoomState* state;
+  Player* player;
 
- std::string toString();
+  void setState();
+  string toString();
+};
+
+/**
+ *
+ *
+ */
+class PuzzleRoom : Room {
+ public:
+  PuzzleRoom(std::string title, std::string description, std::string puzzleDescription);
+  ~PuzzleRoom();
+  RoomState& getState();
+  void addPlayerToRoom(const Player& player);
+  void removePlayerFromRoom();
+  void playerTakeAction();
+  void display();
+
+ private:
+  std::string title;
+  std::string description;
+  Puzzle* puzzle;
+  RoomState* state;
+  Player* player;
+
+  void setState();
+  string toString();
+};
+
+class ThinkingPuzzleRoom : Room {
+ public:
+  ThinkingPuzzleRoom(std::string title
+               , std::string description
+               , std::string puzzleDescription
+               , const DialoguePuzzle &dp);
+  ~ThinkingPuzzleRoom();
+  RoomState& getState();
+  void addPlayerToRoom(const Player& player);
+  void removePlayerFromRoom();
+  void playerTakeAction();
+  void display();
+
+ private:
+  std::string title;
+  std::string description;
+  Puzzle* puzzle;
+  RoomState* state;
+  Player* player;
+
+  void setState();
+  string toString();
 };
 
 
 
+class ItemPuzzleRoom : Room {
+ public:
+  ItemPuzzleRoom(std::string title
+               , std::string description
+               , std::string puzzleDescription
+               , const ItemPuzzle &ip);
+  ~ItemPuzzleRoom();
+  RoomState& getState();
+  void addPlayerToRoom(const Player& player);
+  void removePlayerFromRoom();
+  void playerTakeAction();
+  void display();
 
+ private:
+  std::string title;
+  std::string description;
+  Puzzle* puzzle;
+  RoomState* state;
+  Player* player;
+
+  void setState();
+  string toString();
+};
 
 #endif
