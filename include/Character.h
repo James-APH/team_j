@@ -36,7 +36,7 @@ class Character {
  protected:
   std::string name;
   std::string dialogue;
- 
+
  /**
   * @brief sets the dialogue of a character 
   * @param [in] fileName the name of the file
