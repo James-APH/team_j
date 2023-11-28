@@ -8,6 +8,8 @@
 
 #include <string>
 
+#include "Item.h"
+#include "Inventory.h"
 /**
  * @class Character in character.h "character.h"
  * @brief superclass for different character types
@@ -31,18 +33,19 @@ class Character {
   */
   void display();
 
-  /**
-  * @brief sets the dialogue of a character 
-  * @param [in] fileName the name of the file
-  * containing dialogue
-  * @throw bad_input if the file does not exist
-  * @throw incomplete_settings if the file
-  */
-  void setDialogue(std::string fileName);
-
  protected:
   std::string name;
   std::string dialogue;
+ 
+ /**
+  * @brief sets the dialogue of a character 
+  * @param [in] fileName the name of the file
+  * containing dialogue
+  * @throw bad_input if file does not exist
+  * @throw incomplete_settings if file is empty
+  */
+  void setDialogue(std::string fileName);
+
 
   /**
   * @brief puts all of the information from
@@ -59,22 +62,35 @@ class NPC : protected Character {
  public:
   /**
   * @brief constructor
-  * @param [in] name the name of the character
+  * @param [in] name the name of the NPC
+  * @param [in] &item an item the NPC is holding
   * @throw bad_input if name is empty
+  * @throw bad_input if the item is a nullptr
   */
-  virtual Character(std::string name);
+  NPC(std::string name, const Item &item);
 
   /**
   * @brief destructor
   */
-  virtual ~Character();
+  ~NPC();
+
+  /**
+   * @brief gives an item to the user
+   */
+  Item& giveItem();
 
   /**
   * @brief outputs all attributes of a character
   */
-  void display();
+  display();
 
-  /**
+
+ private:
+  Item* item;
+  std::string name;
+  std::string dialogue;
+
+ /**
   * @brief sets the dialogue of a character 
   * @param [in] fileName the name of the file
   * containing dialogue
@@ -83,9 +99,6 @@ class NPC : protected Character {
   */
   void setDialogue(std::string fileName);
 
- private:
-  std::string name;
-  std::string dialogue;
 
   /**
   * @brief puts all of the information from
@@ -110,7 +123,7 @@ class Player : protected Character {
   /**
   * @brief destructor
   */
-  ~Character();
+  ~Player();
 
   /**
   * @brief function to allow user to pickUp items
@@ -182,7 +195,12 @@ class Player : protected Character {
   */
   void display();
 
-  /**
+ private:
+  Inventory* inventory;
+  std::string name;
+  std::string dialogue;
+
+ /**
   * @brief sets the dialogue of a character 
   * @param [in] fileName the name of the file
   * containing dialogue
@@ -192,9 +210,6 @@ class Player : protected Character {
   */
   void setDialogue(std::string fileName);
 
- private:
-  std::string name;
-  std::string dialogue;
 
   /**
   * @brief puts all of the information from
