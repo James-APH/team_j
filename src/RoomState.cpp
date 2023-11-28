@@ -19,7 +19,7 @@ bool FullyExploredRoom::isExplored() {
   return true;
 }
 
-bool FullyExploredRoom::allSecretsFound() {
+bool FullyExploredRoom::roomDone() {
   return true;
 }
 
@@ -33,7 +33,7 @@ bool ExploredRoom::isExplored() {
   return true;
 }
 
-bool ExploredRoom::allSecretsFound() {
+bool ExploredRoom::roomDone() {
   return false;
 }
 
@@ -48,7 +48,7 @@ bool UnexploredRoom::isExplored() {
   return false;
 }
 
-bool UnexploredRoom::allSecretsFound() {
+bool UnexploredRoom::roomDone() {
   return false;
 }
 
