@@ -26,6 +26,7 @@ class Inventory {
 
   /**
   * @brief construction from vector
+  * @throw incomplete_settings if itemList is empty
   */
   Inventory(std::vector<Item> itemList);
 
@@ -37,18 +38,21 @@ class Inventory {
   /**
   * @brief outputs the description of one item
   * @param[in] itemName the name of the item
+  * @throw bad_input if itemName is empty
   */
   void Inspect(std::string itemName);
 
   /**
   * @brief allows user to accept items from npcs and take items from rooms
   * @param[in] itemName the name of the item
+  * @throw bad_input if itemName is empty
   */
   void addItem(std::string itemName);
 
   /**
   * @brief removes item from list
   * @param[in] itemName the name of the item
+  * @throw bad_input if itemName is empty
   */
   void deleteItem(std::string itemName);
 
@@ -56,6 +60,7 @@ class Inventory {
   * @brief checks if item exists in list
   * @param[in] itemName the name of the item
   * @return true if item is in list false otherwise
+  * @throw bad_input if itemName is empty
   */
   bool hasItem(std::string itemName);
 
@@ -64,6 +69,7 @@ class Inventory {
   * @brief returns an item that exists in the list
   * @param[in] itemName the name of the item
   * @return A reference to an item
+  * @throw bad_input if itemName is empty
   */
   Item& getItem(std::string itemName);
 
@@ -87,6 +93,8 @@ class Inventory {
 
   /**
   * @brief adds a description to a newly added item
+  * @throw bad_input if file does not exist
+  * @throw incomplete_settings if file is empty
   */
   void addItemDescription(std::string fileName);
 };
