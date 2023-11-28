@@ -28,10 +28,10 @@ class RoomState {
   virtual bool isExplored() = 0;
 
   /**
-  * @brief used to determine if all the secrets have been found
-  * @return true if all secrets have been found, false otherwise
+  * @brief used to determine if all the clues have been found
+  * @return true if all clues have been found, false otherwise
   */
-  virtual bool allSecretsFound() = 0;
+  virtual bool roomDone() = 0;
 };
 
 /**
@@ -57,10 +57,10 @@ class FullyExploredRoom : RoomState {
   bool isExplored();
 
   /**
-  * @brief In this state all the secrets have been found.
+  * @brief In this state all the clues have been found.
   * @return true.
   */
-  bool allSecretsFound();
+  bool roomDone();
 };
 
 
@@ -87,10 +87,10 @@ class ExploredRoom : RoomState {
   bool isExplored();
 
   /**
-  * @brief In this state no or some secrets have been found
+  * @brief In this state no or some clues have been found
   * @return false
   */
-  bool allSecretsFound();
+  bool roomDone();
 };
 
 /**
@@ -117,10 +117,10 @@ class UnexploredRoom : RoomState {
 
 
   /**
-  * @brief In this state the no secretes have been found
+  * @brief In this state the no clues have been found
   * @return false
   */
-  bool allSecretsFound();
+  bool roomDone();
 };
 
 #endif
