@@ -20,6 +20,11 @@
 class Puzzle {
  public:
   /**
+  * @brief default constructor 
+  */
+  Puzzle();
+
+  /**
   * @brief default constructor
   * @param [in] description the description of the puzzle
   */
@@ -58,7 +63,7 @@ class Puzzle {
  * @brief derived class of Puzzle, for puzzles that require
  * dialogue answers
  */
-class DialoguePuzzle {
+class DialoguePuzzle : Puzzle {
  public:
   /**
   * @brief constructor
@@ -124,7 +129,7 @@ class DialoguePuzzle {
  * @brief derived class of Puzzle for puzzles that require
  * Items to solve them.
  */
-class ItemPuzzle {
+class ItemPuzzle : Puzzle {
  public:
   /**
   * @brief default constructor
