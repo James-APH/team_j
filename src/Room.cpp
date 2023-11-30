@@ -10,157 +10,215 @@
 #include "Puzzle.h"
 #include "Character.h"
 #include "RoomState.h"
+#include "Room.h"
 
-  Room(std::string title
+
+  Room::Room(std::string title
        , std::string description
-       , const std::string connections[]) {
-  if(title == "" || description == "") {
-     // throw
-  }
-  if(connections.length() == 0) {
-    //throw
-  }
-  this.title = title;
-  this.description = description;
+       , const std::vector<std::string> connections) {
 
+       }
+
+
+  Room::~Room() {
+
+  }
+
+
+
+
+
+  DialogueRoom::DialogueRoom(std::string title
+               , std::string description
+               , const std::vector<std::string> connections
+               , const NPC &fella) {
+
+               }
+
+
+  DialogueRoom::~DialogueRoom() {
+
+  }
+
+
+  RoomState& DialogueRoom::getState() {
+
+  }
+
+
+  void DialogueRoom::listConnections() {
+
+  }
+
+
+  void DialogueRoom::converse() {
+
+  }
+
+
+  void DialogueRoom::display() {
+
+  }
+
+
+  void DialogueRoom::setState() {
+
+  }
+
+
+  std::string DialogueRoom::toString() {
+
+  }
+
+
+
+
+
+
+
+
+ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title
+                     , std::string description
+                     , const std::vector<std::string> connections
+                     , const DialoguePuzzle &dp) {
+
+                     }
+
+
+ThinkingPuzzleRoom::~ThinkingPuzzleRoom() {
 
 }
 
 
-  ~Room();
+RoomState& ThinkingPuzzleRoom::getState() {
+
+}
+
+
+  void ThinkingPuzzleRoom::listConnections() {
+
+  }
+
+
+  void ThinkingPuzzleRoom::playerTryPuzzle(std::string answer) {
+
+  }
+
+
+  void ThinkingPuzzleRoom::display() {
+
+  }
+
+
+  void ThinkingPuzzleRoom::setState() {
+
+  }
+
+
+  std::string ThinkingPuzzleRoom::toString() {
+
+  }
 
 
 
 
-  DialogueRoom(std::string title
-             , std::string description
-             , const std::string connections[]
-             , const NPC &fella);
-
-
-  ~DialogueRoom();
-
-
-  RoomState &getState();
-
-
-  void listConnections();
-
-
-  void converse();
-
-
-  void display();
-
-
-  void setState();
-
-
-  std::string toString();
 
 
 
 
-
-
-
-ThinkingPuzzleRoom(std::string title
+  ItemPuzzleRoom::ItemPuzzleRoom(std::string title
                  , std::string description
-                 , const std::string connections[]
-                 , const DialoguePuzzle &dp);
+                 , const std::vector<std::string> connections
+                 , const ItemPuzzle &ip) {
 
+                 }
 
 
+  ItemPuzzleRoom::~ItemPuzzleRoom() {
 
-~ThinkingPuzzleRoom();
+  }
 
 
+  RoomState& ItemPuzzleRoom::getState() {
 
-RoomState &getState();
+  }
 
 
+  void ItemPuzzleRoom::listConnections() {
 
-void listConnections();
+  }
 
 
+  void ItemPuzzleRoom::playerTakeAction() {
 
-void playerTryPuzzle(std::string answer);
+  }
 
 
+  void ItemPuzzleRoom::display() {
 
-void display();
+  }
 
 
+  void ItemPuzzleRoom::setState() {
 
-void setState();
+  }
 
 
+  std::string ItemPuzzleRoom::toString() {
 
-std::string toString();
+  }
 
 
 
-ItemPuzzleRoom(std::string title
-             , std::string description
-             , const std::string connections[]
-             , const ItemPuzzle &ip);
 
 
-~ItemPuzzleRoom();
 
 
-RoomState &getState();
 
+  ItemRoom::ItemRoom(std::string title
+                 , std::string description
+                 , const std::vector<std::string> connections
+                 , const Item &i) {
 
-void listConnections();
+                 }
 
 
-void playerTakeAction();
+ ItemRoom::~ItemRoom() {
 
+ }
 
-void display();
 
+  RoomState& ItemRoom::getState() {
 
-void setState();
+  }
 
 
-std::string toString();
+  void ItemRoom::listConnections() {
 
+  }
 
 
-ItemPuzzleRoom(std::string title
-             , std::string description
-             , const std::string connections[]
-             , const Item &i);
+  void ItemRoom::playerUseItem(const Item &i) {
 
+  }
 
-~ItemPuzzleRoom();
 
+  void ItemRoom::display() {
 
-RoomState &getState();
+  }
 
 
+  void ItemRoom::setState() {
 
-void listConnections();
+  }
 
 
+  Item& ItemRoom::giveItem() {
 
-void playerUseItem(const Item &i);
+  }
 
 
-
-void display();
-
-
-
-void setState();
-
-
-
-Item& giveItem();
-
-
-
-std::string toString();
-
+  std::string ItemRoom::toString() {
+    
+  }
 
