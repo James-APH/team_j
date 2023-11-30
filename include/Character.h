@@ -17,11 +17,16 @@
 class Character {
  public:
   /**
+   * @brief default constructor
+   */
+  Character();
+
+  /**
   * @brief constructor
   * @param [in] name the name of the character
   * @throw bad_input if name is empty
   */
-  virtual Character(std::string name);
+  Character(std::string name);
 
   /**
   * @brief destructor
@@ -31,7 +36,7 @@ class Character {
   /**
   * @brief outputs all attributes of a character
   */
-  void display();
+  virtual void display() = 0;
 
  protected:
   std::string name;
@@ -44,14 +49,14 @@ class Character {
   * @throw bad_input if file does not exist
   * @throw incomplete_settings if file is empty
   */
-  void setDialogue(std::string fileName);
+  virtual void setDialogue(std::string fileName) = 0;
 
 
   /**
   * @brief puts all of the information from
   * character into a string
   */
-  std::string toString();
+  virtual std::string toString() = 0;
 };
 
 /**
@@ -82,7 +87,7 @@ class NPC : protected Character {
   /**
   * @brief outputs all attributes of a character
   */
-  display();
+  void display();
 
 
  private:
