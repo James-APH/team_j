@@ -270,7 +270,7 @@ class ItemRoom : Room {
    * @param [in] description the description of the room
    * @param [in] ip the object of an item puzzle for the room
    */
-  ItemPuzzleRoom(std::string title
+  ItemRoom(std::string title
                  , std::string description
                  , const std::vector<std::string> connections
                  , const Item &i);
@@ -278,7 +278,7 @@ class ItemRoom : Room {
   /**
    * @brief destructor
    */
-  ~ItemPuzzleRoom();
+  ~ItemRoom();
 
   /**
    * @brief getter for RoomState
