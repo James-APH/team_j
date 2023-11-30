@@ -13,13 +13,11 @@
 
 
 Puzzle::Puzzle(std::string description) {
-
+    this->description = description;
 }
 
 
-Puzzle::~Puzzle() {
-
-}
+Puzzle::~Puzzle() {}
 
 
 
@@ -27,9 +25,9 @@ Puzzle::~Puzzle() {
 
 
 DialoguePuzzle::DialoguePuzzle(std::string description
-                             , std::string expectedInput) {
-
-                             }
+                             , std::string expectedInput) : Puzzle(description) {
+                            this->expectedInput = expectedInput;
+                            }
 
 
 DialoguePuzzle::~DialoguePuzzle() {
@@ -48,10 +46,6 @@ void DialoguePuzzle::display() {
 
 }
 
-bool DialoguePuzzle::hasAttempts() {
-
-}
-
 std::string DialoguePuzzle::toString() {
 
 }
@@ -60,7 +54,7 @@ std::string DialoguePuzzle::toString() {
 //-------------------------------------------------------------
 
 
-ItemPuzzle::ItemPuzzle(std::string description, const Item &item) {
+ItemPuzzle::ItemPuzzle(std::string description, const Item &item) : Puzzle(description) {
 
 }
 
