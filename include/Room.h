@@ -37,18 +37,12 @@ class Room {
    */
   virtual RoomState &getState() = 0;
 
-  /**
-   * @brief adds the player to the room, so they
-   * can either talk to npc's or manipulate puzzles
-   * @param [in] player the player
-   */
-  virtual void addPlayerToRoom(const Player &player) = 0;
 
   /**
-   * @brief removes a player from a room when they leave
-   * so that they do not exist in 9 rooms at once.
+   * @brief gets the list of rooms the room is connected to
+   *
    */
-  virtual void removePlayerFromRoom() = 0;
+  void listConnections();
 
   /**
    * @brief allows player to interact with the room
@@ -109,20 +103,15 @@ class DialogueRoom : Room {
   RoomState &getState();
 
   /**
-   * @brief adds the player to the room, so they
-   * can either talk to npc's or manipulate puzzles
-   * @param [in] player the player
+   * @brief gets the list of rooms the room is connected to
+   *
    */
-  void addPlayerToRoom(const Player &player);
+  void listConnections();
 
-  /**
-   * @brief removes a player from a room when they leave
-   * so that they do not exist in 9 rooms at once.
-   */
-  void removePlayerFromRoom();
 
   /**
    * @brief allows player to interact with the room
+   * in this case the player would talk to the npc.
    */
   void playerTakeAction();
 
@@ -132,8 +121,6 @@ class DialogueRoom : Room {
   void display();
 
  private:
-  std::string title;
-  std::string description;
   NPC *fella;
   RoomState *state;
   Player *player;
@@ -148,77 +135,6 @@ class DialogueRoom : Room {
    * @brief puts all of room information into a
    * string
    * @return string the string of room information
-   */
-  std::string toString();
-};
-
-/**
- * @class PuzzleRoom in Room.h "Room.h"
- * @brief derived class from room, parent
- * class for ThinkingPuzzleRoom and
- * ItemPuzzleRoom
- */
-class PuzzleRoom : Room {
- public:
-  /**
-   * @brief constructor
-   * @param [in] title the title of the room
-   * @param [in] description the description of the room
-   */
-  PuzzleRoom(std::string title, std::string description);
-
-  /**
-   * @brief destructor
-   */
-  ~PuzzleRoom();
-
-  /**
-   * @brief getter for RoomState
-   * returns the state of the room
-   */
-  RoomState &getState();
-
-  /**
-   * @brief adds the player to the room, so they
-   * can manipulate puzzles
-   * @param [in] player the player
-   */
-  void addPlayerToRoom(const Player &player);
-
-  /**
-   * @brief removes a player from a room when they leave
-   * so that they do not exist in nine rooms at once.
-   */
-  void removePlayerFromRoom();
-
-  /**
-   * @brief allows the player to interact with the room 
-   * (puzzles, npcs)
-   */
-  void playerTakeAction();
-
-  /**
-   * @brief describes / shows the room to the player
-   *
-   */
-  void display();
-
- private:
-  std::string title;
-  std::string description;
-  Puzzle *puzzle;
-  RoomState *state;
-  Player *player;
-
-  /**
-   * @brief depending on the players interactions 
-   * with the room, sets the state of the room accordingly.
-   */ 
-  void setState();
-
-  /**
-   * @brief puts all of room information into a string
-   * @return string the string of room information.
    */
   std::string toString();
 };
@@ -251,16 +167,10 @@ class ThinkingPuzzleRoom : Room {
   RoomState &getState();
 
   /**
-   * @brief adds the player to the room, so they 
-   * can manipulate puzzles
-   * @param [in] player the player
+   * @brief gets the list of rooms the room is connected to
+   *
    */
-  void addPlayerToRoom(const Player &player);
-
-  /**
-   * @brief removes the player from the room
-   */
-  void removePlayerFromRoom();
+  void listConnections();
 
   /**
    * @brief allows the player to interact with the room
@@ -273,9 +183,7 @@ class ThinkingPuzzleRoom : Room {
   void display();
 
  private:
-  std::string title;
-  std::string description;
-  Puzzle *puzzle;
+  DialoguePuzzle* dp;
   RoomState *state;
   Player *player;
 
@@ -320,16 +228,9 @@ class ItemPuzzleRoom : Room {
   RoomState &getState();
 
   /**
-   * @brief adds the player to the room, so they
-   * can interact with the puzzle
-   * @param [in] player the player
+   * @brief gets the list of rooms the room is connected to
    */
-  void addPlayerToRoom(const Player &player);
-
-  /**
-   * @brief removes the player from the room
-   */
-  void removePlayerFromRoom();
+  void listConnections();
 
   /**
    * @brief allows the player to interact with the room
