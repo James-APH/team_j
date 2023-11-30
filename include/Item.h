@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <string>
-#include <fstream>
+
 
 
 /**
@@ -22,11 +22,13 @@ class Item {
   /**
   * @brief Constructor initializes name, and image of item
   * @ param[in] name the name of the item
+  * @ param[in] useLocation the location the item will be used
   * @ param[in] description the description of the item
+  * @throw bad_input if the 
   * @throw bad_input if name is empty
   * @throw bad_input if description is empty
   */
-  Item(std::string name, std::string description);
+  Item(std::string name, std::string useLocation, std::string description);
 
   /**
   * @brief copy constructor
@@ -53,15 +55,27 @@ class Item {
   std::string getDescription();
 
   /**
+   * @brief gets the location where the item should be used 
+   * @brief returns the location where the item should be used
+   */
+  std::string getUselocation();
+
+  /**
+   * @brief displays the name of the item and description 
+   */
+  void display();
+
+  /**
   * @brief checks if two items are equivalent
   * @return true if the items are equivalent
   * @throw bad_input if item is nullptr
   */ 
-  bool operator==(const Item item&);
+  bool operator==(const Item& item);
 
  private:
   std::string name;
   std::string description;
+  std::string useLocation;
 
   /**
   * @brief puts the information in from item into a string
