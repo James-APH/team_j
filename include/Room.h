@@ -24,7 +24,9 @@ class Room {
    * @param [in] title the title of the room
    * @param [in] description the description of the room
    */
-  Room(std::string title, std::string description);
+  Room(std::string title
+       , std::string description
+       , const std::vector<std::string> connections);
 
   /**
    * @brief destructor
@@ -37,17 +39,11 @@ class Room {
    */
   virtual RoomState &getState() = 0;
 
-
   /**
    * @brief gets the list of rooms the room is connected to
    *
    */
   void listConnections();
-
-  /**
-   * @brief allows player to interact with the room
-   */
-  virtual void playerTakeAction() = 0;
 
   /**
    * @brief descibes/shows the room to the player
@@ -57,8 +53,8 @@ class Room {
  private:
   std::string title;
   std::string description;
+  std::vector<std::string> connections;
   RoomState *state;
-  Player *player;
 
   /**
    * @brief depending on the players interactions with
@@ -89,7 +85,10 @@ class DialogueRoom : Room {
    * @param [in] fella the NPC that exists in the
    * room
    */
-  DialogueRoom(std::string title, std::string description, const NPC &fella);
+  DialogueRoom(std::string title
+               , std::string description
+               , const std::vector<std::string> connections
+               , const NPC &fella);
 
   /**
    * @brief destructor
@@ -108,12 +107,10 @@ class DialogueRoom : Room {
    */
   void listConnections();
 
-
   /**
-   * @brief allows player to interact with the room
-   * in this case the player would talk to the npc.
+   * @brief allows player to talk to the npc.
    */
-  void playerTakeAction();
+  void converse();
 
   /**
    * @brief descibes/shows the room to the player
@@ -123,7 +120,6 @@ class DialogueRoom : Room {
  private:
   NPC *fella;
   RoomState *state;
-  Player *player;
 
   /**
    * @brief depending on the players interactions with
@@ -152,7 +148,9 @@ class ThinkingPuzzleRoom : Room {
    * @param [in] description the description of the room
    * @param [in] dp the object for the dialogue puzzle
    */
-  ThinkingPuzzleRoom(std::string title, std::string description
+  ThinkingPuzzleRoom(std::string title
+                     , std::string description
+                     , const std::vector<std::string> connections
                      , const DialoguePuzzle &dp);
 
   /**
@@ -173,9 +171,11 @@ class ThinkingPuzzleRoom : Room {
   void listConnections();
 
   /**
-   * @brief allows the player to interact with the room
+   * @brief allows the player to
+   * attempt to solve the puzzle
+   * @param answer, the answer to the puzzle
    */
-  void playerTakeAction();
+  void playerTryPuzzle(std::string answer);
 
   /**
    * describes/shows the room to the player
@@ -185,8 +185,6 @@ class ThinkingPuzzleRoom : Room {
  private:
   DialoguePuzzle* dp;
   RoomState *state;
-  Player *player;
-
   /**
    * @brief depending on the players interactions with
    * the room sets the state of the room accordingly
@@ -213,7 +211,9 @@ class ItemPuzzleRoom : Room {
    * @param [in] description the description of the room
    * @param [in] ip the object of an item puzzle for the room
    */
-  ItemPuzzleRoom(std::string title, std::string description
+  ItemPuzzleRoom(std::string title
+                 , std::string description
+                 , const std::vector<std::string> connections
                  , const ItemPuzzle &ip);
 
   /**
@@ -243,17 +243,78 @@ class ItemPuzzleRoom : Room {
   void display();
 
  private:
-  std::string title;
-  std::string description;
-  Puzzle *puzzle;
+  ItemPuzzle* ip;
   RoomState *state;
-  Player *player;
-
   /**
    * @brief depending on the players interactions with
    * the room sets the state of the room accordingly
    */
   void setState();
+
+  /**
+   * @brief puts all of room information into a string
+   * @return string the string of room information
+   */
+  std::string toString();
+};
+
+/**
+ * @class ItemRoom in Room.h "Room.h"
+ * @brief class of room where players 'find' items
+ */
+class ItemRoom : Room {
+ public:
+  /**
+   * @brief constructor
+   * @param [in] title the title of the room
+   * @param [in] description the description of the room
+   * @param [in] ip the object of an item puzzle for the room
+   */
+  ItemPuzzleRoom(std::string title
+                 , std::string description
+                 , const std::vector<std::string> connections
+                 , const Item &i);
+
+  /**
+   * @brief destructor
+   */
+  ~ItemPuzzleRoom();
+
+  /**
+   * @brief getter for RoomState
+   * @return the state of the room
+   */
+  RoomState &getState();
+
+  /**
+   * @brief gets the list of rooms the room is connected to
+   */
+  void listConnections();
+
+  /**
+   * @brief allows the player to input
+   * one of their items to solve the rooms puzzle
+   */
+  void playerUseItem(const Item &i);
+
+  /**
+   * @brief describes/shows the room to the player
+   */
+  void display();
+
+ private:
+  Item* ip;
+  RoomState *state;
+  /**
+   * @brief depending on the players interactions with
+   * the room sets the state of the room accordingly
+   */
+  void setState();
+
+  /**
+   * @brief function to give the player items
+   */
+  Item& giveItem();
 
   /**
    * @brief puts all of room information into a string
