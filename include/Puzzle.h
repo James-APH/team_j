@@ -34,7 +34,7 @@ class Puzzle {
   * @brief getter for solved
   * @return true if puzzle is solved, false otherwise
   */
-  virtual bool wasSolved();
+  virtual bool wasSolved() = 0;
 
   /**
   * @brief display all details of the puzzle
@@ -49,7 +49,7 @@ class Puzzle {
   * @brief creates string of all attributes of the puzzle
   * return string string of all attributes of the puzzle
   */
-  std::string toString() = 0;
+  virtual std::string toString() = 0;
 };
 
 
@@ -72,8 +72,8 @@ class DialoguePuzzle {
   * @throw bad_input if attemptLimit is less than or
   * equal to zero.
   */
-  DialoguePuzzle(std::string description, std::string expectedInput
-         , int attemptLimit = 1) : Puzzle(description) {}
+  DialoguePuzzle(std::string description
+               , std::string expectedInput);
 
   /**
   * @brief gets the input from the user to compare with expectedInput
@@ -102,11 +102,7 @@ class DialoguePuzzle {
   void display();
 
  private:
-  std::string description;
   std::string expectedInput;
-  int attemptLimit;
-  int attempts = 0;
-  bool solved;
 
   /*
   * @brief function to check if the user still has attempts
@@ -138,13 +134,12 @@ class ItemPuzzle {
   * puzzle
   * @throw bad_input if item is nullptr
   */
-  Puzzle(std::string description, const Item &item)
-         : Puzzle(description) {}
+  ItemPuzzle(std::string description, const Item &item);
 
   /**
   * @brief destructor for ItemPuzzle
   */
-  ~Puzzle();
+  ~ItemPuzzle();
 
   /**
   * @brief checks if the item the user uses
@@ -168,9 +163,7 @@ class ItemPuzzle {
   void display();
 
  private:
-  Item expectedItem;
-  std::string description;
-  bool solved;
+  Item* expectedItem;
 
   /**
   * @brief puts all of the puzzle information into a string
