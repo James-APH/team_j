@@ -17,7 +17,7 @@ It is possible no one saw anything happen even though he is laying there on the 
 You notice there is someone sitting alone not far away. It looks like they are for the party. 
 (OPTION) what do you do:
 
-1.	Approach and ask what happened. You find out the man laying on the ground was the owner of the estate and his name is Scott. 
+1.	Approach and ask what happened. You find out the man laying on the ground was the wife of the owner of the estate. 
     You find out just before Scott fell to the floor he was in an argument with someone but no body was able to hear what it was about. 
     A few minutes later when everything seemed fine and figured walked quickly past Scott and disappeared into the crowd of dancers.
 2.	Approach and comfort them. 
@@ -33,7 +33,6 @@ Where do you want to go?
 1.	The door to the left (staircase)
 2.	The door to the right (library)
 3.	The door straight ahead (bedroom)
-4.	The door you came through (garden)
 
 
 Library:

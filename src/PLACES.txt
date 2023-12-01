@@ -1,0 +1,146 @@
+ALL OF THE TEXT IN THIS FILE IS DESIGNED TO BE COPPIED AND PASTED INTO THE GAME
+IT WILL BE BLOCKED INTO CHUCKS BASED ON THE ROOMS
+
+GARDEN:
+
+You drive up to the mansion. It is sitting on a cliff overlooking a lake.
+It is a giant building with a lot of rooms and the windows are all lit.
+There are vines growing all over the building, snaking their way up the walls.
+It is early evening and the full moon is shining across the lake.
+There is a slight breeze making it's way across the lake brining the sweet
+smell of fresh flowers.
+You enter exit you car and notice there are a lot of other cars parked in the
+driveway. There must be a party going on inside even though you cannot hear
+anything outside.
+
+You enter the garden through a gate and you can smell the flowers and tress.
+You can hear the fountain going in the middle of the garden and you can
+hear the sound of fish swimming around in a small pond in the corner.
+
+You are met next to the fountain by a security guard.
+
+CRAIG FROM PEOPLE
+
+You enter the front door and enter the ballroom.
+
+BALLROOM:
+
+You enter the ballroom. You are greeted with the sound of people dancing
+and music filling the air. You can smell the alcohol in the air and everyone
+seems to be having a good time and no one notices you enter the room.
+
+You notice there is someone sitting alone across the dancefloor. They do not
+look like any of the guests. It looks like they might be a waiter. They are
+sitting on a chair at a table crying.
+
+1.	Approach and ask what happened. You find out the woman laying on the ground
+    was the wife of the owner of the estate.
+    You find out just before Diane fell to the floor he was in an argument with
+    someone but no body was able to hear what it was about.
+    A few minutes later when everything seemed fine and figured walked quickly
+    past Diane and disappeared into the crowd of dancers.
+2.	Approach and comfort them.
+    (MAYBE THIS FAILS IT SINCE IT TAKES TO LONG???)
+3.	Leave them in peace and continue looking around.
+    (THIS FAILS IT SINCE CRUTIAL INFO IS LOST)
+
+LIBRARY:
+
+You go through the door and you entered a library. It looks like it goes
+unsused. There is a layer of dust everywhere. You see dustlest path leading
+from the door of the library to another door on the right. There is a desk
+sitting in fron of you with an open book sitting there. You also see footprints
+coming from the bookcase. But, there are no footprints going to the bookcase.
+Maybe there is something there?
+
+    1. Follow the path an go to the next room.
+    2. Leave
+
+STUDY:
+
+You enter the study only to find papers and books everywhere.
+It is obvious someone was looking for something. You know finding
+anything in this room is going to be difficult but there is a filing cabinet
+nearby. 
+
+    1. (PUZZLE TO OPEN IT). You have a look through the files inside and you
+       notice there is a spot missing for a will. You look around the room
+       and find the folder containing the will sitting on a desk, open, and
+       empty.
+    2. Give up and don't look.
+    3. Leave
+
+BEDROOM:
+
+You enter the master bedroom and stop after you walked through the door.
+There is a large four poster bed in the center of the room. The bed has been
+used and the blankets and pillows are thrown all over the room. There are
+pieces of a vase shattered on the floor. You aren't sure it was thrown or
+dropped. It appears there is blood splatter on the wall on the other side of
+the bed. You notice there is someone in the room.
+
+(MIGHT NEED TO CHANGE UP THE OPTIONS TO ACCOUNT FOR THE SECRET DOOR)
+    1. You walk up to the maid and talk to her.
+    2. You leave the room.
+    3. Give up.
+
+SECRET PASSAGE:
+
+You found your way into a secret passage. You wonder where it leads.
+The passage goes straight from the door to the end where it turns right.
+
+    1. You find a knife and it has a crest on it. The crest looks like 
+       a rearing lion over crossed swords. This could only belong to one person. 
+    2. Leave back through the door you came.
+    3. Continue down the hall and exit through the door at the end.
+
+STAIRCASE:
+
+You found your way to the central hub. You notice a few things.
+There are two doors. One door is at the top of the stairs and one at the
+bottom. The door at the top of the stairs likely leads to the attic.
+The door at the bottom of the stairs likely leads to the cellar. You can
+smell the scent of old oak comming from downstairs. 
+There is someone sitting on the stairs shaking. You notice he is wearing
+expensive clothing. They look tailored.
+
+1.	Go upstairs.
+2.	Go downstairs.
+3.	Talk to the stranger (NOTE: You need to talk to Brent here or else he
+    leaves, and the true ending can’t be had)
+  
+ATTIC: (ADD TWO PUZZLES TO GET INTO THE CHEST AND A LOCKER?)
+
+(BEFORE KEY)
+You climbed the stairs to the attic door. You try to turn the doorknob,
+but it doesn’t move. You notice a key is needed to get in. 
+You go back down the stairs.
+(AFTER KEY) You climbed the stairs and tried to turn to doorknob, but
+it didn’t move. You remember you picked up a key and place it in the lock. 
+The key opens the door. As you enter the room you notice a thick layer
+of dust over everything. Nothing looks out of place. 
+No one has been in this room in a very long time. 
+It must be filled with lots of treasured memories long forgotten.
+
+1.	You go over to a trunk and open it. You find a picture on top of
+    everything else. In this picture there are three people. It looks like
+    two brothers and a father in the middle. The boys were wearing school
+    uniforms with name tags. The name tag on the older brother was Scott
+    and the name tag on the younger brother was Brent.
+2.	There is a piece of torn paper wedged into the frame of the picture. 
+    It has 3 numbers written on it. 
+    6-3- the last number it torn off, but it looks like it might 6 or 8. 
+    (PUT THIS IN THE HELP SECTION AS IT IS FOUND OR FORCE THEM TO REMEMBER IT)
+
+CELLAR: (NEED A PUZZLE TO FIND THE KEY)
+
+You walk into the cellar. It feel cool but dry. You can smell the oak barrels
+and see the caskets stacked against the walls. There is a large wooden chest
+in the center of the room. It is locked. You also see a stack of papers sitting
+on top of one of the caskets. When you look closer, you notice it is a will.
+It looks like it was drafted some time ago. As you read through the pages you
+notice the Scott was main beneficiary of most of the father’s estate. 
+
+    1. Do the puzzle.
+    2. Give up.
+    3. Leave.
