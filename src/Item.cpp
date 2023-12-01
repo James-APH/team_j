@@ -7,21 +7,23 @@
 
 
 
+
 #include <iostream>
 #include <string>
-
 
 #include "Item.h"
 
 
 
-Item::Item(std::string name, std::string description) {
+Item::Item(std::string name, std::string useLocation, std::string description) {
 
 }
 
-
-Item::Item(const Item &item) {
-
+  
+Item::Item(const Item& item) {
+  this->name = item.name;
+  this->useLocation = item.useLocation;
+  this->description = item.description;
 }
 
 
@@ -31,21 +33,30 @@ Item::~Item() {
 
 
 std::string Item::getName() {
-
+  return name;
 }
 
 
-  std::string Item::getDescription() {
-
-  }
-
-
-  bool Item::operator==(const Item item) {
-
-  }
+std::string Item::getDescription() {
+  return description;
+}
 
 
-  std::string Item::toString() {
+std::string Item::getUselocation() {
+  return useLocation;
+}
 
-  }
+void display() {
+
+}
+
+bool Item::operator==(const Item& item) {
+  return this->name == item.name 
+      && this->useLocation == item.useLocation;
+}
+
+
+std::string Item::toString() {
+  
+}
 
