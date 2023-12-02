@@ -60,6 +60,12 @@ class Room {
   std::vector<std::string> getConnections();
 
   /**
+   * @brief getter for roomtype
+   * @return roomtype the type of room the current is
+  */
+  GameTypes::RoomTypes getRoomType();
+
+  /**
    * @brief descibes/shows the room to the player
    */
   virtual void display() = 0;
@@ -69,6 +75,7 @@ class Room {
   std::string description;
   std::vector<std::string> connections;
   RoomState *state;
+  GameTypes::RoomTypes roomtype;
 
   /**
    * @brief depending on the players interactions with
@@ -127,6 +134,12 @@ class DialogueRoom : protected Room {
    * @return list of rooms the room connects to
   */
   std::vector<std::string> getConnections();
+
+  /**
+   * @brief getter for roomtype
+   * @return roomtype the type of room the current is
+  */
+  GameTypes::RoomTypes getRoomType();
 
   /**
    * @brief allows player to talk to the npc.
@@ -199,6 +212,12 @@ class ThinkingPuzzleRoom : protected Room {
   std::vector<std::string> getConnections();
 
   /**
+   * @brief getter for roomtype
+   * @return roomtype the type of room the current is
+  */
+  GameTypes::RoomTypes getRoomType();
+
+  /**
    * @brief allows the player to
    * attempt to solve the puzzle
    * @param answer, the answer to the puzzle
@@ -269,6 +288,12 @@ class ItemPuzzleRoom : protected Room {
   std::vector<std::string> getConnections();
 
   /**
+   * @brief getter for roomtype
+   * @return roomtype the type of room the current is
+  */
+  GameTypes::RoomTypes getRoomType();
+
+  /**
    * @brief allows the player to interact with the room
    */
   void playerTakeAction();
@@ -334,6 +359,12 @@ class ItemRoom : protected Room {
    * @return list of rooms the room connects to
   */
   std::vector<std::string> getConnections();
+
+  /**
+   * @brief getter for roomtype
+   * @return roomtype the type of room the current is
+  */
+  GameTypes::RoomTypes getRoomType();
 
   /**
    * @brief allows the player to input
