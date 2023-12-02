@@ -14,6 +14,7 @@
  * 
 */
 class GameTypes {
+ public:
   enum PuzzleTypes {
     THINKING,
     ITEM,
