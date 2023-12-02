@@ -5,12 +5,14 @@
 
 
 #include <string>
+#include <vector>
 
 #include "Item.h"
 #include "Puzzle.h"
 #include "Character.h"
 #include "RoomState.h"
 #include "Room.h"
+#include "GameTypes.h"
 
   Room::Room() {
 
