@@ -80,8 +80,9 @@ class Room {
   /**
    * @brief depending on the players interactions with
    * the room sets the state of the room accordingly.
+   * @param[in] state the new state of the room;
    */
-  void setState();
+  void setState(RoomState *state);
 
   /**
    * @brief puts all of room information into a
