@@ -31,25 +31,21 @@
 
 
   RoomState& Room::getState() {
-
+    return *state;
   }
 
 
   std::string Room::getTitle() {
-
+    return title;
   }
     
-
-
   std::vector<std::string> Room::getConnections() {
-
+    return connections;
   }
-
 
   GameTypes::RoomTypes Room::getRoomType() {
-
+    return roomtype;
   }
-
 
   void Room::setState(RoomState *state) {
     this->state = state;
