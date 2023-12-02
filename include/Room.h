@@ -45,6 +45,10 @@ class Room {
    */
   void listConnections();
 
+  std::string getTitle();
+
+  std::vector<std::string> getConnections();
+
   /**
    * @brief descibes/shows the room to the player
    */
