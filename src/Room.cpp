@@ -29,6 +29,32 @@
 
   }
 
+
+  RoomState& Room::getState() {
+
+  }
+
+
+  std::string Room::getTitle() {
+
+  }
+    
+
+
+  std::vector<std::string> Room::getConnections() {
+
+  }
+
+
+  GameTypes::RoomTypes Room::getRoomType() {
+
+  }
+
+
+  void Room::setState(RoomState *state) {
+    this->state = state;
+  }
+
 //----------------------------------------------------------
 
   DialogueRoom::DialogueRoom(std::string title
@@ -43,32 +69,12 @@
   }
 
 
-  RoomState& DialogueRoom::getState() {
-    return *state;
-  }
-
-
-  std::string  DialogueRoom::getTitle() {
-    return title;
-  }
-
-
-  std::vector<std::string>  DialogueRoom::getConnections() {
-    return connections;
-  }
-
-
   void DialogueRoom::converse() {
 
   }
 
 
   void DialogueRoom::display() {
-
-  }
-
-
-  void DialogueRoom::setState() {
 
   }
 
@@ -92,22 +98,6 @@ ThinkingPuzzleRoom::~ThinkingPuzzleRoom() {
 }
 
 
-RoomState& ThinkingPuzzleRoom::getState() {
-
-}
-
-
-
-  std::string ThinkingPuzzleRoom::getTitle() {
-
-  }
-
-
-  std::vector<std::string> ThinkingPuzzleRoom::getConnections() {
-
-  }
-
-
   void ThinkingPuzzleRoom::playerTryPuzzle(std::string answer) {
 
   }
@@ -117,10 +107,6 @@ RoomState& ThinkingPuzzleRoom::getState() {
 
   }
 
-
-  void ThinkingPuzzleRoom::setState() {
-
-  }
 
 
   std::string ThinkingPuzzleRoom::toString() {
@@ -142,20 +128,6 @@ RoomState& ThinkingPuzzleRoom::getState() {
   }
 
 
-  RoomState& ItemPuzzleRoom::getState() {
-
-  }
-
-
-  std::string ItemPuzzleRoom::getTitle() {
-
-  }
-
-
-  std::vector<std::string> ItemPuzzleRoom::getConnections() {
-
-  }
-
 
   void ItemPuzzleRoom::playerTakeAction() {
 
@@ -167,9 +139,6 @@ RoomState& ThinkingPuzzleRoom::getState() {
   }
 
 
-  void ItemPuzzleRoom::setState() {
-
-  }
 
 
   std::string ItemPuzzleRoom::toString() {
@@ -191,31 +160,12 @@ RoomState& ThinkingPuzzleRoom::getState() {
  }
 
 
-  RoomState& ItemRoom::getState() {
-
-  }
-
-
-  std::string ItemRoom::getTitle() {
-
-  }
-
-
-  std::vector<std::string> ItemRoom::getConnections() {
-
-  }
-
   void ItemRoom::playerUseItem(const Item &i) {
 
   }
 
 
   void ItemRoom::display() {
-
-  }
-
-
-  void ItemRoom::setState() {
 
   }
 
