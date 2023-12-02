@@ -12,6 +12,9 @@
 #include "RoomState.h"
 #include "Room.h"
 
+  Room::Room() {
+
+  }
 
   Room::Room(std::string title
        , std::string description
@@ -24,9 +27,7 @@
 
   }
 
-
-
-
+//----------------------------------------------------------
 
   DialogueRoom::DialogueRoom(std::string title
                , std::string description
@@ -37,17 +38,21 @@
 
 
   DialogueRoom::~DialogueRoom() {
-
   }
 
 
   RoomState& DialogueRoom::getState() {
-
+    return *state;
   }
 
 
-  void DialogueRoom::listConnections() {
+  std::string  DialogueRoom::getTitle() {
+    return title;
+  }
 
+
+  std::vector<std::string>  DialogueRoom::getConnections() {
+    return connections;
   }
 
 
@@ -70,12 +75,7 @@
 
   }
 
-
-
-
-
-
-
+//------------------------------------------------------------------
 
 ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title
                      , std::string description
@@ -95,7 +95,13 @@ RoomState& ThinkingPuzzleRoom::getState() {
 }
 
 
-  void ThinkingPuzzleRoom::listConnections() {
+
+  std::string ThinkingPuzzleRoom::getTitle() {
+
+  }
+
+
+  std::vector<std::string> ThinkingPuzzleRoom::getConnections() {
 
   }
 
@@ -119,12 +125,7 @@ RoomState& ThinkingPuzzleRoom::getState() {
 
   }
 
-
-
-
-
-
-
+//------------------------------------------------------------------------
 
   ItemPuzzleRoom::ItemPuzzleRoom(std::string title
                  , std::string description
@@ -144,7 +145,12 @@ RoomState& ThinkingPuzzleRoom::getState() {
   }
 
 
-  void ItemPuzzleRoom::listConnections() {
+  std::string ItemPuzzleRoom::getTitle() {
+
+  }
+
+
+  std::vector<std::string> ItemPuzzleRoom::getConnections() {
 
   }
 
@@ -168,12 +174,7 @@ RoomState& ThinkingPuzzleRoom::getState() {
 
   }
 
-
-
-
-
-
-
+//------------------------------------------------------------------------
 
   ItemRoom::ItemRoom(std::string title
                  , std::string description
@@ -193,10 +194,14 @@ RoomState& ThinkingPuzzleRoom::getState() {
   }
 
 
-  void ItemRoom::listConnections() {
+  std::string ItemRoom::getTitle() {
 
   }
 
+
+  std::vector<std::string> ItemRoom::getConnections() {
+
+  }
 
   void ItemRoom::playerUseItem(const Item &i) {
 
