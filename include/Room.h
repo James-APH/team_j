@@ -12,6 +12,8 @@
 #include "Puzzle.h"
 #include "Character.h"
 #include "RoomState.h"
+#include "GameTypes.h"
+
 
 /**
  * @class Room in Room.h "Room.h"
@@ -19,6 +21,11 @@
  */
 class Room {
  public:
+  /**
+   * @brief default constructor
+   */
+  Room();
+
   /**
    * @brief constructor
    * @param [in] title the title of the room
@@ -57,7 +64,7 @@ class Room {
    */
   virtual void display() = 0;
 
- private:
+ protected:
   std::string title;
   std::string description;
   std::vector<std::string> connections;
@@ -82,7 +89,7 @@ class Room {
  * @brief players will recieve hints and items
  * from npcs
  */
-class DialogueRoom : Room {
+class DialogueRoom : protected Room {
  public:
   /**
    * @brief constructor
@@ -154,7 +161,7 @@ class DialogueRoom : Room {
  * @brief class to hold puzzles that require players
  * to use their brains
  */
-class ThinkingPuzzleRoom : Room {
+class ThinkingPuzzleRoom : protected Room {
  public:
   /**
    * @brief constructor
@@ -224,7 +231,7 @@ class ThinkingPuzzleRoom : Room {
  * @brief class to hold puzzles that require players
  * to explore the game
  */
-class ItemPuzzleRoom : Room {
+class ItemPuzzleRoom : protected Room {
  public:
   /**
    * @brief constructor
@@ -291,7 +298,7 @@ class ItemPuzzleRoom : Room {
  * @class ItemRoom in Room.h "Room.h"
  * @brief class of room where players 'find' items
  */
-class ItemRoom : Room {
+class ItemRoom : protected Room {
  public:
   /**
    * @brief constructor
