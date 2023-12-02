@@ -115,7 +115,6 @@ RoomList::~RoomList()
     RoomNode *current = head;
     while (current != nullptr)
     {
-
         current = current->getNextNode();
     }
 }
