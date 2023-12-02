@@ -117,31 +117,6 @@ class DialogueRoom : protected Room {
   ~DialogueRoom();
 
   /**
-   * @brief getter for RoomState
-   * returns the state of the room
-   */
-  RoomState &getState();
-
-  /**
-   * @brief returns the title of the room
-   * @return title the title of the room
-  */
-  std::string getTitle();
-
-  /**
-   * @brief returns the list of all the rooms the room
-   * connects to
-   * @return list of rooms the room connects to
-  */
-  std::vector<std::string> getConnections();
-
-  /**
-   * @brief getter for roomtype
-   * @return roomtype the type of room the current is
-  */
-  GameTypes::RoomTypes getRoomType();
-
-  /**
    * @brief allows player to talk to the npc.
    */
   void converse();
@@ -153,13 +128,6 @@ class DialogueRoom : protected Room {
 
  private:
   NPC *fella;
-  RoomState *state;
-
-  /**
-   * @brief depending on the players interactions with
-   * the room sets the state of the room accordingly.
-   */
-  void setState();
 
   /**
    * @brief puts all of room information into a
@@ -192,30 +160,6 @@ class ThinkingPuzzleRoom : protected Room {
    */
   ~ThinkingPuzzleRoom();
 
-  /**
-   * @brief getter for RoomState
-   * returns the state of the room
-   */
-  RoomState &getState();
-
-  /**
-   * @brief returns the title of the room
-   * @return title the title of the room
-  */
-  std::string getTitle();
-
-  /**
-   * @brief returns the list of all the rooms the room
-   * connects to
-   * @return list of rooms the room connects to
-  */
-  std::vector<std::string> getConnections();
-
-  /**
-   * @brief getter for roomtype
-   * @return roomtype the type of room the current is
-  */
-  GameTypes::RoomTypes getRoomType();
 
   /**
    * @brief allows the player to
@@ -231,12 +175,6 @@ class ThinkingPuzzleRoom : protected Room {
 
  private:
   DialoguePuzzle* dp;
-  RoomState *state;
-  /**
-   * @brief depending on the players interactions with
-   * the room sets the state of the room accordingly
-   */
-  void setState();
 
   /**
    * @brief puts all of the rooms information into a string
@@ -269,31 +207,6 @@ class ItemPuzzleRoom : protected Room {
   ~ItemPuzzleRoom();
 
   /**
-   * @brief getter for RoomState
-   * @return the state of the room
-   */
-  RoomState &getState();
-
-  /**
-   * @brief returns the title of the room
-   * @return title the title of the room
-  */
-  std::string getTitle();
-
-  /**
-   * @brief returns the list of all the rooms the room
-   * connects to
-   * @return list of rooms the room connects to
-  */
-  std::vector<std::string> getConnections();
-
-  /**
-   * @brief getter for roomtype
-   * @return roomtype the type of room the current is
-  */
-  GameTypes::RoomTypes getRoomType();
-
-  /**
    * @brief allows the player to interact with the room
    */
   void playerTakeAction();
@@ -305,12 +218,7 @@ class ItemPuzzleRoom : protected Room {
 
  private:
   ItemPuzzle* ip;
-  RoomState *state;
-  /**
-   * @brief depending on the players interactions with
-   * the room sets the state of the room accordingly
-   */
-  void setState();
+
 
   /**
    * @brief puts all of room information into a string
@@ -342,31 +250,6 @@ class ItemRoom : protected Room {
   ~ItemRoom();
 
   /**
-   * @brief getter for RoomState
-   * @return the state of the room
-   */
-  RoomState &getState();
-
-  /**
-   * @brief returns the title of the room
-   * @return title the title of the room
-  */
-  std::string getTitle();
-
-  /**
-   * @brief returns the list of all the rooms the room
-   * connects to
-   * @return list of rooms the room connects to
-  */
-  std::vector<std::string> getConnections();
-
-  /**
-   * @brief getter for roomtype
-   * @return roomtype the type of room the current is
-  */
-  GameTypes::RoomTypes getRoomType();
-
-  /**
    * @brief allows the player to input
    * one of their items to solve the rooms puzzle
    */
@@ -379,12 +262,6 @@ class ItemRoom : protected Room {
 
  private:
   Item* ip;
-  RoomState *state;
-  /**
-   * @brief depending on the players interactions with
-   * the room sets the state of the room accordingly
-   */
-  void setState();
 
   /**
    * @brief function to give the player items
