@@ -31,49 +31,37 @@ DialoguePuzzle::DialoguePuzzle(std::string description
 
 
 DialoguePuzzle::~DialoguePuzzle() {
-
 }
 
 void DialoguePuzzle::getInput(std::string answer) {
-
 }
 
 bool DialoguePuzzle::wasSolved() {
-
 }
 
 void DialoguePuzzle::display() {
-
 }
 
 std::string DialoguePuzzle::toString() {
-
 }
 
 
-//-------------------------------------------------------------
 
 
 ItemPuzzle::ItemPuzzle(std::string description, const Item &item) : Puzzle(description) {
-
 }
 
 ItemPuzzle::~ItemPuzzle() {
-
 }
 
 void ItemPuzzle::checkItem(const Item &item) {
-
 }
 
 bool ItemPuzzle::wasSolved() {
-
 }
 
 void ItemPuzzle::display() {
-
 }
 
 std::string ItemPuzzle::toString() {
-
 }
