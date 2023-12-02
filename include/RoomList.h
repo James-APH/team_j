@@ -28,7 +28,7 @@ class RoomNode {
     * @brief returns a pointer to a room
     * @return _room, a pointer to a room
     */
-    const Room* getRoom();
+    Room* getRoom();
 
    /**
     * @brief returns a pointer to a possible room
@@ -95,24 +95,6 @@ class RoomNode {
     RoomNode* getNextNode();
 
 
-    /**
-     * @brief once list is set this method is called to check and
-     * set all the joining rooms.
-     */
-    void makeMap();
-
-  protected:
-  // up down nesw
-    const Room* room;
-    RoomNode* up;
-    RoomNode* down;
-    RoomNode* north;
-    RoomNode* east;
-    RoomNode* south;
-    RoomNode* west;
-    RoomNode* next;
-
-        
    /**
     * @brief setters for connected rooms:
     * @param [in] up the room ? above the current room
@@ -122,6 +104,8 @@ class RoomNode {
     * @param [in] south the room ? south of the current room
     * @param [in] west the room ? west of the current room
     */
+
+   
     void setUpNode(RoomNode* up);
 
     void setDownNode(RoomNode* down);
@@ -134,6 +118,16 @@ class RoomNode {
 
     void setWestNode(RoomNode* west);
 
+  protected:
+  // up down nesw
+    Room* room;
+    RoomNode* up;
+    RoomNode* down;
+    RoomNode* north;
+    RoomNode* east;
+    RoomNode* south;
+    RoomNode* west;
+    RoomNode* next;
 };
 
 class RoomList {
@@ -177,6 +171,5 @@ class RoomList {
     int amountOfRooms;
 
 };
-
 
 #endif //ROOMLIST_H_INCLUDED
