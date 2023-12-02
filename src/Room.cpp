@@ -21,12 +21,17 @@
   Room::Room(std::string title
        , std::string description
        , const std::vector<std::string> connections) {
-
+        if(title!="")
+          this->title = title;
+        if(description!="")
+          this->description = description;
+        if(!connections.empty())
+          this->connections = connections;
        }
 
 
   Room::~Room() {
-
+    delete state;
   }
 
 
