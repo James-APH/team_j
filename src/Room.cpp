@@ -6,6 +6,7 @@
 
 #include <string>
 #include <vector>
+#include <sstream>
 
 #include "Item.h"
 #include "Puzzle.h"
@@ -90,7 +91,7 @@ void DialogueRoom::display() {
 ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title
                      , std::string description
                      , const std::vector<std::string> connections
-                     , const DialoguePuzzle &dp) {
+                     , const DialoguePuzzle &dp) : Room(title, description, connections) {
                         this->roomtype = GameTypes::THINKING_PUZZLE_ROOM;
                         this->dp = new DialoguePuzzle(dp); 
                      }
@@ -113,6 +114,7 @@ void ThinkingPuzzleRoom::display() {
 
 
 std::string ThinkingPuzzleRoom::toString() {
+  std::string display;
 
 }
 
@@ -121,7 +123,7 @@ std::string ThinkingPuzzleRoom::toString() {
 ItemPuzzleRoom::ItemPuzzleRoom(std::string title
                  , std::string description
                  , const std::vector<std::string> connections
-                 , const ItemPuzzle &ip) {
+                 , const ItemPuzzle &ip) : Room(title, description, connections) {
                     this->roomtype = GameTypes::ITEM_PUZZLE_ROOM;
                     this->ip = new ItemPuzzle(ip);
                  }
@@ -154,7 +156,7 @@ std::string ItemPuzzleRoom::toString() {
 ItemRoom::ItemRoom(std::string title
                  , std::string description
                  , const std::vector<std::string> connections
-                 , const Item &i) {
+                 , const Item &i) : Room(title, description, connections) {
                     this->roomtype = GameTypes::ITEM_ROOM;
                     this->item = new Item(i);
                  }
