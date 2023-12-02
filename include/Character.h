@@ -75,6 +75,12 @@ class NPC : protected Character {
   NPC(std::string name, const Item &item);
 
   /**
+   * @brief copy constructor
+   * @param [in] fella the npc that is being copied
+  */
+  NPC(const NPC &fella);
+
+  /**
   * @brief destructor
   */
   ~NPC();
