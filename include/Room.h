@@ -44,7 +44,7 @@ class Room {
    * @brief getter for RoomState
    * @return the state of the room
    */
-  virtual RoomState &getState() = 0;
+  RoomState &getState();
 
   /**
    * @brief returns the title of the room
@@ -81,7 +81,7 @@ class Room {
    * @brief depending on the players interactions with
    * the room sets the state of the room accordingly.
    */
-  virtual void setState() = 0;
+  void setState();
 
   /**
    * @brief puts all of room information into a
