@@ -1,6 +1,6 @@
 /**
  * @author James Huston [huston@uleth.ca]
- * @date 11/2023
+ * @date 12/2023
  * 
  * 
 */
@@ -85,7 +85,16 @@ class RoomNode {
     */
     RoomNode* getWestNode();
 
-
+    /**
+     * @brief setter for the next node on each roomNode
+     * @details the pointers to other rooms cannot exist 
+     * until the other rooms are created, so on creation 
+     * of each node we set the previous nodes nextNode 
+     * pointer to the current and then to set all of the 
+     * up, down, north... pointers we loop through the singly
+     * linked list.
+     * @param[in] nextNode the nextNode in the list.
+    */
     void setNextNode(RoomNode* nextNode);
 
         /**
@@ -105,20 +114,49 @@ class RoomNode {
     * @param [in] west the room ? west of the current room
     */
 
-   
+    /**
+     * @brief sets the current rooms up pointer
+     * @param up the pointer to the room above the current
+     * 
+    */
     void setUpNode(RoomNode* up);
 
+    /**
+     * @brief sets the current rooms down pointer
+     * @param down the pointer to the room below the current
+     * 
+    */
     void setDownNode(RoomNode* down);
 
+    /**
+     * @brief sets the current rooms north pointer
+     * @param north the pointer to the room north of the current
+     * 
+    */
     void setNorthNode(RoomNode* north);
 
+    /**
+     * @brief sets the current rooms east pointer
+     * @param east the pointer to the room east of the current
+     * 
+    */
     void setEastNode(RoomNode* east);
 
+    /**
+     * @brief sets the current rooms south pointer
+     * @param south the pointer to the room south of the current
+     * 
+    */
     void setSouthNode(RoomNode* south);
 
+    /**
+     * @brief sets the current rooms west pointer
+     * @param west the pointer to the room west of the current
+     * 
+    */
     void setWestNode(RoomNode* west);
 
-  protected:
+  private:
   // up down nesw
     Room* room;
     RoomNode* up;
@@ -141,9 +179,6 @@ class RoomList {
      * @brief destructor
     */
     ~RoomList();
-
-
-    void setAmountOfRooms(int rooms);
 
     /**
     * @brief inserts new rooms into the list
@@ -168,7 +203,6 @@ class RoomList {
   private:
     RoomNode* head;
     RoomNode* tail;
-    int amountOfRooms;
 
 };
 
