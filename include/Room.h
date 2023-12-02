@@ -262,7 +262,7 @@ class ItemRoom : protected Room {
   void display();
 
  private:
-  Item* ip;
+  Item* item;
 
   /**
    * @brief function to give the player items
