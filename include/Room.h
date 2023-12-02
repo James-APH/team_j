@@ -40,13 +40,16 @@ class Room {
   virtual RoomState &getState() = 0;
 
   /**
-   * @brief gets the list of rooms the room is connected to
-   *
-   */
-  void listConnections();
-
+   * @brief returns the title of the room
+   * @return title the title of the room
+  */
   std::string getTitle();
 
+  /**
+   * @brief returns the list of all the rooms the room
+   * connects to
+   * @return list of rooms the room connects to
+  */
   std::vector<std::string> getConnections();
 
   /**
@@ -106,10 +109,17 @@ class DialogueRoom : Room {
   RoomState &getState();
 
   /**
-   * @brief gets the list of rooms the room is connected to
-   *
-   */
-  void listConnections();
+   * @brief returns the title of the room
+   * @return title the title of the room
+  */
+  std::string getTitle();
+
+  /**
+   * @brief returns the list of all the rooms the room
+   * connects to
+   * @return list of rooms the room connects to
+  */
+  std::vector<std::string> getConnections();
 
   /**
    * @brief allows player to talk to the npc.
@@ -169,10 +179,17 @@ class ThinkingPuzzleRoom : Room {
   RoomState &getState();
 
   /**
-   * @brief gets the list of rooms the room is connected to
-   *
-   */
-  void listConnections();
+   * @brief returns the title of the room
+   * @return title the title of the room
+  */
+  std::string getTitle();
+
+  /**
+   * @brief returns the list of all the rooms the room
+   * connects to
+   * @return list of rooms the room connects to
+  */
+  std::vector<std::string> getConnections();
 
   /**
    * @brief allows the player to
@@ -232,9 +249,17 @@ class ItemPuzzleRoom : Room {
   RoomState &getState();
 
   /**
-   * @brief gets the list of rooms the room is connected to
-   */
-  void listConnections();
+   * @brief returns the title of the room
+   * @return title the title of the room
+  */
+  std::string getTitle();
+
+  /**
+   * @brief returns the list of all the rooms the room
+   * connects to
+   * @return list of rooms the room connects to
+  */
+  std::vector<std::string> getConnections();
 
   /**
    * @brief allows the player to interact with the room
@@ -291,9 +316,17 @@ class ItemRoom : Room {
   RoomState &getState();
 
   /**
-   * @brief gets the list of rooms the room is connected to
-   */
-  void listConnections();
+   * @brief returns the title of the room
+   * @return title the title of the room
+  */
+  std::string getTitle();
+
+  /**
+   * @brief returns the list of all the rooms the room
+   * connects to
+   * @return list of rooms the room connects to
+  */
+  std::vector<std::string> getConnections();
 
   /**
    * @brief allows the player to input
