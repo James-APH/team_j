@@ -81,6 +81,12 @@ class DialoguePuzzle : Puzzle {
                , std::string expectedInput);
 
   /**
+   * @brief copy constructor
+   * @param [in] dp the DialoguePuzzle that is being copied
+  */
+  DialoguePuzzle(const DialoguePuzzle& dp);
+
+  /**
   * @brief gets the input from the user to compare with expectedInput
   * @detail gets the input from the user, checks if the user
   * still has attempts left, if they do increase the attempts by one
@@ -140,6 +146,13 @@ class ItemPuzzle : Puzzle {
   * @throw bad_input if item is nullptr
   */
   ItemPuzzle(std::string description, const Item &item);
+
+  /**
+   * @brief copy constructor
+   * @param [in] ip the itempuzzle being copied
+   * 
+   */
+  ItemPuzzle(const ItemPuzzle& ip);
 
   /**
   * @brief destructor for ItemPuzzle
