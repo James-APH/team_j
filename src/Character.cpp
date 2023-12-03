@@ -28,10 +28,6 @@ void Character::display() {
 }
 
 
-void Character::setDialogue(std::string fileName) {
-
-}
-
 std::string Character::toString() {
 
 }
@@ -41,7 +37,7 @@ std::string Character::toString() {
 
 
 
-NPC::NPC(std::string name, const Item &item) {
+NPC::NPC(std::string name, std::string dialogue) {
 
 }
 
@@ -51,20 +47,12 @@ NPC::~NPC() {
 }
 
 
-Item& NPC::giveItem() {
-
-}
-
 
 void NPC::display() {
 
 }
 
 
-
-void NPC::setDialogue(std::string fileName) {
-
-}
 
 
 
@@ -122,10 +110,6 @@ void Player::display() {
 
 }
 
-
-void Player::setDialogue(std::string fileName) {
-
-}
 
 
 std::string Player::toString() {
