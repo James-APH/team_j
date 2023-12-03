@@ -42,16 +42,6 @@ class Character {
   std::string name;
   std::string dialogue;
 
- /**
-  * @brief sets the dialogue of a character 
-  * @param [in] fileName the name of the file
-  * containing dialogue
-  * @throw bad_input if file does not exist
-  * @throw incomplete_settings if file is empty
-  */
-  virtual void setDialogue(std::string fileName) = 0;
-
-
   /**
   * @brief puts all of the information from
   * character into a string
@@ -72,7 +62,7 @@ class NPC : protected Character {
   * @throw bad_input if name is empty
   * @throw bad_input if the item is a nullptr
   */
-  NPC(std::string name, const Item &item);
+  NPC(std::string name, std::string dialogue);
 
   /**
    * @brief copy constructor
@@ -85,10 +75,6 @@ class NPC : protected Character {
   */
   ~NPC();
 
-  /**
-   * @brief gives an item to the user
-   */
-  Item& giveItem();
 
   /**
   * @brief outputs all attributes of a character
@@ -97,18 +83,8 @@ class NPC : protected Character {
 
 
  private:
-  Item* item;
   std::string name;
   std::string dialogue;
-
- /**
-  * @brief sets the dialogue of a character 
-  * @param [in] fileName the name of the file
-  * containing dialogue
-  * @throw bad_input if file does not exist
-  * @throw incomplete_settings if file is empty
-  */
-  void setDialogue(std::string fileName);
 
 
   /**
@@ -210,17 +186,6 @@ class Player : protected Character {
   Inventory* inventory;
   std::string name;
   std::string dialogue;
-
- /**
-  * @brief sets the dialogue of a character 
-  * @param [in] fileName the name of the file
-  * containing dialogue
-  * @throw bad_input if the file does not exist
-  * @throw incomplete_settings if the file
-  * is empty
-  */
-  void setDialogue(std::string fileName);
-
 
   /**
   * @brief puts all of the information from
