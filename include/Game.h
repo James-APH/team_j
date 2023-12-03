@@ -11,6 +11,11 @@
 
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
+
+#include "Room.h"
+#include "RoomList.h"
+#include "Puzzle.h"
+#include "Item.h"
 /**
  * @class Game in Game.h "Game.h"
  * @details this class will handle
@@ -25,7 +30,27 @@
  * a list of all of the rooms (I may use 
  * another class to manage this)
  */
-class Game {};
+class Game {
+  public:
+  RoomList* setRoomList();
+  
+
+
+
+
+
+  private:
+  RoomList* roomlist = new RoomList();
+
+
+
+
+
+
+
+
+
+};
 
 
 #endif
