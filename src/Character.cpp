@@ -23,6 +23,11 @@ Character::~Character() {
 
 }
 
+std::string Character::getName() {
+  return name;
+}
+
+
 void Character::display() {
 
 }
