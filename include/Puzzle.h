@@ -39,14 +39,14 @@ class Puzzle {
   * @brief getter for solved
   * @return true if puzzle is solved, false otherwise
   */
-  virtual bool wasSolved() = 0;
+ bool wasSolved() const;
 
   /**
   * @brief display all details of the puzzle
   */
   virtual void display() = 0;
 
- private:
+ protected:
   std::string description;
   bool solved;
 
@@ -63,7 +63,7 @@ class Puzzle {
  * @brief derived class of Puzzle, for puzzles that require
  * dialogue answers
  */
-class DialoguePuzzle : Puzzle {
+class DialoguePuzzle : protected Puzzle {
  public:
   /**
   * @brief constructor
@@ -101,13 +101,7 @@ class DialoguePuzzle : Puzzle {
   */
   ~DialoguePuzzle();
 
-  /*
-  * @brief getter for solved variable
-  * @return true if puzzle was solved, false otherwise
-  */
-  bool wasSolved();
-
-  /*
+   /*
   * @brief function to display puzzle information
   */
   void display();
@@ -115,12 +109,6 @@ class DialoguePuzzle : Puzzle {
  private:
   std::string expectedInput;
 
-  /*
-  * @brief function to check if the user still has attempts
-  * left.
-  * @return true if the user has attempts left, false otherwise
-  */
-  bool hasAttempts();
 
   /*
   * @brief function to convert all of the puzzle attributes into
@@ -135,7 +123,7 @@ class DialoguePuzzle : Puzzle {
  * @brief derived class of Puzzle for puzzles that require
  * Items to solve them.
  */
-class ItemPuzzle : Puzzle {
+class ItemPuzzle : protected Puzzle {
  public:
   /**
   * @brief default constructor
@@ -168,12 +156,6 @@ class ItemPuzzle : Puzzle {
   * the players inventory
   */
   void checkItem(const Item &item);
-
-  /**
-  * @brief getter for solved
-  * @return true if puzzle was solved false otherwise
-  */
-  bool wasSolved();
 
   /**
   * @brief displays the information about the puzzle

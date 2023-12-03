@@ -50,7 +50,7 @@ void display() {
 
 }
 
-bool Item::operator==(const Item& item) {
+bool Item::equals(const Item& item) {
   return this->name == item.name 
       && this->useLocation == item.useLocation;
 }
