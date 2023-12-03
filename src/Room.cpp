@@ -109,6 +109,32 @@ ThinkingPuzzleRoom::~ThinkingPuzzleRoom()
 
 bool ThinkingPuzzleRoom::playerTakeAction(Player &player)
 {
+  char input;
+  std::cout << "Would you like to attempt to solve the puzzle? [y/n]" << std::endl;
+  std::cin >> input;
+  while(input != 'y' || input != 'n') {
+    std::cout << "Would you like to Would you like to attempt to solve the puzzle? [y/n]" << std::endl;
+    std::cin >> input;
+  }
+  if(input == 'y') {
+    dp->display();
+    std::string answer;
+    while(!dp->wasSolved()) {
+      std::cout << "Enter your answer to the puzzle or enter [q] to quit" << std::endl;
+      if(answer == "q") {
+        break;
+      }
+      else {
+        dp->getInput(answer);
+      }
+    }
+    state = new FullyExploredRoom();
+    return true;
+  } else {
+    state = new ExploredRoom();
+    return false;
+  }
+
 }
 
 void ThinkingPuzzleRoom::display()
