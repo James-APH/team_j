@@ -28,6 +28,10 @@ class Character {
   */
   Character(std::string name);
 
+
+
+  virtual std::string getName();
+
   /**
   * @brief destructor
   */
@@ -53,7 +57,7 @@ class Character {
  * @class NPC in character.h "character.h"
  * @brief class for npc character type
  */
-class NPC : protected Character {
+class NPC : public Character {
  public:
   /**
   * @brief constructor
@@ -82,9 +86,8 @@ class NPC : protected Character {
   void display();
 
 
- private:
-  std::string name;
-  std::string dialogue;
+private:
+
 
 
   /**
@@ -184,8 +187,6 @@ class Player : protected Character {
 
  private:
   Inventory* inventory;
-  std::string name;
-  std::string dialogue;
 
   /**
   * @brief puts all of the information from
