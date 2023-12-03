@@ -66,6 +66,16 @@ class Room {
   GameTypes::RoomTypes getRoomType();
 
   /**
+   * @brief a function to allow the player to manipulate data in the rooms
+   * -> cannot be const, in the case that the user picks up an item.
+   * or uses an item.
+   * @param in [player] a reference to player to access their data
+   * @return true if the player did the action i.e. used item,
+   * talked to an npc, solved a thinking puzzle, took an item.
+  */
+  virtual bool playerTakeAction(Player& player) = 0;
+
+  /**
    * @brief descibes/shows the room to the player
    */
   virtual void display() = 0;
@@ -109,7 +119,7 @@ class DialogueRoom : protected Room {
    */
   DialogueRoom(std::string title
                , std::string description
-               , const std::vector<std::string> connections
+               , std::vector<std::string> connections
                , const NPC &fella);
 
   /**
@@ -118,9 +128,11 @@ class DialogueRoom : protected Room {
   ~DialogueRoom();
 
   /**
-   * @brief allows player to talk to the npc.
+   * @brief a function to allow the player to manipulate data in the rooms
+   * @param in [player] a reference to player to access their data
+   * @return true if the player did the action i.e.talked to an npc
    */
-  void converse();
+  bool playerTakeAction(Player& player);
 
   /**
    * @brief descibes/shows the room to the player
@@ -153,7 +165,7 @@ class ThinkingPuzzleRoom : protected Room {
    */
   ThinkingPuzzleRoom(std::string title
                      , std::string description
-                     , const std::vector<std::string> connections
+                     , std::vector<std::string> connections
                      , const DialoguePuzzle &dp);
 
   /**
@@ -163,11 +175,12 @@ class ThinkingPuzzleRoom : protected Room {
 
 
   /**
-   * @brief allows the player to
-   * attempt to solve the puzzle
-   * @param answer, the answer to the puzzle
-   */
-  void playerTryPuzzle(std::string answer);
+   * @brief a function to allow the player to manipulate data in the rooms
+   * @param in [player] a reference to player to access their data
+   * @return true if the player did the right action i.e. entered the correct input
+   * false otherwise
+  */
+  bool playerTakeAction(Player& player);
 
   /**
    * describes/shows the room to the player
@@ -199,7 +212,7 @@ class ItemPuzzleRoom : protected Room {
    */
   ItemPuzzleRoom(std::string title
                  , std::string description
-                 , const std::vector<std::string> connections
+                 , std::vector<std::string> connections
                  , const ItemPuzzle &ip);
 
   /**
@@ -208,9 +221,12 @@ class ItemPuzzleRoom : protected Room {
   ~ItemPuzzleRoom();
 
   /**
-   * @brief allows the player to interact with the room
-   */
-  void playerTakeAction();
+   * @brief a function to allow the player to manipulate data in the rooms
+   * @param in [player] a reference to player to access their data
+   * @return true if the player did the action i.e. input the correct item
+   * false otherwise
+  */
+  bool playerTakeAction(Player& player);
 
   /**
    * @brief describes/shows the room to the player
@@ -242,7 +258,7 @@ class ItemRoom : protected Room {
    */
   ItemRoom(std::string title
                  , std::string description
-                 , const std::vector<std::string> connections
+                 , std::vector<std::string> connections
                  , const Item &i);
 
   /**
@@ -251,10 +267,11 @@ class ItemRoom : protected Room {
   ~ItemRoom();
 
   /**
-   * @brief allows the player to input
-   * one of their items to solve the rooms puzzle
-   */
-  void playerUseItem(const Item &i);
+   * @brief a function to allow the player to manipulate data in the rooms
+   * @param in [player] a reference to player to access their data
+   * @return true if the player did the action i.e. pick up an item
+  */
+  bool playerTakeAction(Player& player);
 
   /**
    * @brief describes/shows the room to the player
