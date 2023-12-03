@@ -70,7 +70,7 @@ class Item {
   * @return true if the items are equivalent
   * @throw bad_input if item is nullptr
   */ 
-  bool operator==(const Item& item);
+  bool equals(const Item& item);
 
  private:
   std::string name;
