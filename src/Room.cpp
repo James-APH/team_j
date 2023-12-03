@@ -72,19 +72,19 @@ DialogueRoom::~DialogueRoom() {
 }
 
 
-void DialogueRoom::converse() {
+bool DialogueRoom::playerTakeAction(Player& player) {
 
 }
 
 
 void DialogueRoom::display() {
-
+  
 }
 
 
-  std::string DialogueRoom::toString() {
-
-  }
+std::string DialogueRoom::toString() {
+  
+}
 
 //------------------------------------------------------------------
 
@@ -102,7 +102,8 @@ ThinkingPuzzleRoom::~ThinkingPuzzleRoom() {
 }
 
 
-void ThinkingPuzzleRoom::playerTryPuzzle(std::string answer) {
+
+bool ThinkingPuzzleRoom::playerTakeAction(Player& player) {
 
 }
 
@@ -134,10 +135,10 @@ ItemPuzzleRoom::~ItemPuzzleRoom() {
 }
 
 
-
-void ItemPuzzleRoom::playerTakeAction() {
+bool ItemPuzzleRoom::playerTakeAction(Player& player) {
 
 }
+
 
 
 void ItemPuzzleRoom::display() {
@@ -167,7 +168,7 @@ ItemRoom::~ItemRoom() {
 }
 
 
-void ItemRoom::playerUseItem(const Item &i) {
+bool ItemRoom::playerTakeAction(Player& player) {
 
 }
 
