@@ -15,6 +15,13 @@
 RoomNode::RoomNode(Room *r)
 {
     this->room = r;
+    up = nullptr;
+    down = nullptr;
+    north = nullptr;
+    east = nullptr;
+    south = nullptr;
+    west = nullptr;
+    next = nullptr;
 }
 
 RoomNode::~RoomNode()
@@ -27,6 +34,7 @@ RoomNode::~RoomNode()
     east = nullptr;
     south = nullptr;
     west = nullptr;
+    next = nullptr;
 }
 
 Room *RoomNode::getRoom()
