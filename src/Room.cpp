@@ -3,7 +3,6 @@
  * @date 2023-11
  */
 
-
 #include <string>
 #include <vector>
 #include <sstream>
@@ -15,175 +14,161 @@
 #include "Room.h"
 #include "GameTypes.h"
 
+Room::Room(std::string title, std::string description, const std::vector<std::string> connections)
+{
+  if (title != "")
+    this->title = title;
+  if (description != "")
+    this->description = description;
+  if (!connections.empty())
+    this->connections = connections;
+}
 
+Room::~Room()
+{
+  delete state;
+}
 
+RoomState &Room::getState()
+{
+  return *state;
+}
 
-  Room::Room(std::string title
-       , std::string description
-       , const std::vector<std::string> connections) {
-        if(title!="")
-          this->title = title;
-        if(description!="")
-          this->description = description;
-        if(!connections.empty())
-          this->connections = connections;
-       }
+std::string Room::getTitle()
+{
+  return title;
+}
 
+std::vector<std::string> Room::getConnections()
+{
+  return connections;
+}
 
-  Room::~Room() {
-    delete state;
-  }
+GameTypes::RoomTypes Room::getRoomType()
+{
+  return roomtype;
+}
 
-
-  RoomState& Room::getState() {
-    return *state;
-  }
-
-
-  std::string Room::getTitle() {
-    return title;
-  }
-    
-  std::vector<std::string> Room::getConnections() {
-    return connections;
-  }
-
-  GameTypes::RoomTypes Room::getRoomType() {
-    return roomtype;
-  }
-
-  void Room::setState(RoomState *state) {
-    this->state = state;
-  }
+void Room::setState(RoomState *state)
+{
+  this->state = state;
+}
 
 //----------------------------------------------------------
 
-  DialogueRoom::DialogueRoom(std::string title
-               , std::string description
-               , const std::vector<std::string> connections
-               , const NPC &fella) : Room(title, description, connections) {
-                  this->roomtype = GameTypes::DIALOGUE_ROOM;
-                  this->fella = new NPC(fella);
-               }
-
-
-DialogueRoom::~DialogueRoom() {
-    delete fella;
+DialogueRoom::DialogueRoom(std::string title, std::string description, const std::vector<std::string> connections, const NPC &fella) : Room(title, description, connections)
+{
+  this->roomtype = GameTypes::DIALOGUE_ROOM;
+  this->fella = new NPC(fella);
 }
 
-
-bool DialogueRoom::playerTakeAction(Player& player) {
-
+DialogueRoom::~DialogueRoom()
+{
+  delete fella;
 }
 
-
-void DialogueRoom::display() {
-  
+bool DialogueRoom::playerTakeAction(Player &player)
+{
+  char input;
+  std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]" << std::endl;
+  std::cin >> input;
+  while(input != 'y' || input != 'n') {
+    std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]" << std::endl;
+    std::cin >> input;
+  }
+  if(input == 'y') {
+    fella->display();
+    state = new FullyExploredRoom();
+    return true;
+  } else {
+    state = new ExploredRoom();
+    return false;
+  }
 }
 
+void DialogueRoom::display()
+{
+}
 
-std::string DialogueRoom::toString() {
-  
+std::string DialogueRoom::toString()
+{
 }
 
 //------------------------------------------------------------------
 
-ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title
-                     , std::string description
-                     , const std::vector<std::string> connections
-                     , const DialoguePuzzle &dp) : Room(title, description, connections) {
-                        this->roomtype = GameTypes::THINKING_PUZZLE_ROOM;
-                        this->dp = new DialoguePuzzle(dp); 
-                     }
+ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title, std::string description, const std::vector<std::string> connections, const DialoguePuzzle &dp) : Room(title, description, connections)
+{
+  this->roomtype = GameTypes::THINKING_PUZZLE_ROOM;
+  this->dp = new DialoguePuzzle(dp);
+}
 
-
-ThinkingPuzzleRoom::~ThinkingPuzzleRoom() {
+ThinkingPuzzleRoom::~ThinkingPuzzleRoom()
+{
   delete dp;
 }
 
-
-
-bool ThinkingPuzzleRoom::playerTakeAction(Player& player) {
-
+bool ThinkingPuzzleRoom::playerTakeAction(Player &player)
+{
 }
 
-
-void ThinkingPuzzleRoom::display() {
-
+void ThinkingPuzzleRoom::display()
+{
 }
 
-
-
-std::string ThinkingPuzzleRoom::toString() {
+std::string ThinkingPuzzleRoom::toString()
+{
   std::string display;
-
 }
 
 //------------------------------------------------------------------------
 
-ItemPuzzleRoom::ItemPuzzleRoom(std::string title
-                 , std::string description
-                 , const std::vector<std::string> connections
-                 , const ItemPuzzle &ip) : Room(title, description, connections) {
-                    this->roomtype = GameTypes::ITEM_PUZZLE_ROOM;
-                    this->ip = new ItemPuzzle(ip);
-                 }
-
-
-ItemPuzzleRoom::~ItemPuzzleRoom() {
-
+ItemPuzzleRoom::ItemPuzzleRoom(std::string title, std::string description, const std::vector<std::string> connections, const ItemPuzzle &ip) : Room(title, description, connections)
+{
+  this->roomtype = GameTypes::ITEM_PUZZLE_ROOM;
+  this->ip = new ItemPuzzle(ip);
 }
 
-
-bool ItemPuzzleRoom::playerTakeAction(Player& player) {
-
+ItemPuzzleRoom::~ItemPuzzleRoom()
+{
 }
 
-
-
-void ItemPuzzleRoom::display() {
-
+bool ItemPuzzleRoom::playerTakeAction(Player &player)
+{
 }
 
+void ItemPuzzleRoom::display()
+{
+}
 
-
-
-std::string ItemPuzzleRoom::toString() {
-
+std::string ItemPuzzleRoom::toString()
+{
 }
 
 //------------------------------------------------------------------------
 
-ItemRoom::ItemRoom(std::string title
-                 , std::string description
-                 , const std::vector<std::string> connections
-                 , const Item &i) : Room(title, description, connections) {
-                    this->roomtype = GameTypes::ITEM_ROOM;
-                    this->item = new Item(i);
-                 }
+ItemRoom::ItemRoom(std::string title, std::string description, const std::vector<std::string> connections, const Item &i) : Room(title, description, connections)
+{
+  this->roomtype = GameTypes::ITEM_ROOM;
+  this->item = new Item(i);
+}
 
-
-ItemRoom::~ItemRoom() {
+ItemRoom::~ItemRoom()
+{
   delete item;
 }
 
-
-bool ItemRoom::playerTakeAction(Player& player) {
-
+bool ItemRoom::playerTakeAction(Player &player)
+{
 }
 
-
-void ItemRoom::display() {
-
+void ItemRoom::display()
+{
 }
 
-
-Item& ItemRoom::giveItem() {
-
+Item &ItemRoom::giveItem()
+{
 }
 
-
-std::string ItemRoom::toString() {
-    
+std::string ItemRoom::toString()
+{
 }
-
