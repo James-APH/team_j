@@ -84,7 +84,7 @@ class Room {
   std::string title;
   std::string description;
   std::vector<std::string> connections;
-  RoomState *state;
+  RoomState* state;
   GameTypes::RoomTypes roomtype;
 
   /**
