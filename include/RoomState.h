@@ -38,7 +38,7 @@ class RoomState {
  * @class FullyExploredRoom roomstate.h "roomstate.h"
  * @brief State of a room that has been fully explored
  */
-class FullyExploredRoom : RoomState {
+class FullyExploredRoom : public RoomState {
  public:
  /**
   * @brief DefaultConstructor
@@ -68,7 +68,7 @@ class FullyExploredRoom : RoomState {
  * @class ExploredRoom roomstate.h "roomstate.h"
  * @brief State of a room that has been entered, but not explored
  */
-class ExploredRoom : RoomState {
+class ExploredRoom : public RoomState {
  public:
  /**
   * @brief DefaultConstructor
@@ -97,7 +97,7 @@ class ExploredRoom : RoomState {
  * @class UnexploredRoom roomstate.h "roomstate.h"
  * @brief State of a roomthat has not been explored
  */
-class UnexploredRoom : RoomState {
+class UnexploredRoom : public RoomState {
  public:
  /**
   * @brief DefaultConstructor
