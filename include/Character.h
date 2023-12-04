@@ -101,7 +101,7 @@ private:
  * @class Player in character.h "character.h"
  * @brief class for player character type
  */
-class Player : protected Character {
+class Player : public Character {
  public:
   /**
   * @brief constructor
@@ -180,6 +180,11 @@ class Player : protected Character {
   char accuse(std::string question,
               const std::string options[]);
 
+  
+  
+  Item& useItem();
+  
+  
   /**
   * @brief outputs all attributes of a character
   */
