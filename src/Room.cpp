@@ -110,7 +110,7 @@ ThinkingPuzzleRoom::~ThinkingPuzzleRoom()
 bool ThinkingPuzzleRoom::playerTakeAction(Player &player)
 {
   char input;
-  std::cout << "Would you like to attempt to solve the puzzle? [y/n]" << std::endl;
+  std::cout << "Would you like to attempt to solve the puzzle detective? [y/n]" << std::endl;
   std::cin >> input;
   while(input != 'y' || input != 'n') {
     std::cout << "Would you like to Would you like to attempt to solve the puzzle? [y/n]" << std::endl;
@@ -127,14 +127,13 @@ bool ThinkingPuzzleRoom::playerTakeAction(Player &player)
       else {
         dp->getInput(answer);
       }
-    }
+    } if (dp->wasSolved()) {
     state = new FullyExploredRoom();
     return true;
-  } else {
+    }
+  }
     state = new ExploredRoom();
     return false;
-  }
-
 }
 
 void ThinkingPuzzleRoom::display()
@@ -160,6 +159,32 @@ ItemPuzzleRoom::~ItemPuzzleRoom()
 
 bool ItemPuzzleRoom::playerTakeAction(Player &player)
 {
+  char input;
+  std::cout << "Would you like to attempt to solve the puzzle detective? [y/n]" << std::endl;
+  std::cin >> input;
+  while(input != 'y' || input != 'n') {
+    std::cout << "Would you like to Would you like to attempt to solve the puzzle? [y/n]" << std::endl;
+    std::cin >> input;
+  }
+  if(input == 'y') {
+    ip->display();
+    std::string answer;
+    while(!ip->wasSolved()) {
+      std::cout << "Enter your answer to the puzzle or enter [q] to quit" << std::endl;
+      if(answer == "q") {
+        break;
+      }
+      else {
+        ip->checkItem(player.useItem());
+      }
+    }
+    if(ip->wasSolved()) {
+    state = new FullyExploredRoom();
+    return true;
+    }
+  }
+    state = new ExploredRoom();
+    return false;
 }
 
 void ItemPuzzleRoom::display()
@@ -172,7 +197,10 @@ std::string ItemPuzzleRoom::toString()
 
 //------------------------------------------------------------------------
 
-ItemRoom::ItemRoom(std::string title, std::string description, const std::vector<std::string> connections, const Item &i) : Room(title, description, connections)
+ItemRoom::ItemRoom(std::string title,
+                   std::string description,
+                   const std::vector<std::string> connections,
+                   const Item &i) : Room(title, description, connections)
 {
   this->roomtype = GameTypes::ITEM_ROOM;
   this->item = new Item(i);
@@ -185,16 +213,37 @@ ItemRoom::~ItemRoom()
 
 bool ItemRoom::playerTakeAction(Player &player)
 {
+  char input;
+  std::cout << "Would you like to pick up this: " + item->getName() + "? [y/n]" << std::endl;
+  std::cin >> input;
+  if(input != 'y' || input != 'n') {
+    while(input != 'y' || input != 'n') {
+      std::cout <<  "Would you like to pick up this: " + item->getName() + "? [y/n]" << std::endl;
+      std::cin >> input;
+    }
+  }
+  if(input == 'y') {
+    item->display();
+    player.pickUp(giveItem());
+    state = new FullyExploredRoom();
+    return true;
+  } else {
+    state = new ExploredRoom();
+    return false;
+  }
 }
 
 void ItemRoom::display()
 {
+
 }
 
 Item &ItemRoom::giveItem()
 {
+  return *item;
 }
 
 std::string ItemRoom::toString()
 {
+  
 }
