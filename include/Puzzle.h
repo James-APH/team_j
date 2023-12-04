@@ -63,7 +63,7 @@ class Puzzle {
  * @brief derived class of Puzzle, for puzzles that require
  * dialogue answers
  */
-class DialoguePuzzle : protected Puzzle {
+class DialoguePuzzle : public Puzzle {
  public:
   /**
   * @brief constructor
@@ -123,7 +123,7 @@ class DialoguePuzzle : protected Puzzle {
  * @brief derived class of Puzzle for puzzles that require
  * Items to solve them.
  */
-class ItemPuzzle : protected Puzzle {
+class ItemPuzzle : public Puzzle {
  public:
   /**
   * @brief default constructor
