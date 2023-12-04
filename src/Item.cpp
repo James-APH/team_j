@@ -15,11 +15,11 @@
 
 
 
-Item::Item(std::string name, std::string useLocation, std::string description) {
-
+Item::Item(std::string name, std::string useLocation,
+  std::string description) {
 }
 
-  
+
 Item::Item(const Item& item) {
   this->name = item.name;
   this->useLocation = item.useLocation;
@@ -28,7 +28,6 @@ Item::Item(const Item& item) {
 
 
 Item::~Item() {
-
 }
 
 
@@ -47,16 +46,13 @@ std::string Item::getUselocation() {
 }
 
 void display() {
-
 }
 
 bool Item::equals(const Item& item) {
-  return this->name == item.name 
+  return this->name == item.name
       && this->useLocation == item.useLocation;
 }
 
 
 std::string Item::toString() {
-  
 }
-

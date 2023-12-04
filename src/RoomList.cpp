@@ -12,8 +12,7 @@
 #include "RoomList.h"
 #include "RoomState.h"
 
-RoomNode::RoomNode(Room *r)
-{
+RoomNode::RoomNode(Room *r) {
     this->room = r;
     up = nullptr;
     down = nullptr;
@@ -24,8 +23,7 @@ RoomNode::RoomNode(Room *r)
     next = nullptr;
 }
 
-RoomNode::~RoomNode()
-{
+RoomNode::~RoomNode() {
     if (room != nullptr)
         delete room;
     up = nullptr;
@@ -37,147 +35,112 @@ RoomNode::~RoomNode()
     next = nullptr;
 }
 
-Room *RoomNode::getRoom()
-{
+Room *RoomNode::getRoom() {
     return room;
 }
 
-RoomNode *RoomNode::getUpNode()
-{
+RoomNode *RoomNode::getUpNode() {
     return up;
 }
 
-RoomNode *RoomNode::getDownNode()
-{
+RoomNode *RoomNode::getDownNode() {
     return down;
 }
 
-RoomNode *RoomNode::getNorthNode()
-{
+RoomNode *RoomNode::getNorthNode() {
     return north;
 }
 
-RoomNode *RoomNode::getEastNode()
-{
+RoomNode *RoomNode::getEastNode() {
     return east;
 }
 
-RoomNode *RoomNode::getSouthNode()
-{
+RoomNode *RoomNode::getSouthNode() {
     return south;
 }
 
-RoomNode *RoomNode::getWestNode()
-{
+RoomNode *RoomNode::getWestNode() {
     return west;
 }
 
-void RoomNode::setUpNode(RoomNode *up)
-{
+void RoomNode::setUpNode(RoomNode *up) {
     this->up = up;
 }
 
-void RoomNode::setDownNode(RoomNode *down)
-{
+void RoomNode::setDownNode(RoomNode *down) {
     this->down = down;
 }
 
-void RoomNode::setNorthNode(RoomNode *north)
-{
+void RoomNode::setNorthNode(RoomNode *north) {
     this->north = north;
 }
 
-void RoomNode::setEastNode(RoomNode *east)
-{
+void RoomNode::setEastNode(RoomNode *east) {
     this->east = east;
 }
 
-void RoomNode::setSouthNode(RoomNode *south)
-{
+void RoomNode::setSouthNode(RoomNode *south) {
     this->south = south;
 }
 
-void RoomNode::setWestNode(RoomNode *west)
-{
+void RoomNode::setWestNode(RoomNode *west) {
     this->south = south;
 }
 
-void RoomNode::setNextNode(RoomNode *nextNode)
-{
+void RoomNode::setNextNode(RoomNode *nextNode) {
     this->next = next;
 }
 
-RoomNode *RoomNode::getNextNode()
-{
+RoomNode *RoomNode::getNextNode() {
     return next;
 }
 
-RoomList::RoomList()
-{
+RoomList::RoomList() {
     head = nullptr;
     tail = nullptr;
 }
 
-RoomList::~RoomList()
-{
+RoomList::~RoomList() {
     RoomNode *current = head;
-    while (current != nullptr)
-    {
+    while (current != nullptr) {
         current = current->getNextNode();
     }
 }
 
-void RoomList::insert(Room *room)
-{
+void RoomList::insert(Room *room) {
     RoomNode *temp = new RoomNode(room);
-    if (head == nullptr)
-    {
+    if (head == nullptr) {
         temp->setNextNode(nullptr);
         head = temp;
         tail = temp;
-    }
-    else
-    {
+    } else {
         temp->setNextNode(nullptr);
         tail->setNextNode(temp);
         tail = temp;
     }
 }
 
-void RoomList::solidify()
-{
+void RoomList::solidify() {
     RoomNode *current = head;
-    while (current != nullptr)
-    {
-        std::vector<std::string> _connections = current->getRoom()->getConnections();
+    while (current != nullptr) {
+        std::vector<std::string> _connections =
+            current->getRoom()->getConnections();
         RoomNode *temp = current->getNextNode();
-        while (temp != nullptr)
-        {
+        while (temp != nullptr) {
             std::string tempTitle = temp->getRoom()->getTitle();
-            if (std::find(_connections.begin(), _connections.end(), tempTitle) != _connections.end())
-            {
-                if (_connections[0] == tempTitle)
-                {
+            if (std::find(_connections.begin(), _connections.end(),
+                    tempTitle) != _connections.end()) {
+                if (_connections[0] == tempTitle) {
                     current->setUpNode(temp);
-                }
-                else if (_connections[1] == tempTitle)
-                {
+                } else if (_connections[1] == tempTitle) {
                     current->setDownNode(temp);
-                }
-                else if (_connections[2] == tempTitle)
-                {
+                } else if (_connections[2] == tempTitle) {
                     current->setNorthNode(temp);
-                }
-                else if (_connections[3] == tempTitle)
-                {
+                } else if (_connections[3] == tempTitle) {
                     current->setEastNode(temp);
-                }
-                else if (_connections[4] == tempTitle)
-                {
+                } else if (_connections[4] == tempTitle) {
                     current->setWestNode(temp);
-                }
-                else
-                {
+                } else {
                     current->setSouthNode(temp);
                 }
             }
@@ -186,12 +149,11 @@ void RoomList::solidify()
     }
 }
 
-bool RoomList::RoomsDone()
-{
+bool RoomList::RoomsDone() {
     RoomNode *current = head;
-    while (current != nullptr)
-    {
-        if (!(current->getRoom()->getState().isExplored() && current->getRoom()->getState().roomDone()))
+    while (current != nullptr) {
+        if (!(current->getRoom()->getState().isExplored() &&
+            current->getRoom()->getState().roomDone()))
             return false;
         current = current->getNextNode();
     }

@@ -86,10 +86,7 @@ class NPC : public Character {
   void display();
 
 
-private:
-
-
-
+ private:
   /**
   * @brief puts all of the information from
   * character into a string
@@ -180,11 +177,8 @@ class Player : public Character {
   char accuse(std::string question,
               const std::string options[]);
 
-  
-  
   Item& useItem();
-  
-  
+
   /**
   * @brief outputs all attributes of a character
   */

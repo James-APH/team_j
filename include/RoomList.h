@@ -11,7 +11,7 @@
 #include "Room.h"
 
 class RoomNode {
-  public:
+ public:
    /**
     * @brief constructor for RoomNodes
     * @param r pointer to Room object
@@ -156,7 +156,7 @@ class RoomNode {
     */
     void setWestNode(RoomNode* west);
 
-  private:
+ private:
   // up down nesw
     Room* room;
     RoomNode* up;
@@ -169,7 +169,7 @@ class RoomNode {
 };
 
 class RoomList {
-  public:
+ public:
     /**
     * @brief default constructor
     */
@@ -199,11 +199,9 @@ class RoomList {
     */
     bool RoomsDone();
 
-    
-  private:
+ private:
     RoomNode* head;
     RoomNode* tail;
-
 };
 
 #endif //ROOMLIST_H_INCLUDED

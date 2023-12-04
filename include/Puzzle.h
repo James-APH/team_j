@@ -39,7 +39,7 @@ class Puzzle {
   * @brief getter for solved
   * @return true if puzzle is solved, false otherwise
   */
- bool wasSolved() const;
+  bool wasSolved() const;
 
   /**
   * @brief display all details of the puzzle

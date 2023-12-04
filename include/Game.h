@@ -31,25 +31,11 @@
  * another class to manage this)
  */
 class Game {
-  public:
+ public:
   RoomList* setRoomList();
-  
 
-
-
-
-
-  private:
+ private:
   RoomList* roomlist = new RoomList();
-
-
-
-
-
-
-
-
-
 };
 
 

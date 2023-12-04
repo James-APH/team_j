@@ -26,8 +26,9 @@ bool Puzzle::wasSolved() const {
 //-------------------------------------------------------------
 
 
-DialoguePuzzle::DialoguePuzzle(std::string description, std::string expectedInput)
-                        : Puzzle(description), expectedInput(expectedInput){
+DialoguePuzzle::DialoguePuzzle(std::string description,
+                        std::string expectedInput)
+                        : Puzzle(description), expectedInput(expectedInput) {
                             this->expectedInput = expectedInput;
                             }
 
@@ -56,7 +57,7 @@ std::string DialoguePuzzle::toString() {
 
 
 
-ItemPuzzle::ItemPuzzle(std::string description, const Item &item) : 
+ItemPuzzle::ItemPuzzle(std::string description, const Item &item) :
                 Puzzle(description) {
                     expectedItem = new Item(item);
 }

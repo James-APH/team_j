@@ -7,6 +7,7 @@
 #define ROOM_H_INCLUDED
 
 #include <string>
+#include <vector>
 
 #include "Item.h"
 #include "Puzzle.h"

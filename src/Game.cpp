@@ -19,7 +19,8 @@
 
 // Puzzle* HallWayOnePuzzle = new ItemPuzzle("need a key to access bedroom");
 // Puzzle* HallwayTwoPuzzle = new ItemPuzzle("need a key to access study");
-// Puzzle* MysteryRoomPuzzle = new DialoguePuzzle("deciepher the code to access ");
+// Puzzle* MysteryRoomPuzzle = new DialoguePuzzle("deciepher the code to
+//access ");
 // Puzzle* LibraryPuzzle = new ThinkingPuzzle("deceipher the code");
 // Puzzle* AtticPuzzle = new ItemPuzzle("need a key to access family picture");
 
