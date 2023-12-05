@@ -7,10 +7,10 @@
 #define CHARACTER_H_INCLUDED
 
 #include <string>
-#include <vector>
+#include <list>
 
 #include "Item.h"
-#include "Inventory.h"
+
 /**
  * @class Character in character.h "character.h"
  * @brief superclass for different character types
@@ -107,7 +107,22 @@ class Player : public Character {
    * the user would like to drop
    * @throw bad_input if the name is empty
    */
-  void drop(std::string name);
+  void drop();
+
+  /**
+   * 
+   * 
+   * 
+  */
+  void InspectItem();
+
+  /**
+   * 
+   * 
+   * 
+  */
+  void listInventory();
+
 
   /**
    * @brief function to allow the user to use an item
@@ -117,7 +132,7 @@ class Player : public Character {
   Item& useItem();
 
  private:
-  std::vector<Item*> itemList;
+  std::list<Item*> itemList;
 };
 
 #endif
