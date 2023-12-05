@@ -15,7 +15,7 @@
 #include "GameTypes.h"
 
 Room::Room(std::string title, std::string description,
-    const std::vector<std::string> connections) {
+    std::vector<std::string> connections) {
   if (title != "")
     this->title = title;
   if (description != "")
@@ -51,7 +51,7 @@ void Room::setState(RoomState *state) {
 //----------------------------------------------------------
 
 DialogueRoom::DialogueRoom(std::string title, std::string description,
-    const std::vector<std::string> connections, const NPC &fella) :
+    std::vector<std::string> connections, const NPC &fella) :
     Room(title, description, connections) {
   this->roomtype = GameTypes::DIALOGUE_ROOM;
   this->fella = new NPC(fella);
@@ -215,7 +215,7 @@ bool ItemRoom::playerTakeAction(Player &player) {
   }
   if (input == 'y') {
     item->display();
-    player.pickUp(giveItesm());
+    player.pickUp(giveItem());
     state = new FullyExploredRoom();
     return true;
   } else {

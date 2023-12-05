@@ -108,7 +108,7 @@ class Room {
  * @brief players will recieve hints and items
  * from npcs
  */
-class DialogueRoom : protected Room {
+class DialogueRoom : public Room {
  public:
   /**
    * @brief constructor
