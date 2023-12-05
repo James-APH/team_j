@@ -61,7 +61,7 @@ DialogueRoom::~DialogueRoom() {
   delete fella;
 }
 
-bool DialogueRoom::playerTakeAction(Player &player) {
+bool DialogueRoom::playerTakeAction(Player *player) {
   char input;
   std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]"
     << std::endl;
@@ -100,7 +100,7 @@ ThinkingPuzzleRoom::~ThinkingPuzzleRoom() {
   delete dp;
 }
 
-bool ThinkingPuzzleRoom::playerTakeAction(Player &player) {
+bool ThinkingPuzzleRoom::playerTakeAction(Player *player) {
   char input;
   std::cout << "Would you like to attempt to solve the puzzle"
     " detective? [y/n]" << std::endl;
@@ -150,7 +150,7 @@ ItemPuzzleRoom::ItemPuzzleRoom(std::string title, std::string description,
 ItemPuzzleRoom::~ItemPuzzleRoom() {
 }
 
-bool ItemPuzzleRoom::playerTakeAction(Player &player) {
+bool ItemPuzzleRoom::playerTakeAction(Player *player) {
   char input;
   std::cout << "Would you like to attempt to solve the puzzle"
     " detective? [y/n]" << std::endl;
@@ -169,7 +169,7 @@ bool ItemPuzzleRoom::playerTakeAction(Player &player) {
       if (answer == "q") {
         break;
       } else {
-        ip->checkItem(player.useItem());
+        ip->checkItem(player->useItem());
       }
     }
     if (ip->wasSolved()) {
@@ -200,7 +200,7 @@ ItemRoom::~ItemRoom() {
   delete item;
 }
 
-bool ItemRoom::playerTakeAction(Player &player) {
+bool ItemRoom::playerTakeAction(Player* player) {
   char input;
   std::cout << "Would you like to pick up this: " +
     item->getName() + "? [y/n]" << std::endl;
@@ -214,7 +214,7 @@ bool ItemRoom::playerTakeAction(Player &player) {
   }
   if (input == 'y') {
     item->display();
-    player.pickUp(giveItem());
+    player->pickUp(giveItem());
     state = new FullyExploredRoom();
     return true;
   } else {
