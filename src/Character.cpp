@@ -7,7 +7,7 @@
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
-#include <vector>
+#include <list>
 
 #include "Item.h"
 #include "Character.h"
