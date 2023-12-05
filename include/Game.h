@@ -34,14 +34,17 @@ class Game {
  public:
   Game() {
     NPC dave("", "");
-    std::vector<std::string> s[1] = {{"0"}};
-    Room* newRoom = new DialogueRoom("", "", s, dave);
+    NPC mick("", "");
+    roomlist->insert(new DialogueRoom("Garden", "its a garden", 
+    {"", "", "Front Hall", "", "", ""}, dave));
+    //Room* newRoom = new DialogueRoom("f", "f", {"", ""}, dave);
   }
   RoomList* setRoomList();
 
 
  private:
   RoomList* roomlist = new RoomList();
+
 };
 
 
