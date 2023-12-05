@@ -60,10 +60,12 @@ Player::~Player() {
 }
 
 void Player::pickUp(const Item& item) {
-  if(std::find(itemList.begin(), itemList.end()
-  , item) == itemList.end()) {
+  if (std::find(itemList.begin(), itemList.end(), item) == itemList.end()) {
     itemList.push_back(new Item(item));
+    std::cout << "Item added to inventory" << std::endl;
+    return;
   }
+  std::cout << "Item already in inventory" << std::endl;
 }
 
 void Player::drop() {

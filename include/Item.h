@@ -72,6 +72,7 @@ class Item {
   * @return string string of item details
   */
   std::string toString();
+
  private:
   std::string name;
   std::string description;
