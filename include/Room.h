@@ -94,13 +94,6 @@ class Room {
    * @param[in] state the new state of the room;
    */
   void setState(RoomState *state);
-
-  /**
-   * @brief puts all of room information into a
-   * string
-   * @return string the string of room information
-   */
-  virtual std::string toString() = 0;
 };
 
 /**
@@ -142,13 +135,6 @@ class DialogueRoom : public Room {
 
  private:
   NPC *fella;
-
-  /**
-   * @brief puts all of room information into a
-   * string
-   * @return string the string of room information
-   */
-  std::string toString();
 };
 
 /**
@@ -190,12 +176,6 @@ class ThinkingPuzzleRoom : protected Room {
 
  private:
   DialoguePuzzle* dp;
-
-  /**
-   * @brief puts all of the rooms information into a string
-   * @return string the string of room information
-   */
-  std::string toString();
 };
 
 /**
@@ -236,13 +216,6 @@ class ItemPuzzleRoom : protected Room {
 
  private:
   ItemPuzzle* ip;
-
-
-  /**
-   * @brief puts all of room information into a string
-   * @return string the string of room information
-   */
-  std::string toString();
 };
 
 /**
@@ -286,12 +259,6 @@ class ItemRoom : protected Room {
    * @brief function to give the player items
    */
   Item& giveItem();
-
-  /**
-   * @brief puts all of room information into a string
-   * @return string the string of room information
-   */
-  std::string toString();
 };
 
 #endif

@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include <iomanip>
 #include <sstream>
 
 #include "Item.h"
@@ -84,9 +85,13 @@ bool DialogueRoom::playerTakeAction(Player *player) {
 }
 
 void DialogueRoom::display() {
-}
-
-std::string DialogueRoom::toString() {
+  std::ostringstream stringReader;
+  stringReader << std::setw(25);
+  stringReader << title;
+  stringReader << '\n' << '\n';
+  stringReader << description;
+  stringReader << '\n' << '\n';
+  std::cout << stringReader.str() << std::endl;
 }
 
 //------------------------------------------------------------------
@@ -109,13 +114,13 @@ bool ThinkingPuzzleRoom::playerTakeAction(Player *player) {
   std::cin >> input;
   if (input != 'y' && input != 'n') {
     while (input != 'y' && input != 'n') {
-      std::cout << "Would you like to Would you like to attempt to"
+      std::cout << "Would you like to attempt to attempt to"
         " solve the puzzle? [y/n]" << std::endl;
         std::cin >> input;
     }
   }
   if (input == 'y') {
-    dp->display();
+    std::cout << dp->toString() << std::endl;
     std::string answer;
     while (!dp->wasSolved()) {
       std::cout << "Enter your answer to the puzzle or enter [q] to quit"
@@ -136,9 +141,14 @@ bool ThinkingPuzzleRoom::playerTakeAction(Player *player) {
 }
 
 void ThinkingPuzzleRoom::display() {
-}
-
-std::string ThinkingPuzzleRoom::toString() {
+    std::ostringstream stringReader;
+  stringReader << std::setw(25);
+  stringReader << title;
+  stringReader << '\n' << '\n';
+  stringReader << description;
+  stringReader << '\n' << '\n';
+  stringReader << "This room is locked, solve a complicated question to unlock more rooms:\n";
+  std::cout << stringReader.str() << std::endl;
 }
 
 //------------------------------------------------------------------------
@@ -155,21 +165,21 @@ ItemPuzzleRoom::~ItemPuzzleRoom() {
 
 bool ItemPuzzleRoom::playerTakeAction(Player *player) {
   char input;
-  std::cout << "Would you like to attempt to solve the puzzle"
+  std::cout << "Do you have the item required"
     " detective? [y/n]" << std::endl;
   std::cin >> input;
   if (input != 'y' && input != 'n') {
     while (input != 'y' && input != 'n') {
-      std::cout << "Would you like to Would you like to attempt to solve the"
-        " puzzle? [y/n]" << std::endl;
+      std::cout << "Do you have the item required"
+        " detective? [y/n]" << std::endl;
       std::cin >> input;
     }
   }
   if (input == 'y') {
-    ip->display();
+    std::cout << ip->toString() << std::endl;
     std::string answer;
     while (!ip->wasSolved()) {
-      std::cout << "Enter your answer to the puzzle or enter [q] to quit"
+      std::cout << "Give the correct item or enter [q] to leave"
         << std::endl;
       if (answer == "q") {
         break;
@@ -187,9 +197,17 @@ bool ItemPuzzleRoom::playerTakeAction(Player *player) {
 }
 
 void ItemPuzzleRoom::display() {
-}
-
-std::string ItemPuzzleRoom::toString() {
+  std::ostringstream stringReader;
+  stringReader << std::setw(25);
+  stringReader << title;
+  stringReader << '\n' << '\n';
+  stringReader << description;
+  stringReader << '\n' << '\n';
+  stringReader << "This room is a dead end " <<
+                   ip->getExpectedItemName() <<
+              " required to unlock more rooms!";
+  stringReader << '\n' << '\n';
+  std::cout << stringReader.str() << std::endl;
 }
 
 //------------------------------------------------------------------------
@@ -229,11 +247,16 @@ bool ItemRoom::playerTakeAction(Player* player) {
 }
 
 void ItemRoom::display() {
+  std::ostringstream stringReader;
+  stringReader << std::setw(25);
+  stringReader << title;
+  stringReader << '\n' << '\n';
+  stringReader << description;
+  stringReader << '\n' << '\n';
+  stringReader << "In this room you see a" << item->getName();
+  std::cout << stringReader.str() << std::endl;
 }
 
 Item &ItemRoom::giveItem() {
   return *item;
-}
-
-std::string ItemRoom::toString() {
 }
