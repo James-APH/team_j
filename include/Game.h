@@ -35,7 +35,7 @@ class Game {
   Game() {
     NPC dave("", "");
     NPC mick("", "");
-    roomlist->insert(new DialogueRoom("Garden", "its a garden", 
+    roomlist->insert(new DialogueRoom("Garden", "its a garden",
     {"", "", "Front Hall", "", "", ""}, dave));
     //Room* newRoom = new DialogueRoom("f", "f", {"", ""}, dave);
   }
@@ -44,7 +44,6 @@ class Game {
 
  private:
   RoomList* roomlist = new RoomList();
-
 };
 
 
