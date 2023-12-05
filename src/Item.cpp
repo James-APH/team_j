@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 #include "Item.h"
 
@@ -27,8 +28,7 @@ Item::Item(const Item& item) {
 }
 
 
-Item::~Item() {
-}
+Item::~Item() {}
 
 
 std::string Item::getName() {
@@ -45,9 +45,6 @@ std::string Item::getUselocation() {
   return useLocation;
 }
 
-void display() {
-}
-
 bool Item::equals(const Item& item) {
   return this->name == item.name
       && this->useLocation == item.useLocation;
@@ -55,4 +52,12 @@ bool Item::equals(const Item& item) {
 
 
 std::string Item::toString() {
+  std::ostringstream stringReader;
+  stringReader << name;
+  stringReader << '\n';
+  stringReader << description;
+  stringReader << '\n';
+  stringReader << useLocation;
+  stringReader << '\n';
+  return stringReader.str();
 }
