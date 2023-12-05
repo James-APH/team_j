@@ -66,10 +66,12 @@ bool DialogueRoom::playerTakeAction(Player *player) {
   std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]"
     << std::endl;
   std::cin >> input;
-  while (input != 'y' || input != 'n') {
-    std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]"
-      << std::endl;
-    std::cin >> input;
+  if (input != 'y' && input != 'n') {
+      while (input != 'y' && input != 'n') {
+      std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]"
+        << std::endl;
+      std::cin >> input;
+    }
   }
   if (input == 'y') {
     fella->display();
@@ -105,10 +107,12 @@ bool ThinkingPuzzleRoom::playerTakeAction(Player *player) {
   std::cout << "Would you like to attempt to solve the puzzle"
     " detective? [y/n]" << std::endl;
   std::cin >> input;
-  while (input != 'y' || input != 'n') {
-    std::cout << "Would you like to Would you like to attempt to"
-      " solve the puzzle? [y/n]" << std::endl;
-    std::cin >> input;
+  if (input != 'y' && input != 'n') {
+    while (input != 'y' && input != 'n') {
+      std::cout << "Would you like to Would you like to attempt to"
+        " solve the puzzle? [y/n]" << std::endl;
+        std::cin >> input;
+    }
   }
   if (input == 'y') {
     dp->display();
@@ -123,8 +127,8 @@ bool ThinkingPuzzleRoom::playerTakeAction(Player *player) {
       }
     }
     if (dp->wasSolved()) {
-    state = new FullyExploredRoom();
-    return true;
+      state = new FullyExploredRoom();
+      return true;
     }
   }
     state = new ExploredRoom();
@@ -135,7 +139,6 @@ void ThinkingPuzzleRoom::display() {
 }
 
 std::string ThinkingPuzzleRoom::toString() {
-  std::string display;
 }
 
 //------------------------------------------------------------------------
@@ -155,10 +158,12 @@ bool ItemPuzzleRoom::playerTakeAction(Player *player) {
   std::cout << "Would you like to attempt to solve the puzzle"
     " detective? [y/n]" << std::endl;
   std::cin >> input;
-  while (input != 'y' || input != 'n') {
-    std::cout << "Would you like to Would you like to attempt to solve the"
-      " puzzle? [y/n]" << std::endl;
-    std::cin >> input;
+  if(input != 'y' && input != 'n') {
+    while (input != 'y' && input != 'n') {
+      std::cout << "Would you like to Would you like to attempt to solve the"
+        " puzzle? [y/n]" << std::endl;
+      std::cin >> input;
+    }
   }
   if (input == 'y') {
     ip->display();
@@ -173,8 +178,8 @@ bool ItemPuzzleRoom::playerTakeAction(Player *player) {
       }
     }
     if (ip->wasSolved()) {
-    state = new FullyExploredRoom();
-    return true;
+      state = new FullyExploredRoom();
+      return true;
     }
   }
     state = new ExploredRoom();
@@ -205,8 +210,8 @@ bool ItemRoom::playerTakeAction(Player* player) {
   std::cout << "Would you like to pick up this: " +
     item->getName() + "? [y/n]" << std::endl;
   std::cin >> input;
-  if (input != 'y' || input != 'n') {
-    while (input != 'y' || input != 'n') {
+  if (input != 'y' && input != 'n') {
+    while (input != 'y' && input != 'n') {
       std::cout <<  "Would you like to pick up this: " +
         item->getName() + "? [y/n]" << std::endl;
       std::cin >> input;
