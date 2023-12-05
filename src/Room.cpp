@@ -15,7 +15,7 @@
 #include "GameTypes.h"
 
 Room::Room(std::string title, std::string description,
-    std::vector<std::string> connections) {
+    const std::vector<std::string>& connections) {
   if (title != "")
     this->title = title;
   if (description != "")
@@ -51,7 +51,7 @@ void Room::setState(RoomState *state) {
 //----------------------------------------------------------
 
 DialogueRoom::DialogueRoom(std::string title, std::string description,
-    std::vector<std::string> connections, const NPC &fella) :
+    const std::vector<std::string>& connections, const NPC &fella) :
     Room(title, description, connections) {
   this->roomtype = GameTypes::DIALOGUE_ROOM;
   this->fella = new NPC(fella);
@@ -90,7 +90,7 @@ std::string DialogueRoom::toString() {
 //------------------------------------------------------------------
 
 ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title,
-    std::string description, const std::vector<std::string> connections,
+    std::string description, const std::vector<std::string>& connections,
     const DialoguePuzzle &dp) : Room(title, description, connections) {
   this->roomtype = GameTypes::THINKING_PUZZLE_ROOM;
   this->dp = new DialoguePuzzle(dp);
@@ -141,7 +141,7 @@ std::string ThinkingPuzzleRoom::toString() {
 //------------------------------------------------------------------------
 
 ItemPuzzleRoom::ItemPuzzleRoom(std::string title, std::string description,
-    const std::vector<std::string> connections, const ItemPuzzle &ip) :
+    const std::vector<std::string>& connections, const ItemPuzzle &ip) :
     Room(title, description, connections) {
   this->roomtype = GameTypes::ITEM_PUZZLE_ROOM;
   this->ip = new ItemPuzzle(ip);
@@ -189,10 +189,9 @@ std::string ItemPuzzleRoom::toString() {
 
 //------------------------------------------------------------------------
 
-ItemRoom::ItemRoom(std::string title,
-                   std::string description,
-                   const std::vector<std::string> connections,
-                   const Item &i) : Room(title, description, connections) {
+ItemRoom::ItemRoom(std::string title, std::string description,
+    const std::vector<std::string>& connections,
+    const Item &i) : Room(title, description, connections) {
   this->roomtype = GameTypes::ITEM_ROOM;
   this->item = new Item(i);
 }
