@@ -67,16 +67,15 @@ class Item {
   */ 
   bool equals(const Item& item);
 
- private:
-  std::string name;
-  std::string description;
-  std::string useLocation;
-
   /**
   * @brief puts the information in from item into a string
   * @return string string of item details
   */
   std::string toString();
+ private:
+  std::string name;
+  std::string description;
+  std::string useLocation;
 };
 
 #endif
