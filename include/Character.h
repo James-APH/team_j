@@ -29,7 +29,6 @@ class Character {
   Character(std::string name);
 
 
-
   virtual std::string getName();
 
   /**
@@ -37,20 +36,9 @@ class Character {
   */
   virtual ~Character();
 
-  /**
-  * @brief outputs all attributes of a character
-  */
-  virtual void display() = 0;
-
  protected:
   std::string name;
   std::string dialogue;
-
-  /**
-  * @brief puts all of the information from
-  * character into a string
-  */
-  virtual std::string toString() = 0;
 };
 
 /**
@@ -79,19 +67,10 @@ class NPC : public Character {
   */
   ~NPC();
 
-
   /**
   * @brief outputs all attributes of a character
   */
   void display();
-
-
- private:
-  /**
-  * @brief puts all of the information from
-  * character into a string
-  */
-  std::string toString();
 };
 
 /**
@@ -119,7 +98,7 @@ class Player : public Character {
   * @throw bad_input if the item reference is a
   * nullptr
   */
-  void pickUp(const Item &item);
+  void pickUp(const Item& item);
 
   /**
    * @brief function to allow user to drop items
@@ -135,11 +114,6 @@ class Player : public Character {
    * 
   */
   Item& useItem();
-
-  /**
-  * @brief outputs all attributes of a character
-  */
-  void display();
 
  private:
   Inventory* inventory;
