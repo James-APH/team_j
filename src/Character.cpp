@@ -17,7 +17,7 @@ Character::Character() {
 }
 
 Character::Character(std::string name) {
-  if(name != "") {
+  if (name != "") {
     this->name = name;
   }
 }
@@ -45,8 +45,9 @@ void NPC::display() {
   std::cout << stringReader.str() << std::endl;
 }
 
-Player::Player(std::string name) : Character(name) {
-
+Player::Player(std::string name, const Item& item) : Character(name) {
+  inventory = new Inventory();
+  inventory->addItem(item);
 }
 
 Player::~Player() {
@@ -58,7 +59,7 @@ void Player::pickUp(const Item &item) {
 }
 
 void Player::drop(std::string name) {
-  if(inventory->hasItem(name)) {
+  if (inventory->hasItem(name)) {
     inventory->deleteItem(name);
     std::cout << "Item Dropped" << std::endl;
   }
@@ -71,6 +72,6 @@ Item& Player::useItem() {
     std::cout << "What item would you like to use? " << std::endl;
     std::cout << inventory->toString() << std::endl;
     std::cin >> itemName;
-  } while(!inventory->hasItem(itemName));
+  } while (!inventory->hasItem(itemName));
   return inventory->getItem(itemName);
 }
