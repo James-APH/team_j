@@ -129,7 +129,7 @@ Item& Player::useItem() {
                "Otherwise enter q to quit!" << std::endl;
         std::cin >> itemName;
     }
-  } 
+  }
   if (itemName != "q") {
       for (auto it : itemList) {
         if (it->getName() == itemName) {
