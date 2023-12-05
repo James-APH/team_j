@@ -74,11 +74,11 @@ ItemPuzzle::~ItemPuzzle() {
     delete expectedItem;
 }
 
-std::string ItemPuzzle::getExpectedItemName() {
+std::string ItemPuzzle::getExpectedItemName() const {
     return expectedItem->getName();
 }
 
-void ItemPuzzle::checkItem(const Item &item) {
+void ItemPuzzle::checkItem(const Item &item){
     if (expectedItem->equals(item)) {
         std::cout << "Correct!\n";
         solved = true;

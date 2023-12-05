@@ -127,7 +127,7 @@ class ItemPuzzle : public Puzzle {
   /**
    * @brief gets the name of the item
   */
-  std::string getExpectedItemName();
+  std::string getExpectedItemName() const;
 
 
   /**

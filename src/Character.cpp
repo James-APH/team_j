@@ -13,9 +13,6 @@
 #include "Character.h"
 
 
-Character::Character() {
-  name = "undetermined";
-}
 
 Character::Character(std::string name) {
   if (name != "") {
@@ -37,7 +34,7 @@ NPC::NPC(std::string name, std::string dialogue) : Character(name) {
 
 NPC::~NPC() {}
 
-void NPC::display() {
+void NPC::display() const {
   std::ostringstream stringReader;
   stringReader << std::setw(25);
   stringReader << "Hello detective, my name is "
@@ -91,7 +88,7 @@ void Player::drop() {
   }
 }
 
-void Player::InspectItem() {
+void Player::InspectItem() const {
   std::string itemName;
   std::cout << "Enter the name of the item you'd like to inspect,\n"
                "Otherwise enter q to quit!" << std::endl;
@@ -112,7 +109,7 @@ void Player::InspectItem() {
   }
 }
 
-void Player::listInventory() {
+void Player::listInventory() const {
   for (auto it : itemList) {
     std::cout << it->toString() << std::endl;
   }
@@ -140,7 +137,7 @@ Item& Player::useItem() {
   return *itemList.front();
 }
 
-bool Player::findItem(const Item& item) {
+bool Player::findItem(const Item& item) const {
   for (auto it : itemList) {
     if (it->equals(item))
       return true;
@@ -148,7 +145,7 @@ bool Player::findItem(const Item& item) {
   return false;
 }
 
-bool Player::findItem(std::string itemName) {
+bool Player::findItem(std::string itemName) const {
   for (auto it : itemList) {
     if (it->getName() == itemName)
       return true;

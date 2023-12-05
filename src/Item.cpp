@@ -31,27 +31,27 @@ Item::Item(const Item& item) {
 Item::~Item() {}
 
 
-std::string Item::getName() {
+std::string Item::getName() const {
   return name;
 }
 
 
-std::string Item::getDescription() {
+std::string Item::getDescription() const {
   return description;
 }
 
 
-std::string Item::getUselocation() {
+std::string Item::getUselocation() const {
   return useLocation;
 }
 
-bool Item::equals(const Item& item) {
+bool Item::equals(const Item& item) const {
   return this->name == item.name
       && this->useLocation == item.useLocation;
 }
 
 
-std::string Item::toString() {
+std::string Item::toString() const {
   std::ostringstream stringReader;
   stringReader << name;
   stringReader << '\n';

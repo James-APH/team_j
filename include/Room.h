@@ -22,24 +22,20 @@
  */
 class Room {
  public:
-  /**
-   * @brief default constructor
-   */
-  Room();
 
   /**
    * @brief constructor
    * @param [in] title the title of the room
    * @param [in] description the description of the room
    */
-  Room(std::string title
-       , std::string description
-       , const std::vector<std::string>& connections);
+  Room(std::string title = "room"
+       , std::string description = "description"
+       , const std::vector<std::string>& connections = {""});
 
   /**
    * @brief destructor
    */
-  ~Room();
+  virtual ~Room();
 
   /**
    * @brief getter for RoomState
@@ -51,7 +47,7 @@ class Room {
    * @brief returns the title of the room
    * @return title the title of the room
   */
-  std::string getTitle();
+  std::string getTitle() const;
 
   /**
    * @brief returns the list of all the rooms the room
@@ -64,7 +60,7 @@ class Room {
    * @brief getter for roomtype
    * @return roomtype the type of room the current is
   */
-  GameTypes::RoomTypes getRoomType();
+  GameTypes::RoomTypes getRoomType() const;
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
@@ -79,7 +75,7 @@ class Room {
   /**
    * @brief descibes/shows the room to the player
    */
-  virtual void display() = 0;
+  virtual void display() const = 0;
 
  protected:
   std::string title;
@@ -119,7 +115,7 @@ class DialogueRoom : public Room {
   /**
    * @brief destructor
    */
-  ~DialogueRoom();
+  virtual ~DialogueRoom();
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
@@ -131,7 +127,7 @@ class DialogueRoom : public Room {
   /**
    * @brief descibes/shows the room to the player
    */
-  void display();
+  void display() const;
 
  private:
   NPC *fella;
@@ -158,7 +154,7 @@ class ThinkingPuzzleRoom : protected Room {
   /**
    * @brief destructor
    */
-  ~ThinkingPuzzleRoom();
+  virtual ~ThinkingPuzzleRoom();
 
 
   /**
@@ -172,7 +168,7 @@ class ThinkingPuzzleRoom : protected Room {
   /**
    * describes/shows the room to the player
    */
-  void display();
+  void display() const;
 
  private:
   DialoguePuzzle* dp;
@@ -199,7 +195,7 @@ class ItemPuzzleRoom : protected Room {
   /**
    * @brief destructor
    */
-  ~ItemPuzzleRoom();
+  virtual ~ItemPuzzleRoom();
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
@@ -212,7 +208,7 @@ class ItemPuzzleRoom : protected Room {
   /**
    * @brief describes/shows the room to the player
    */
-  void display();
+  void display() const;
 
  private:
   ItemPuzzle* ip;
@@ -238,7 +234,7 @@ class ItemRoom : protected Room {
   /**
    * @brief destructor
    */
-  ~ItemRoom();
+  virtual ~ItemRoom();
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
@@ -250,7 +246,7 @@ class ItemRoom : protected Room {
   /**
    * @brief describes/shows the room to the player
    */
-  void display();
+  void display() const;
 
  private:
   Item* item;

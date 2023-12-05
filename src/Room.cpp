@@ -33,7 +33,7 @@ RoomState &Room::getState() {
   return *state;
 }
 
-std::string Room::getTitle() {
+std::string Room::getTitle() const {
   return title;
 }
 
@@ -41,7 +41,7 @@ std::vector<std::string> Room::getConnections() {
   return connections;
 }
 
-GameTypes::RoomTypes Room::getRoomType() {
+GameTypes::RoomTypes Room::getRoomType() const {
   return roomtype;
 }
 
@@ -84,7 +84,7 @@ bool DialogueRoom::playerTakeAction(Player *player) {
   }
 }
 
-void DialogueRoom::display() {
+void DialogueRoom::display() const {
   std::ostringstream stringReader;
   stringReader << std::setw(25);
   stringReader << title;
@@ -140,7 +140,7 @@ bool ThinkingPuzzleRoom::playerTakeAction(Player *player) {
     return false;
 }
 
-void ThinkingPuzzleRoom::display() {
+void ThinkingPuzzleRoom::display() const {
     std::ostringstream stringReader;
   stringReader << std::setw(25);
   stringReader << title;
@@ -197,7 +197,7 @@ bool ItemPuzzleRoom::playerTakeAction(Player *player) {
     return false;
 }
 
-void ItemPuzzleRoom::display() {
+void ItemPuzzleRoom::display() const {
   std::ostringstream stringReader;
   stringReader << std::setw(25);
   stringReader << title;
@@ -237,7 +237,7 @@ bool ItemRoom::playerTakeAction(Player* player) {
     }
   }
   if (input == 'y') {
-    item->display();
+    std::cout << item->toString() << std::endl;
     player->pickUp(giveItem());
     state = new FullyExploredRoom();
     return true;
@@ -247,7 +247,7 @@ bool ItemRoom::playerTakeAction(Player* player) {
   }
 }
 
-void ItemRoom::display() {
+void ItemRoom::display() const {
   std::ostringstream stringReader;
   stringReader << std::setw(25);
   stringReader << title;

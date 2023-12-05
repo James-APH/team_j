@@ -42,37 +42,32 @@ class Item {
   * @brief gets the name of the item
   * @return string the name of the item
   */
-  std::string getName();
+  std::string getName() const;
 
   /**
   * @brief gets the description of the item
   * @return string the description of the item
   */
-  std::string getDescription();
+  std::string getDescription() const;
 
   /**
    * @brief gets the location where the item should be used 
    * @brief returns the location where the item should be used
    */
-  std::string getUselocation();
-
-  /**
-   * @brief displays the name of the item and description 
-   */
-  void display();
+  std::string getUselocation() const;
 
   /**
   * @brief checks if two items are equivalent
   * @return true if the items are equivalent
   * @throw bad_input if item is nullptr
   */ 
-  bool equals(const Item& item);
+  bool equals(const Item& item) const;
 
   /**
   * @brief puts the information in from item into a string
   * @return string string of item details
   */
-  std::string toString();
+  std::string toString() const;
 
  private:
   std::string name;

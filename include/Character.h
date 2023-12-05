@@ -18,16 +18,11 @@
 class Character {
  public:
   /**
-   * @brief default constructor
-   */
-  Character();
-
-  /**
   * @brief constructor
   * @param [in] name the name of the character
   * @throw bad_input if name is empty
   */
-  Character(std::string name);
+  Character(std::string name = "anonymous");
 
 
   virtual std::string getName();
@@ -66,12 +61,12 @@ class NPC : public Character {
   /**
   * @brief destructor
   */
-  ~NPC();
+  virtual ~NPC();
 
   /**
   * @brief outputs all attributes of a character
   */
-  void display();
+  void display() const;
 };
 
 /**
@@ -90,7 +85,7 @@ class Player : public Character {
   /**
   * @brief destructor
   */
-  ~Player();
+  virtual ~Player();
 
   /**
   * @brief function to allow user to pickUp items
@@ -114,14 +109,14 @@ class Player : public Character {
    * 
    * 
   */
-  void InspectItem();
+  void InspectItem() const;
 
   /**
    * 
    * 
    * 
   */
-  void listInventory();
+  void listInventory() const;
 
 
   /**
@@ -134,10 +129,18 @@ class Player : public Character {
  private:
   std::list<Item*> itemList;
 
+  /**
+   * 
+   * 
+  */
+  bool findItem(const Item& item) const;
 
-  bool findItem(const Item& item);
 
-  bool findItem(std::string itemName);
+  /**
+   * 
+   * 
+  */
+  bool findItem(std::string itemName) const;
 };
 
 #endif
