@@ -32,6 +32,11 @@ NPC::NPC(std::string name, std::string dialogue) : Character(name) {
   }
 }
 
+NPC::NPC(const NPC &fella) {
+  this->name = fella.name;
+  this->dialogue = fella.dialogue;
+}
+
 NPC::~NPC() {}
 
 void NPC::display() const {
