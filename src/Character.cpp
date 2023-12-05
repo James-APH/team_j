@@ -48,6 +48,7 @@ void NPC::display() {
 
 Player::Player(std::string name, const Item& item)
   : Character(name) {
+  itemList.push_back(new Item("NullItem", "Null", "Null"));
   itemList.push_back(new Item(item));
 }
 
@@ -60,37 +61,55 @@ Player::~Player() {
 }
 
 void Player::pickUp(const Item& item) {
-  if (std::find(itemList.begin(), itemList.end(), item) == itemList.end()) {
-    itemList.push_back(new Item(item));
-    std::cout << "Item added to inventory" << std::endl;
-    return;
+  if (findItem(item)) {
+    std::cout << "Item already exists in inventory!" << std::endl;
+  } else {
+      itemList.push_back(new Item(item));
+      std::cout << "Item added to inventory!" << std::endl;
   }
-  std::cout << "Item already in inventory" << std::endl;
 }
 
 void Player::drop() {
   std::string itemName;
-  std::cout << "What item would you like to drop?" << std::endl;
-  for (auto it : itemList) {
-    if (it->getName() == itemName) {
-      itemList.remove(it);
-      std::cout << "Item dropped" << std::endl;
-      return;
+  std::cout << "Enter the name of the item you'd like to drop,\n"
+               "Otherwise enter q to quit!" << std::endl;
+  std::cin >> itemName;
+  if (!findItem(itemName) && itemName != "q") {
+    while (findItem(itemName) == false && itemName != "q") {
+        std::cout << "Enter the name of the item you'd like to drop,\n"
+                     "Otherwise enter q to quit!" << std::endl;
+        std::cin >> itemName;
     }
-    std::cout << "Item not found!" << std::endl;
+  }
+  if (itemName != "q") {
+    for (auto it : itemList) {
+      if (it->getName() == itemName) {
+        itemList.remove(it);
+        std::cout << "Item dropped!" << std::endl;
+      }
+    }
   }
 }
 
 void Player::InspectItem() {
   std::string itemName;
-  std::cout << "What item would you like to inspect?" << std::endl;
-  for (auto it : itemList) {
-    if (it->getName() == itemName) {
-      std::cout << it->toString() << std::endl;
-      return;
+  std::cout << "Enter the name of the item you'd like to inspect,\n"
+               "Otherwise enter q to quit!" << std::endl;
+  std::cin >> itemName;
+  if (!findItem(itemName) && itemName != "q") {
+    while (findItem(itemName) == false && itemName != "q") {
+        std::cout << "Enter the name of the item you'd like to inspect,\n"
+               "Otherwise enter q to quit!" << std::endl;
+        std::cin >> itemName;
     }
   }
-  std::cout << "Item not found!" << std::endl;
+  if (itemName != "q") {
+    for (auto it : itemList) {
+      if (it->getName() == itemName) {
+        std::cout << it->toString() << std::endl;
+      }
+    }
+  }
 }
 
 void Player::listInventory() {
@@ -99,16 +118,39 @@ void Player::listInventory() {
   }
 }
 
-
 Item& Player::useItem() {
   std::string itemName;
-  std::cout << "What item would you like to use?" << std::endl;
+  std::cout << "Enter the name of the item you'd like to use,\n"
+               "Otherwise enter q to quit!" << std::endl;
   std::cin >> itemName;
-  for (auto it : itemList) {
-    if (it->getName() == itemName) {
-      return *it;
+  if (!findItem(itemName) && itemName != "q") {
+    while (findItem(itemName) == false && itemName != "q") {
+        std::cout << "Enter the name of the item you'd like to use\n"
+               "Otherwise enter q to quit!" << std::endl;
+        std::cin >> itemName;
+    }
+  } if (itemName != "q") {
+      for (auto it : itemList) {
+        if (it->getName() == itemName) {
+          return *it;
+      }
     }
   }
-  std::cout << "Item not found!" << std::endl;
-  return;
+  return *itemList.front();
+}
+
+bool Player::findItem(const Item& item) {
+  for (auto it : itemList) {
+    if(it->equals(item))
+      return true;
+  }
+  return false;
+}
+
+bool Player::findItem(std::string itemName) {
+  for (auto it : itemList) {
+    if (it->getName() == itemName)
+      return true;
+  }
+  return false;
 }
