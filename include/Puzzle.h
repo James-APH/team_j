@@ -42,19 +42,14 @@ class Puzzle {
   bool wasSolved() const;
 
   /**
-  * @brief display all details of the puzzle
-  */
-  virtual void display() = 0;
-
- protected:
-  std::string description;
-  bool solved;
-
-  /**
   * @brief creates string of all attributes of the puzzle
   * return string string of all attributes of the puzzle
   */
   virtual std::string toString() = 0;
+
+ protected:
+  std::string description;
+  bool solved;
 };
 
 
@@ -101,21 +96,15 @@ class DialoguePuzzle : public Puzzle {
   */
   ~DialoguePuzzle();
 
-   /*
-  * @brief function to display puzzle information
-  */
-  void display();
-
- private:
-  std::string expectedInput;
-
-
   /*
   * @brief function to convert all of the puzzle attributes into
   * a string
   * @return string string of all puzzle attributes
   */
   std::string toString();
+
+ private:
+  std::string expectedInput;
 };
 
 /**
@@ -143,6 +132,12 @@ class ItemPuzzle : public Puzzle {
   ItemPuzzle(const ItemPuzzle& ip);
 
   /**
+   * @brief gets the name of the item
+  */
+  std::string getExpectedItemName();
+
+
+  /**
   * @brief destructor for ItemPuzzle
   */
   ~ItemPuzzle();
@@ -158,18 +153,13 @@ class ItemPuzzle : public Puzzle {
   void checkItem(const Item &item);
 
   /**
-  * @brief displays the information about the puzzle
-  */
-  void display();
-
- private:
-  Item* expectedItem;
-
-  /**
   * @brief puts all of the puzzle information into a string
   * @return string string of puzzle information
   */
   std::string toString();
+
+ private:
+  Item* expectedItem;
 };
 
 #endif

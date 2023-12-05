@@ -65,6 +65,10 @@ ItemPuzzle::ItemPuzzle(std::string description, const Item &item) :
 ItemPuzzle::~ItemPuzzle() {
 }
 
+std::string ItemPuzzle::getExpectedItemName() {
+    return expectedItem->getName();
+}
+
 void ItemPuzzle::checkItem(const Item &item) {
     if (expectedItem->equals(item)) {
         std::cout << "Correct!\n";
