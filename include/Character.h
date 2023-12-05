@@ -133,6 +133,11 @@ class Player : public Character {
 
  private:
   std::list<Item*> itemList;
+
+
+  bool findItem(const Item& item);
+
+  bool findItem(std::string itemName);
 };
 
 #endif
