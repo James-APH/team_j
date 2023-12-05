@@ -45,7 +45,7 @@ class Puzzle {
   * @brief creates string of all attributes of the puzzle
   * return string string of all attributes of the puzzle
   */
-  virtual std::string toString() = 0;
+  std::string toString();
 
  protected:
   std::string description;
@@ -96,13 +96,6 @@ class DialoguePuzzle : public Puzzle {
   */
   ~DialoguePuzzle();
 
-  /*
-  * @brief function to convert all of the puzzle attributes into
-  * a string
-  * @return string string of all puzzle attributes
-  */
-  std::string toString();
-
  private:
   std::string expectedInput;
 };
@@ -152,11 +145,6 @@ class ItemPuzzle : public Puzzle {
   */
   void checkItem(const Item &item);
 
-  /**
-  * @brief puts all of the puzzle information into a string
-  * @return string string of puzzle information
-  */
-  std::string toString();
 
  private:
   Item* expectedItem;

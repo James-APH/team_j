@@ -7,9 +7,13 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <sstream>
+
 
 #include "Puzzle.h"
 #include "Item.h"
+
 
 
 Puzzle::Puzzle(std::string description) {
@@ -21,6 +25,12 @@ Puzzle::~Puzzle() {}
 
 bool Puzzle::wasSolved() const {
     return solved;
+}
+
+std::string Puzzle::toString() {
+    std::ostringstream stringReader;
+    stringReader << description;
+    return stringReader.str();
 }
 
 //-------------------------------------------------------------
@@ -45,18 +55,6 @@ void DialoguePuzzle::getInput(std::string answer) {
     }
 }
 
-void DialoguePuzzle::display() {
-    std::cout << "Puzzle: " << description << "\n";
-    std::cout << "Input: " << expectedInput << "\n\n";
-}
-
-std::string DialoguePuzzle::toString() {
-    return "Puzzle: " + description + "\nInput: " + expectedInput;
-}
-
-
-
-
 ItemPuzzle::ItemPuzzle(std::string description, const Item &item) :
                 Puzzle(description) {
                     expectedItem = new Item(item);
@@ -76,13 +74,4 @@ void ItemPuzzle::checkItem(const Item &item) {
         } else {
             std::cout << "Incorrect.\n";
     }
-}
-
-void ItemPuzzle::display() {
-    std::cout << "Puzzle: " << description << "\n";
-    std::cout << "Item: " << expectedItem->getName() << "\n\n";
-}
-
-std::string ItemPuzzle::toString() {
-    return "Puzzle: " + description + "\nItem: " + expectedItem->getName();
 }
