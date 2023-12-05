@@ -110,12 +110,12 @@ ThinkingPuzzleRoom::~ThinkingPuzzleRoom() {
 bool ThinkingPuzzleRoom::playerTakeAction(Player *player) {
   char input;
   std::cout << "Would you like to attempt to solve the puzzle"
-    " detective? [y/n]" << std::endl;
+               " detective? [y/n]" << std::endl;
   std::cin >> input;
   if (input != 'y' && input != 'n') {
     while (input != 'y' && input != 'n') {
       std::cout << "Would you like to attempt to attempt to"
-        " solve the puzzle? [y/n]" << std::endl;
+                   " solve the puzzle? [y/n]" << std::endl;
         std::cin >> input;
     }
   }
@@ -147,7 +147,8 @@ void ThinkingPuzzleRoom::display() {
   stringReader << '\n' << '\n';
   stringReader << description;
   stringReader << '\n' << '\n';
-  stringReader << "This room is locked, solve a complicated question to unlock more rooms:\n";
+  stringReader << "This room is locked, solve a complicated"
+                  " question to unlock more rooms:\n";
   std::cout << stringReader.str() << std::endl;
 }
 
