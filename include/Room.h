@@ -22,7 +22,6 @@
  */
 class Room {
  public:
-
   /**
    * @brief constructor
    * @param [in] title the title of the room
