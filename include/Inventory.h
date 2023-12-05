@@ -47,7 +47,7 @@ class Inventory {
   * @param[in] itemName the name of the item
   * @throw bad_input if itemName is empty
   */
-  void addItem(std::string itemName);
+  void addItem(const Item& item);
 
   /**
   * @brief removes item from list
@@ -73,16 +73,7 @@ class Inventory {
   */
   Item& getItem(std::string itemName);
 
-  /**
-  * @brief outputs the information created in
-  * the toString function.
-  */
-  void display();
 
-
- private:
-  std::vector<Item> itemList;
-  int size;
 
   /**
   * @brief creates a string formatted to list
@@ -91,12 +82,10 @@ class Inventory {
   */
   std::string toString();
 
-  /**
-  * @brief adds a description to a newly added item
-  * @throw bad_input if file does not exist
-  * @throw incomplete_settings if file is empty
-  */
-  void addItemDescription(std::string fileName);
+
+ private:
+  std::vector<Item> itemList;
+  int size;
 };
 
 #endif
