@@ -23,7 +23,8 @@ class Item {
   * @throw bad_input if name is empty
   * @throw bad_input if description is empty
   */
-  Item(std::string name, std::string useLocation, std::string description);
+  Item(std::string name = "name", std::string useLocation = "location",
+       std::string description = "description");
 
   /**
   * @brief copy constructor
@@ -35,7 +36,7 @@ class Item {
   /**
   * @brief Default Destructor
   */
-  ~Item();
+  virtual ~Item();
 
   /**
   * @brief gets the name of the item

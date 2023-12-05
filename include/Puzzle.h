@@ -22,13 +22,13 @@ class Puzzle {
   /**
   * @brief default constructor 
   */
-  Puzzle();
+  //Puzzle();
 
   /**
   * @brief default constructor
   * @param [in] description the description of the puzzle
   */
-  Puzzle(std::string description);
+  Puzzle(std::string description = "No puzzle");
 
   /**
   * @brief destructor
