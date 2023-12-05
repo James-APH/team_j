@@ -158,7 +158,7 @@ bool ItemPuzzleRoom::playerTakeAction(Player *player) {
   std::cout << "Would you like to attempt to solve the puzzle"
     " detective? [y/n]" << std::endl;
   std::cin >> input;
-  if(input != 'y' && input != 'n') {
+  if (input != 'y' && input != 'n') {
     while (input != 'y' && input != 'n') {
       std::cout << "Would you like to Would you like to attempt to solve the"
         " puzzle? [y/n]" << std::endl;
