@@ -32,7 +32,13 @@
  */
 class Game {
  public:
+  Game() {
+    NPC dave("", "");
+    std::vector<std::string> s[1] = {{"0"}};
+    Room* newRoom = new DialogueRoom("", "", s, dave);
+  }
   RoomList* setRoomList();
+
 
  private:
   RoomList* roomlist = new RoomList();
