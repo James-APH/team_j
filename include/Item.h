@@ -1,8 +1,5 @@
-/* @Authors - James Huston | jamzhuston@gmail.com |
- *          - 
- *          -
- * Created 10/30/2023
- *
+/* @Authors - James Huston [jamzhuston@gmail.com]
+ * @date 11/2023
 */
 
 #ifndef ITEM_H_INCLUDED
@@ -10,8 +7,6 @@
 
 #include <iostream>
 #include <string>
-
-
 
 /**
  * @class Item in Item.h "Item.h"
