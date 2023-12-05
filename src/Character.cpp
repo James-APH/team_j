@@ -6,6 +6,8 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
+#include <vector>
 
 #include "Item.h"
 #include "Inventory.h"
@@ -46,21 +48,29 @@ void NPC::display() {
 }
 
 Player::Player(std::string name, const Item& item) : Character(name) {
-  inventory = new Inventory();
-  inventory->addItem(item);
+  itemList.push_back(new Item(item));
 }
 
 Player::~Player() {
-  delete inventory;
+
 }
 
-void Player::pickUp(const Item &item) {
-  inventory->addItem(item);
+void Player::pickUp(const Item& item) {
+  if(std::find(itemList.begin(), itemList.end(), item) == itemList.end()) {
+    itemList.push_back(new Item(item));
+  }
 }
 
 void Player::drop(std::string name) {
-  if (inventory->hasItem(name)) {
-    inventory->deleteItem(name);
+  bool deleted;
+  for(int i = 0; i < itemList.size(); i++) {
+    if(itemList[i]->getName() == name) {
+      deleted = true;
+      
+    }
+  }
+
+    
     std::cout << "Item Dropped" << std::endl;
   }
   std::cout << "Item not in inventory" << std::endl;

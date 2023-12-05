@@ -7,6 +7,7 @@
 #define CHARACTER_H_INCLUDED
 
 #include <string>
+#include <vector>
 
 #include "Item.h"
 #include "Inventory.h"
@@ -116,7 +117,7 @@ class Player : public Character {
   Item& useItem();
 
  private:
-  Inventory* inventory;
+  std::vector<Item*> itemList;
 };
 
 #endif
