@@ -122,7 +122,7 @@ class ItemPuzzle : public Puzzle {
    * @param [in] ip the itempuzzle being copied
    * 
    */
-  ItemPuzzle(const ItemPuzzle& ip);
+  ItemPuzzle(const ItemPuzzle& itemPuzzle);
 
   /**
    * @brief gets the name of the item

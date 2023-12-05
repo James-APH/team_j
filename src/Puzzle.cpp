@@ -10,7 +10,6 @@
 #include <iomanip>
 #include <sstream>
 
-
 #include "Puzzle.h"
 #include "Item.h"
 
@@ -38,13 +37,16 @@ std::string Puzzle::toString() {
 
 DialoguePuzzle::DialoguePuzzle(std::string description,
                         std::string expectedInput)
-                        : Puzzle(description), expectedInput(expectedInput) {
+                        : Puzzle(description) {
                             this->expectedInput = expectedInput;
                             }
 
-
-DialoguePuzzle::~DialoguePuzzle() {
+DialoguePuzzle::DialoguePuzzle(const DialoguePuzzle& dialoguePuzzle) {
+    this->description = dialoguePuzzle.description;
+    this->expectedInput = dialoguePuzzle.expectedInput;
 }
+
+DialoguePuzzle::~DialoguePuzzle() {}
 
 void DialoguePuzzle::getInput(std::string answer) {
     if (answer == expectedInput) {
@@ -55,12 +57,21 @@ void DialoguePuzzle::getInput(std::string answer) {
     }
 }
 
+
+
 ItemPuzzle::ItemPuzzle(std::string description, const Item &item) :
                 Puzzle(description) {
                     expectedItem = new Item(item);
 }
 
+ItemPuzzle::ItemPuzzle(const ItemPuzzle& itemPuzzle) {
+    this->description = itemPuzzle.description;
+    this->expectedItem = new Item(*itemPuzzle.expectedItem);
+}
+
+
 ItemPuzzle::~ItemPuzzle() {
+    delete expectedItem;
 }
 
 std::string ItemPuzzle::getExpectedItemName() {
