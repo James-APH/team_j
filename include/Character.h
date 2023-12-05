@@ -130,53 +130,10 @@ class Player : public Character {
   void drop(std::string name);
 
   /**
-   * @brief function to allow the user to move to
-   * a different room.
-   * @param [in] question the question for which room
-   * the user would like to move to
-   * @param [in] options the list of possible options
-   * @throw bad_input if the question is empty
-   * @throw bad_input if there are options, but
-   * the entrees are empty.
-   * @throw invalid_size if there are no options
-   * @return char the answer for the location
-   * the user would like to move to
-   */
-  char getMoveRoomChoice(std::string question,
-                         const std::string options[]);
-
-  /**
-   * @brief function to allow the user to choose
-   * what activity they do in a room
-   * @param [in] question the question for what
-   * the user is allowed to do
-   * @param [in] options the list of possible options
-   * @throw bad_input if the question is empty
-   * @throw bad_input if there are options, but 
-   * the entrees are empty
-   * @throw invalid_size if there are no options
-   * @return char the answer for the activity 
-   * the user would like to do
-   */
-  char getRoomActivityChoice(std::string question,
-                             const std::string options[]);
-
-  /**
-   * @brief function to allow the user to make 
-   * an accusation
-   * @param [in] question the question for 
-   * which person the user would like to accuse
-   * @param [in] options the list of possible options
-   * @throw bad_input if the question is empty
-   * @throw bad_input if there are options, but 
-   * the entrees are empty
-   * @throw invalid_size if there are no options
-   * @return char the answer for the person the
-   * user would like to accuse
-   */
-  char accuse(std::string question,
-              const std::string options[]);
-
+   * @brief function to allow the user to use an item
+   * 
+   * 
+  */
   Item& useItem();
 
   /**
@@ -187,11 +144,6 @@ class Player : public Character {
  private:
   Inventory* inventory;
 
-  /**
-  * @brief puts all of the information from
-  * character into a string
-  */
-  std::string toString();
 };
 
 #endif
