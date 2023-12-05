@@ -84,10 +84,10 @@ void RoomNode::setSouthNode(RoomNode *south) {
 }
 
 void RoomNode::setWestNode(RoomNode *west) {
-    this->south = south;
+    this->west = west;
 }
 
-void RoomNode::setNextNode(RoomNode *nextNode) {
+void RoomNode::setNextNode(RoomNode *next) {
     this->next = next;
 }
 
