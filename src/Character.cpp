@@ -4,6 +4,8 @@
 */
 
 #include <string>
+#include <sstream>
+#include <iomanip>
 
 #include "Item.h"
 #include "Inventory.h"
@@ -37,23 +39,26 @@ std::string Character::toString() {
 
 
 
-NPC::NPC(std::string name, std::string dialogue) {
+NPC::NPC(std::string name, std::string dialogue) : Character(name) {
+  if (dialogue != "") {
+    this->dialogue = dialogue;
+  }
 }
 
 
 NPC::~NPC() {
+
 }
 
 
 
 void NPC::display() {
-}
-
-
-
-
-
-std::string NPC::toString() {
+  std::ostringstream stringReader;
+  stringReader << std::setw(25);
+  stringReader << "Hello detective, my name is "
+   << name << "." << '\n';
+  stringReader << dialogue << std::endl;
+  std::cout << stringReader.str() << std::endl;
 }
 
 
@@ -79,26 +84,9 @@ void Player::pickUp(const Item &item) {
 void Player::drop(std::string name) {
 }
 
-
-char Player::getMoveRoomChoice(std::string question,
-                         const std::string options[]) {
-                         }
-
-
-char Player::getRoomActivityChoice(std::string question,
-                             const std::string options[]) {
-                             }
-
-
-char Player::accuse(std::string question,
-              const std::string options[]) {
-              }
-
-
-void Player::display() {
+Item& Player::useItem() {
+  std::cout << "What item would you like to use? " << std::endl;
 }
 
-
-
-std::string Player::toString() {
+void Player::display() {
 }
