@@ -84,7 +84,7 @@ class Player : public Character {
   * @param [in] name the name of the character
   * @throw bad_input if name is empty
   */
-  Player(std::string name);
+  Player(std::string name, const Item& item);
 
   /**
   * @brief destructor
@@ -117,7 +117,6 @@ class Player : public Character {
 
  private:
   Inventory* inventory;
-
 };
 
 #endif
