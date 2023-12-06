@@ -1,5 +1,5 @@
 /**
- * @Author James Huston [huston@uleth.ca]
+ * @author James Huston [huston@uleth.ca]
  * @date 2023-11
  */
 

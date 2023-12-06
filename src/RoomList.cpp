@@ -1,8 +1,6 @@
 /**
  * @author James Huston [huston@uleth.ca]
  * @date 12/2023
- *
- *
  */
 
 #include <vector>

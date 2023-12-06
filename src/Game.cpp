@@ -1,45 +1,63 @@
-// #include <Room.h>
-// #include <Item.h>
-// #include <Puzzle.h>
-// #include <Character.h>
+/**
+* @author James Huston [huston@uleth.ca]
+* @date 2023-12
+*/
+
+#include <string>
+#include <vector>
 
 
-// Item* key1 = new Item("Attic Key", "");
-// Item* key2 = new Item("Hallway Key", "");
-// Item* key3 = new Item("LivingRoom Key", "");
-// Item* will = new Item("will", "");
-// Item* knife = new Item("knife", "");
+#include "Room.h"
+#include "RoomList.h"
+#include "Puzzle.h"
+#include "Item.h"
+#include "Character.h"
 
-// NPC* witness = new NPC();
-// NPC* brent = new NPC();
-// NPC* officer = new NPC();
+/**
+ * @class Game in Game.h "Game.h"
+ * @details this class will handle
+ * the majority of the game logic, i.e
+ * the output the user will actually see
+ * for future james, in this class
+ * we will add a function to start the 
+ * game, a function to output splash screens
+ * a function to play the game
+ * a function to build all of the npcs
+ * a function to build all of the rooms
+ * a list of all of the rooms (I may use 
+ * another class to manage this)
+ * NPC dave("", "");
+    NPC mick("", "");
+    roomlist->insert(new DialogueRoom("Garden", "its a garden",
+    {"", "", "Front Hall", "", "", ""}, dave));
+ */
+class Game {
+ public:
+  Game();
 
-// Player* user = new Player("James");
+  ~Game();
 
-
-// Puzzle* HallWayOnePuzzle = new ItemPuzzle("need a key to access bedroom");
-// Puzzle* HallwayTwoPuzzle = new ItemPuzzle("need a key to access study");
-// Puzzle* MysteryRoomPuzzle = new DialoguePuzzle("deciepher the code to
-//access ");
-// Puzzle* LibraryPuzzle = new ThinkingPuzzle("deceipher the code");
-// Puzzle* AtticPuzzle = new ItemPuzzle("need a key to access family picture");
-
-
-
-
-
-// Room* Garden = new DialogueRoom("Garden");
-// Room* CoatCloset = new ItemRoom("CoatCloset");
-// Room* BallRoom = new DialogueRoom("BallRoom");
-// Room* HallWay = new ItemPuzzleRoom("HallWay");
-// Room* BedRoom = new ItemRoom("BedRoom");
-// Room* Library = new ThinkingPuzzleRoom("Library");
-// Room* MysteryRoom = new ThinkingPuzzleRoom("MysteryRoom");
-// Room* livingRoom = new ItemPuzzleRoom("livingRoom");
-// Room* Study = new ItemRoom("Study");
-// Room* Stairway = new DialogueRoom("Stairway");
-// Room* Cellar = new DialogueRoom("Cellar");
-// Room* Attic = new ItemPuzzleRoom("Attic");
+  void playGame();
 
 
-// vector<Room*> roomlist();
+
+ private:
+  RoomList* roomlist = new RoomList();
+  std::vector<NPC*> npcList;
+  std::vector<Puzzle*> puzzleList;
+  std::vector<Item*> itemList;
+
+  void displaySplashScreen();
+
+  void setRoomList();
+
+  void setItems();
+
+  void setPuzzles();
+
+  void setNPCs();
+  
+  void readData(std::string&, std::string&, std::string&, std::string start, std::string end);
+
+  void readData(std::string&, std::string&, std::string start, std::string end);
+};

@@ -1,5 +1,6 @@
-/* @Authors - James Huston [jamzhuston@gmail.com]
- * @date 11/2023
+/** 
+ * @author - James Huston [jamzhuston@gmail.com]
+ * @date 11/2023 12/2023
 */
 
 #ifndef ITEM_H_INCLUDED

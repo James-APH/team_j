@@ -1,13 +1,8 @@
 /**
-* @Author James Huston [huston@uleth.ca]
-* @date 2023-11
-*
-*
-*
-*
-*
-*
-*/
+ * @author James Huston [huston@uleth.ca]
+ * @date 12/2023
+ *
+ */
 
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
@@ -46,7 +41,7 @@ class Game {
 
   ~Game();
 
-  void startGame();
+  void playGame();
 
 
 
@@ -65,6 +60,10 @@ class Game {
   void setPuzzles();
 
   void setNPCs();
+  
+  void readData(std::string&, std::string&, std::string&, std::string start, std::string end);
+
+  void readData(std::string&, std::string&, std::string start, std::string end);
 };
 
 

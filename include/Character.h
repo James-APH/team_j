@@ -1,7 +1,7 @@
 /**
-* @Author James Huston [huston@uleth.ca]
-* @date 2023-11
-*/
+ * @author James Huston [huston@uleth.ca]
+ * @date 11/2023 12/2023
+ */
 
 #ifndef CHARACTER_H_INCLUDED
 #define CHARACTER_H_INCLUDED
