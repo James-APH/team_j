@@ -41,9 +41,12 @@ class Game {
   }
   RoomList* setRoomList();
 
+  NPC* setNPCs();
 
  private:
   RoomList* roomlist = new RoomList();
+  NPC* npcList;
+  Puzzle* puzzleList;
 };
 
 
