@@ -17,6 +17,9 @@
 
 Item::Item(std::string name, std::string useLocation,
   std::string description) {
+    this->name = name;
+    this->useLocation = useLocation;
+    this->description = description;
 }
 
 
