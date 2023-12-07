@@ -29,7 +29,7 @@ class Room {
    */
   Room(std::string title = "room"
        , std::string description = "description"
-       , const std::vector<std::string>& connections = {""});
+       , const std::vector<std::string> connections = {""});
 
   /**
    * @brief destructor
@@ -40,26 +40,26 @@ class Room {
    * @brief getter for RoomState
    * @return the state of the room
    */
-  RoomState &getState();
+  virtual RoomState &getState();
 
   /**
    * @brief returns the title of the room
    * @return title the title of the room
   */
-  std::string getTitle() const;
+  virtual std::string getTitle() const;
 
   /**
    * @brief returns the list of all the rooms the room
    * connects to
    * @return list of rooms the room connects to
   */
-  std::vector<std::string> getConnections();
+  virtual std::vector<std::string> getConnections();
 
   /**
    * @brief getter for roomtype
    * @return roomtype the type of room the current is
   */
-  GameTypes::RoomTypes getRoomType() const;
+  virtual GameTypes::RoomTypes getRoomType() const;
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
@@ -108,13 +108,14 @@ class DialogueRoom : public Room {
    */
   DialogueRoom(std::string title
                , std::string description
-               , const std::vector<std::string>& connections
+               , const std::vector<std::string> connections
                , const NPC &fella);
 
   /**
    * @brief destructor
    */
   virtual ~DialogueRoom();
+
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
@@ -137,7 +138,7 @@ class DialogueRoom : public Room {
  * @brief class to hold puzzles that require players
  * to use their brains
  */
-class ThinkingPuzzleRoom : protected Room {
+class ThinkingPuzzleRoom : public Room {
  public:
   /**
    * @brief constructor
@@ -147,7 +148,7 @@ class ThinkingPuzzleRoom : protected Room {
    */
   ThinkingPuzzleRoom(std::string title
                      , std::string description
-                     , const std::vector<std::string>& connections
+                     , const std::vector<std::string> connections
                      , const DialoguePuzzle &dp);
 
   /**
@@ -178,7 +179,7 @@ class ThinkingPuzzleRoom : protected Room {
  * @brief class to hold puzzles that require players
  * to explore the game
  */
-class ItemPuzzleRoom : protected Room {
+class ItemPuzzleRoom : public Room {
  public:
   /**
    * @brief constructor
@@ -188,7 +189,7 @@ class ItemPuzzleRoom : protected Room {
    */
   ItemPuzzleRoom(std::string title
                  , std::string description
-                 , const std::vector<std::string>& connections
+                 , const std::vector<std::string> connections
                  , const ItemPuzzle &ip);
 
   /**
@@ -217,7 +218,7 @@ class ItemPuzzleRoom : protected Room {
  * @class ItemRoom in Room.h "Room.h"
  * @brief class of room where players 'find' items
  */
-class ItemRoom : protected Room {
+class ItemRoom : public Room {
  public:
   /**
    * @brief constructor
@@ -227,7 +228,7 @@ class ItemRoom : protected Room {
    */
   ItemRoom(std::string title
                  , std::string description
-                 , const std::vector<std::string>& connections
+                 , const std::vector<std::string> connections
                  , const Item &i);
 
   /**
