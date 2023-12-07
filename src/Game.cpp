@@ -59,6 +59,9 @@ Game::Game(std::string playerName) {
 Game::~Game() {}
 
 void Game::playGame() {
+  std::cout << currentNode->getNorthNode()->getRoom()->getTitle();
+
+
   std::string playAnswer;
   std::cout << "Would you like to play a game? [y/n]"
    << std::endl;
@@ -88,6 +91,7 @@ void Game::playGame() {
      << std::endl;
     std::cin >> playAnswer;
   }
+  delete currentNode;
 }
 
 void Game::displaySplashScreen(int condition) {
@@ -117,7 +121,7 @@ void Game::moveRoom() {
       currentNode = previousNode;
     }
   } else {
-    std::vector<char> connectionLabels = getConnectionLabels();
+    std::vector<char> connectionLabels(getConnectionLabels());
     getRoomOptions(connectionLabels);
     char newRoom;
     std::cin >> newRoom;
