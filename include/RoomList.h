@@ -187,6 +187,13 @@ class RoomList {
    */
   void insert(Room* room);
 
+
+  /**
+   * @brief makes the room list into a circly linked list
+  */
+  void circley();
+
+
   /**
    * @brief method to be called once all nodes have been set to
    * make the connections between each node.

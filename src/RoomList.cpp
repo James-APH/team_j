@@ -121,39 +121,53 @@ void RoomList::insert(Room *room) {
     }
 }
 
+void RoomList::circley() {
+	auto start = head;
+	while (start->getNextNode() != nullptr) {
+		start = start->getNextNode();
+	}
+	if (start->getNextNode() == nullptr) {
+		start->setNextNode(head);
+	}
+}
+
 void RoomList::solidify() {
-    RoomNode *current = head;
-    RoomNode *temp;
-    while (current != nullptr) {
-        std::vector<std::string> _connections =
-            current->getRoom()->getConnections();
-        temp = current->getNextNode();
-        while (temp != nullptr) {
-            std::string tempTitle = temp->getRoom()->getTitle();
-            if (std::find(_connections.begin(), _connections.end(),
-                    tempTitle) != _connections.end()) {
-                if (_connections[UP] == tempTitle) {
+	RoomNode* current = head;
+	do {
+		std::vector<std::string> tempCons;
+		for (auto a : current->getRoom()->getConnections()) {
+			tempCons.push_back(a);
+		}
+		RoomNode* temp = current->getNextNode();
+		do {
+			std::string tempTitle = temp->getRoom()->getTitle();
+            auto a = (std::find(tempCons.begin(), tempCons.end(), tempTitle));
+            int index = a - tempCons.begin();
+            switch(index) {
+                case 0: 
                     current->setUpNode(temp);
-                } else if (_connections[DOWN] == tempTitle) {
+                break;
+                case 1: 
                     current->setDownNode(temp);
-                } else if (_connections[NORTH] == tempTitle) {
+                break;
+                case 2:
                     current->setNorthNode(temp);
-                } else if (_connections[EAST] == tempTitle) {
+                break;
+                case 3:
                     current->setEastNode(temp);
-                } else if (_connections[SOUTH] == tempTitle) {
+                break;
+                case 4:
                     current->setSouthNode(temp);
-                } else {
+                break;
+                case 5:
                     current->setWestNode(temp);
-                }
-            }
-            temp = temp->getNextNode();
-        }
-        current = current->getNextNode();
-        
-    }
-    delete temp;
-    delete current;
-    
+                break;
+            }		
+			temp = temp->getNextNode();
+		} while (temp != current);
+		
+		current = current->getNextNode();
+	} while (current != head);	
 }
 
 bool RoomList::RoomsDone() {
