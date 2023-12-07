@@ -64,8 +64,8 @@ void Game::playGame() {
    << std::endl;
   std::cin >> playAnswer;
   setCurrentNode(roomlist->getHead());
-  while(playAnswer == "y") {
-    while(currentNode->getRoom()->getTitle() != "End") {
+  while (playAnswer == "y") {
+    while (currentNode->getRoom()->getTitle() != "End") {
         std::cout << "Would you like to move rooms"
                      " or interact with the current"
                      " one? [m/i]" << std::endl;
@@ -91,7 +91,7 @@ void Game::playGame() {
 }
 
 void Game::displaySplashScreen(int condition) {
-  switch(condition) {
+  switch (condition) {
       case 1:
         std::cout << "No Duh" << std::endl;
         break;
@@ -128,7 +128,7 @@ void Game::moveRoom() {
       std::cin >> newRoom;
     }
     previousNode = currentNode;
-    switch(newRoom) {
+    switch (newRoom) {
       case 'u':
         currentNode = currentNode->getUpNode();
       break;
@@ -155,7 +155,7 @@ void Game::getRoomOptions
 (std::vector<char> connectionLabels) {
   std::cout << "Would you like to go to"
                " any of these rooms?\n";
-  for(int i = 0; i < connectionLabels.size(); i++) {
+  for (int i = 0; i < connectionLabels.size(); i++) {
     switch(connectionLabels[i]) {
       case 'u':
         "The " + currentNode->getRoom()->
@@ -232,7 +232,7 @@ RoomNode* Game::getPreviousNode() {
 }
 
 
-  
+
 // void Game::readData(std::string&
 //                   , std::string&, std::string&
 //                   , std::string start

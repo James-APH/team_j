@@ -86,7 +86,7 @@ class Game {
   ItemPuzzle* redItemPuzzle = new ItemPuzzle
   ("This lock requires a red key card", *redKeyCard);
 
-  // Dialogue Puzzle 
+  // Dialogue Puzzle
   DialoguePuzzle* studyPuzzle = new DialoguePuzzle("a", "a");
   DialoguePuzzle* libraryPuzzle = new DialoguePuzzle("b", "b");
   DialoguePuzzle* atticPuzzle = new DialoguePuzzle("c", "c");
@@ -117,10 +117,12 @@ class Game {
 void getRoomOptions(std::vector<char> connectionLabels);
 
 std::vector<char> getConnectionLabels();
-  
-void readData(std::string&, std::string&, std::string&, std::string start, std::string end);
 
-void readData(std::string&, std::string&, std::string start, std::string end);
+// void readData(std::string&, std::string&, std::string&
+//             , std::string start, std::string end);
+
+// void readData(std::string&, std::string&
+//             , std::string start, std::string end);
 };
 
 

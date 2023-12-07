@@ -158,41 +158,41 @@ class RoomNode {
 
  private:
   // up down nesw
-    Room* room;
-    RoomNode* up;
-    RoomNode* down;
-    RoomNode* north;
-    RoomNode* east;
-    RoomNode* south;
-    RoomNode* west;
-    RoomNode* next;
+   Room* room;
+   RoomNode* up;
+   RoomNode* down;
+   RoomNode* north;
+   RoomNode* east;
+   RoomNode* south;
+   RoomNode* west;
+   RoomNode* next;
 };
 
 class RoomList {
  public:
-    /**
+   /**
     * @brief default constructor
     */
-    RoomList();
+   RoomList();
 
-    /**
-     * @brief destructor
+   /**
+    * @brief destructor
     */
-    ~RoomList();
+   ~RoomList();
 
-    /**
+   /**
     * @brief inserts new rooms into the list
     * @param[in] room the room to be added
     */
-    void insert(Room* room);
+   void insert(Room* room);
 
-    /**
-     * @brief method to be called once all nodes have been set to
-     * make the connections between each node.
+   /**
+    * @brief method to be called once all nodes have been set to
+    * make the connections between each node.
     */
-    void solidify();
+   void solidify();
 
-    /**
+   /**
     * @brief checks if all of the rooms have been explored
     * @return true if all of the rooms have been explored
     * false otherwise.
@@ -200,10 +200,10 @@ class RoomList {
     bool RoomsDone();
 
    RoomNode* getHead();
-   
+
  private:
-    RoomNode* head;
-    RoomNode* tail;
+   RoomNode* head;
+   RoomNode* tail;
 };
 
 #endif //ROOMLIST_H_INCLUDED
