@@ -53,25 +53,27 @@ Game::Game(std::string playerName) {
   {"Stairway", "", "", "", "", ""}, *will));
   roomlist->insert(new DialogueRoom("End", "",
   {"", "", "", "", "Crawl Space", ""}, *craig2));
+  roomlist->circley();
   roomlist->solidify();
 }
 
 Game::~Game() {}
 
 void Game::playGame() {
-  std::cout << currentNode->getNorthNode()->getRoom()->getTitle();
-
+  setCurrentNode(roomlist->getHead());
+  std::cout << "Murder Mystery" << std::endl;
 
   std::string playAnswer;
-  std::cout << "Would you like to play a game? [y/n]"
-   << std::endl;
+  std::cout << "Would you like to play a game? [y/n]" << std::endl;
   std::cin >> playAnswer;
   setCurrentNode(roomlist->getHead());
   while (playAnswer == "y") {
     while (currentNode->getRoom()->getTitle() != "End") {
-        std::cout << "Would you like to move rooms"
-                     " or interact with the current"
-                     " one? [m/i]" << std::endl;
+        currentNode->getRoom()->display();
+        std::cout << "Would you like to:"
+                     "\n* Move rooms [m]"
+                     "\n* Interact   [i]"
+                     "\n* View Inven [v]" << std::endl;
         char takeActionChoice;
         std::cin >> takeActionChoice;
       if (takeActionChoice == 'm') {
