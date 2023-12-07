@@ -1,8 +1,8 @@
 /**
  * @author James Huston [huston@uleth.ca]
  * @date 12/2023
- * 
- * 
+ *
+ *
 */
 
 #ifndef ROOMLIST_H_INCLUDED
@@ -73,7 +73,7 @@ class RoomNode {
    * @return if there is a room to the south of the current room
    * returns a pointer to that room.
    * else returns nullptr
-   * 
+   *
    */
   RoomNode* getSouthNode();
 
@@ -88,10 +88,10 @@ class RoomNode {
 
   /**
    * @brief setter for the next node on each roomNode
-   * @details the pointers to other rooms cannot exist 
-   * until the other rooms are created, so on creation 
-   * of each node we set the previous nodes nextNode 
-   * pointer to the current and then to set all of the 
+   * @details the pointers to other rooms cannot exist
+   * until the other rooms are created, so on creation
+   * of each node we set the previous nodes nextNode
+   * pointer to the current and then to set all of the
    * up, down, north... pointers we loop through the singly
    * linked list.
    * @param[in] nextNode the nextNode in the list.
@@ -118,45 +118,47 @@ class RoomNode {
   /**
    * @brief sets the current rooms up pointer
    * @param [in] up the pointer to the room above the current
-   * 
+   *
    */
     void setUpNode(RoomNode* up);
 
   /**
    * @brief sets the current rooms down pointer
    * @param [in] down the pointer to the room below the current
-   * 
+   *
    */
   void setDownNode(RoomNode* down);
 
   /**
    * @brief sets the current rooms north pointer
    * @param [in] north the pointer to the room north of the current
-   * 
+   *
    */
   void setNorthNode(RoomNode* north);
 
   /**
    * @brief sets the current rooms east pointer
    * @param [in] east the pointer to the room east of the current
-   * 
+   *
    */
   void setEastNode(RoomNode* east);
 
   /**
    * @brief sets the current rooms south pointer
    * @param south the pointer to the room south of the current
-   * 
+   *
    */
   void setSouthNode(RoomNode* south);
 
   /**
    * @brief sets the current rooms west pointer
    * @param west the pointer to the room west of the current
-   * 
+   *
    */
   void setWestNode(RoomNode* west);
 
+  void setNodeByIndex(RoomNode* node, int direction);
+    
  private:
   // up down nesw
   Room* room;
@@ -206,7 +208,7 @@ class RoomList {
    * false otherwise.
    */
   bool RoomsDone();
-
+    
   RoomNode* getHead();
 
  private:
@@ -216,3 +218,4 @@ class RoomList {
 };
 
 #endif //ROOMLIST_H_INCLUDED
+
