@@ -19,11 +19,6 @@
 class Puzzle {
  public:
   /**
-  * @brief default constructor 
-  */
-  //Puzzle();
-
-  /**
   * @brief default constructor
   * @param [in] description the description of the puzzle
   */
