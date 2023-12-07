@@ -199,6 +199,8 @@ class RoomList {
     */
     bool RoomsDone();
 
+   RoomNode* getHead();
+   
  private:
     RoomNode* head;
     RoomNode* tail;
