@@ -93,6 +93,8 @@ RoomNode *RoomNode::getNextNode() {
     return next;
 }
 
+
+
 RoomList::RoomList() {
     head = nullptr;
     tail = nullptr;
@@ -156,4 +158,8 @@ bool RoomList::RoomsDone() {
         current = current->getNextNode();
     }
     return true;
+}
+
+RoomNode *RoomList::getHead() {
+    return head;
 }
