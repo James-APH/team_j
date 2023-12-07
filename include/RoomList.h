@@ -202,8 +202,8 @@ class RoomList {
   RoomNode* getHead();
 
  private:
-   RoomNode* head;
-   RoomNode* tail;
+  RoomNode* head;
+  RoomNode* tail;
 };
 
 #endif //ROOMLIST_H_INCLUDED
