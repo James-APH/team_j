@@ -156,7 +156,7 @@ void Game::getRoomOptions
   std::cout << "Would you like to go to"
                " any of these rooms?\n";
   for (int i = 0; i < connectionLabels.size(); i++) {
-    switch (connectionLabels[i]) {
+    switch(connectionLabels[i]) {
       case 'u':
         "The " + currentNode->getRoom()->
         getConnections()[0] + "[u]\n";
