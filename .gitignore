@@ -57,3 +57,4 @@ obj/
 
 # VS Code files
 team_j.code-workspace
+.vscode/settings.json
