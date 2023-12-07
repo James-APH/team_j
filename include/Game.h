@@ -31,35 +31,70 @@
  * a list of all of the rooms (I may use 
  * another class to manage this)
  * NPC dave("", "");
-    NPC mick("", "");
+    
     roomlist->insert(new DialogueRoom("Garden", "its a garden",
     {"", "", "Front Hall", "", "", ""}, dave));
  */
 class Game {
  public:
-  Game();
+  Game(std::string playerName = "Detective");
 
-  ~Game();
+  virtual ~Game();
 
   void playGame();
 
 
 
  private:
+  Player* player;
+
+  RoomNode* currentNode;
+  RoomNode* previousNode;
+
+
+
   RoomList* roomlist = new RoomList();
-  std::vector<NPC*> npcList;
-  std::vector<Puzzle*> puzzleList;
-  std::vector<Item*> itemList;
+  Item* yellowKeyCard = new Item("Key Card", "East Hallway", "It opens doors");
+  Item* blueKeyCard = new Item("Key Card", "North Hallway", "It opens doors");
+  Item* redKeyCard = new Item("Key Card", "West Hallway", "It opens doors");
+  Item* knife = new Item("It's a knife", "Garden End", "It kills people");
+  Item* pictureFrame = new Item("It's a picture", "Garden End", "Hey is that brent");
+  Item* will = new Item("It's a will", "Garden End", "Hey is that brent");
+  Item* map = new Item("Its a map of the building", "Everywhere", "unset");
 
-  void displaySplashScreen();
+  ItemPuzzle* yellowItemPuzzle = new ItemPuzzle("this lock requires a yellow key card", *yellowKeyCard);
+  ItemPuzzle* blueItemPuzzle = new ItemPuzzle("This lock requires a blue key card", *blueKeyCard);
+  ItemPuzzle* redItemPuzzle = new ItemPuzzle("This lock requires a red key card", *redKeyCard);
 
-  void setRoomList();
+  DialoguePuzzle* studyPuzzle = new DialoguePuzzle("a", "a");
+  DialoguePuzzle* libraryPuzzle = new DialoguePuzzle("b", "b");
+  DialoguePuzzle* atticPuzzle = new DialoguePuzzle("c", "c");
 
-  void setItems();
+  NPC* craig = new NPC("Craig", "Craig dialogue");
+  NPC* steph = new NPC("Stephanie", "Steph dialogue");
+  NPC* rose = new NPC("Rose", "Rose dialogue");
+  NPC* brent = new NPC("Brent", "Brent dialogue");
+  NPC* craig2 = new NPC("Craig", "Craig dialogue 2");
 
-  void setPuzzles();
+  void setCurrentNode(RoomNode* currentNode);
 
-  void setNPCs();
+  void setPreviousNode(RoomNode* previousNode);
+
+  RoomNode* getCurrentNode();
+
+  RoomNode* getPreviousNode();
+
+  void displaySplashScreen(int condition);
+
+  char getRoomActionChoice();
+
+  void moveRoom();
+
+  void interact();
+
+  void getRoomOptions(std::vector<char> connectionLabels);
+
+  std::vector<char> getConnectionLabels();
   
   void readData(std::string&, std::string&, std::string&, std::string start, std::string end);
 
