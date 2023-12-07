@@ -1,3 +1,10 @@
+//
+//  Game.hpp
+//  Tester
+//
+//  Created by James Huston on 2023-12-07.
+//
+
 /**
  * @author James Huston [huston@uleth.ca]
  * @date 12/2023
@@ -23,15 +30,15 @@
  * the majority of the game logic, i.e
  * the output the user will actually see
  * for future james, in this class
- * we will add a function to start the 
+ * we will add a function to start the
  * game, a function to output splash screens
  * a function to play the game
  * a function to build all of the npcs
  * a function to build all of the rooms
- * a list of all of the rooms (I may use 
+ * a list of all of the rooms (I may use
  * another class to manage this)
  * NPC dave("", "");
-    
+
     roomlist->insert(new DialogueRoom("Garden", "its a garden",
     {"", "", "Front Hall", "", "", ""}, dave));
  */
@@ -51,7 +58,7 @@ class Game {
   RoomNode* currentNode;
   RoomNode* previousNode;
 
-  
+
 
 
 

@@ -94,8 +94,6 @@ RoomNode *RoomNode::getNextNode() {
     return next;
 }
 
-
-
 RoomList::RoomList() {
     head = nullptr;
     tail = nullptr;
@@ -122,52 +120,52 @@ void RoomList::insert(Room *room) {
 }
 
 void RoomList::circley() {
-	auto start = head;
-	while (start->getNextNode() != nullptr) {
-		start = start->getNextNode();
-	}
-	if (start->getNextNode() == nullptr) {
-		start->setNextNode(head);
-	}
+    auto start = head;
+    while (start->getNextNode() != nullptr) {
+        start = start->getNextNode();
+    }
+    if (start->getNextNode() == nullptr) {
+        start->setNextNode(head);
+    }
 }
 
 void RoomList::solidify() {
-	RoomNode* current = head;
-	do {
-		std::vector<std::string> tempCons;
-		for (auto a : current->getRoom()->getConnections()) {
-			tempCons.push_back(a);
-		}
-		RoomNode* temp = current->getNextNode();
-		do {
-			std::string tempTitle = temp->getRoom()->getTitle();
-			auto a = (std::find(tempCons.begin(), tempCons.end(), tempTitle));
-			int index = a - tempCons.begin();
-			switch(index) {
-				case 0: 
-					current->setUpNode(temp);
-				break;
-				case 1: 
-					current->setDownNode(temp);
-				break;
-				case 2:
-					current->setNorthNode(temp);
-				break;
-				case 3:
-					current->setEastNode(temp);
-				break;
-				case 4:
-					current->setSouthNode(temp);
-				break;
-				case 5:
-					current->setWestNode(temp);
-				break;
-			}		
-			temp = temp->getNextNode();
-		} while (temp != current);
-
-		current = current->getNextNode();
-	} while (current != head);	
+    RoomNode* current = head;
+    do {
+        std::vector<std::string> tempCons;
+        for (auto a : current->getRoom()->getConnections()) {
+            tempCons.push_back(a);
+        }
+        RoomNode* temp = current->getNextNode();
+        do {
+            std::string tempTitle = temp->getRoom()->getTitle();
+            auto a = (std::find(tempCons.begin(), tempCons.end(), tempTitle));
+            int index = a - tempCons.begin();
+            switch(index) {
+                case 0:
+                    current->setUpNode(temp);
+                    break;
+                case 1:
+                    current->setDownNode(temp);
+                    break;
+                case 2:
+                    current->setNorthNode(temp);
+                    break;
+                case 3:
+                    current->setEastNode(temp);
+                    break;
+                case 4:
+                    current->setSouthNode(temp);
+                    break;
+                case 5:
+                    current->setWestNode(temp);
+                    break;
+            }
+            temp = temp->getNextNode();
+        } while (temp != current);
+        
+        current = current->getNextNode();
+    } while (current != head);
 }
 
 bool RoomList::RoomsDone() {
@@ -184,3 +182,4 @@ bool RoomList::RoomsDone() {
 RoomNode *RoomList::getHead() {
     return head;
 }
+
