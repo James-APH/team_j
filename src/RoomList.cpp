@@ -141,31 +141,31 @@ void RoomList::solidify() {
 		RoomNode* temp = current->getNextNode();
 		do {
 			std::string tempTitle = temp->getRoom()->getTitle();
-            auto a = (std::find(tempCons.begin(), tempCons.end(), tempTitle));
-            int index = a - tempCons.begin();
-            switch(index) {
-                case 0: 
-                    current->setUpNode(temp);
-                break;
-                case 1: 
-                    current->setDownNode(temp);
-                break;
-                case 2:
-                    current->setNorthNode(temp);
-                break;
-                case 3:
-                    current->setEastNode(temp);
-                break;
-                case 4:
-                    current->setSouthNode(temp);
-                break;
-                case 5:
-                    current->setWestNode(temp);
-                break;
-            }		
+			auto a = (std::find(tempCons.begin(), tempCons.end(), tempTitle));
+			int index = a - tempCons.begin();
+			switch(index) {
+				case 0: 
+					current->setUpNode(temp);
+				break;
+				case 1: 
+					current->setDownNode(temp);
+				break;
+				case 2:
+					current->setNorthNode(temp);
+				break;
+				case 3:
+					current->setEastNode(temp);
+				break;
+				case 4:
+					current->setSouthNode(temp);
+				break;
+				case 5:
+					current->setWestNode(temp);
+				break;
+			}		
 			temp = temp->getNextNode();
 		} while (temp != current);
-		
+
 		current = current->getNextNode();
 	} while (current != head);	
 }
