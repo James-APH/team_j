@@ -10,6 +10,7 @@
 #include "RoomList.h"
 #include "RoomState.h"
 
+
 RoomNode::RoomNode(Room *r) {
     this->room = r;
     up = nullptr;
@@ -122,31 +123,37 @@ void RoomList::insert(Room *room) {
 
 void RoomList::solidify() {
     RoomNode *current = head;
+    RoomNode *temp;
     while (current != nullptr) {
         std::vector<std::string> _connections =
             current->getRoom()->getConnections();
-        RoomNode *temp = current->getNextNode();
+        temp = current->getNextNode();
         while (temp != nullptr) {
             std::string tempTitle = temp->getRoom()->getTitle();
             if (std::find(_connections.begin(), _connections.end(),
                     tempTitle) != _connections.end()) {
-                if (_connections[0] == tempTitle) {
+                if (_connections[UP] == tempTitle) {
                     current->setUpNode(temp);
-                } else if (_connections[1] == tempTitle) {
+                } else if (_connections[DOWN] == tempTitle) {
                     current->setDownNode(temp);
-                } else if (_connections[2] == tempTitle) {
+                } else if (_connections[NORTH] == tempTitle) {
                     current->setNorthNode(temp);
-                } else if (_connections[3] == tempTitle) {
+                } else if (_connections[EAST] == tempTitle) {
                     current->setEastNode(temp);
-                } else if (_connections[4] == tempTitle) {
-                    current->setWestNode(temp);
-                } else {
+                } else if (_connections[SOUTH] == tempTitle) {
                     current->setSouthNode(temp);
+                } else {
+                    current->setWestNode(temp);
                 }
             }
+            temp = temp->getNextNode();
         }
         current = current->getNextNode();
+        
     }
+    delete temp;
+    delete current;
+    
 }
 
 bool RoomList::RoomsDone() {

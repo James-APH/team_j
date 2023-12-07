@@ -10,6 +10,7 @@
 
 #include "Room.h"
 
+
 class RoomNode {
  public:
   /**
@@ -202,6 +203,7 @@ class RoomList {
   RoomNode* getHead();
 
  private:
+  const int UP = 0, DOWN = 1, NORTH = 2, EAST = 3, SOUTH = 4, WEST = 5;
   RoomNode* head;
   RoomNode* tail;
 };
