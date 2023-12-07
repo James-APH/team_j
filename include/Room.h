@@ -29,7 +29,7 @@ class Room {
    */
   Room(std::string title = "room"
        , std::string description = "description"
-       , const std::vector<std::string> connections = {""});
+       , const std::vector<std::string>& connections = {""});
 
   /**
    * @brief destructor
@@ -108,7 +108,7 @@ class DialogueRoom : public Room {
    */
   DialogueRoom(std::string title
                , std::string description
-               , const std::vector<std::string> connections
+               , const std::vector<std::string>& connections
                , const NPC &fella);
 
   /**
@@ -148,7 +148,7 @@ class ThinkingPuzzleRoom : public Room {
    */
   ThinkingPuzzleRoom(std::string title
                      , std::string description
-                     , const std::vector<std::string> connections
+                     , const std::vector<std::string>& connections
                      , const DialoguePuzzle &dp);
 
   /**
@@ -189,7 +189,7 @@ class ItemPuzzleRoom : public Room {
    */
   ItemPuzzleRoom(std::string title
                  , std::string description
-                 , const std::vector<std::string> connections
+                 , const std::vector<std::string>& connections
                  , const ItemPuzzle &ip);
 
   /**
@@ -228,7 +228,7 @@ class ItemRoom : public Room {
    */
   ItemRoom(std::string title
                  , std::string description
-                 , const std::vector<std::string> connections
+                 , const std::vector<std::string>& connections
                  , const Item &i);
 
   /**
