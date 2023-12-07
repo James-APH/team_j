@@ -21,10 +21,9 @@ class GameTypes {
   };
 
   enum RoomTypes {
-    THINKING_PUZZLE_ROOM,
+    PUZZLE_ROOM,
     DIALOGUE_ROOM,
     ITEM_ROOM,
-    ITEM_PUZZLE_ROOM
   };
 };
 
