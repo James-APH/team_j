@@ -22,21 +22,37 @@ Game::Game(std::string playerName) {
   //            west     east
   //  down          south
   player = new Player(playerName, *map);
-  roomlist->insert(new DialogueRoom("Garden", "", {"", "", "South Hall", "", "", ""}, *craig));
-  roomlist->insert(new ItemRoom("South Hall", "", {"", "", "Ball Room", "", "", ""}, *yellowKeyCard));
-  roomlist->insert(new DialogueRoom("Ball Room", "", {"", "", "North Hall", "East Hall", "South Hall", "Stairway"}, *rose));
-  roomlist->insert(new ItemPuzzleRoom("East Hall", "", {"", "", "", "Library", "Study Room", ""}, *yellowItemPuzzle));
-  roomlist->insert(new ThinkingPuzzleRoom("Study Room", "", {"", "", "East Hall", "", "Cabinet", ""}, *studyPuzzle));
-  roomlist->insert(new ItemRoom("Cabinent", "", {"", "", "Study Room", "", "", ""}, *blueKeyCard));
-  roomlist->insert(new ThinkingPuzzleRoom("Library", "", {"", "", "Secret Passage", "", "", "East Hall"}, *libraryPuzzle));
-  roomlist->insert(new ItemRoom("Secret Passage", "", {"", "", "", "", "Library", ""}, *knife));
-  roomlist->insert(new ItemPuzzleRoom("North Hall", "", {"", "", "", "Bed Room", "Ball Room", ""}, *blueItemPuzzle));
-  roomlist->insert(new DialogueRoom("Bed Room", "", {"", "", "", "North Hall", "", ""}, *steph));
-  roomlist->insert(new DialogueRoom("Stairway", "", {"Attic", "Cellar", "", "Ball Room", "", "", ""}, *brent));
-  roomlist->insert(new ThinkingPuzzleRoom("Attic", "", {"", "Stairway", "Crawl Space", "", "", ""}, *atticPuzzle));
-  roomlist->insert(new ItemRoom("Crawl Space", "", {"", "", "End", "", "Attic", ""}, *pictureFrame));
-  roomlist->insert(new ItemRoom("Cellar", "", {"Stairway", "", "", "", "", ""}, *will));
-  roomlist->insert(new DialogueRoom("End", "", {"", "", "", "", "Crawl Space", ""}, *craig2));
+  roomlist->insert(new DialogueRoom("Garden", "",
+  {"", "", "South Hall", "", "", ""}, *craig));
+  roomlist->insert(new ItemRoom("South Hall", "",
+  {"", "", "Ball Room", "", "", ""}, *yellowKeyCard));
+  roomlist->insert(new DialogueRoom("Ball Room", "",
+  {"", "", "North Hall", "East Hall"
+  , "South Hall", "Stairway"}, *rose));
+  roomlist->insert(new ItemPuzzleRoom("East Hall", "",
+  {"", "", "", "Library", "Study Room", ""}, *yellowItemPuzzle));
+  roomlist->insert(new ThinkingPuzzleRoom("Study Room", "",
+  {"", "", "East Hall", "", "Cabinet", ""}, *studyPuzzle));
+  roomlist->insert(new ItemRoom("Cabinent", "",
+  {"", "", "Study Room", "", "", ""}, *blueKeyCard));
+  roomlist->insert(new ThinkingPuzzleRoom("Library", "",
+  {"", "", "Secret Passage", "", "", "East Hall"}, *libraryPuzzle));
+  roomlist->insert(new ItemRoom("Secret Passage", "",
+  {"", "", "", "", "Library", ""}, *knife));
+  roomlist->insert(new ItemPuzzleRoom("North Hall", "",
+  {"", "", "", "Bed Room", "Ball Room", ""}, *blueItemPuzzle));
+  roomlist->insert(new DialogueRoom("Bed Room", "",
+  {"", "", "", "North Hall", "", ""}, *steph));
+  roomlist->insert(new DialogueRoom("Stairway", "",
+  {"Attic", "Cellar", "", "Ball Room", "", "", ""}, *brent));
+  roomlist->insert(new ThinkingPuzzleRoom("Attic", "",
+  {"", "Stairway", "Crawl Space", "", "", ""}, *atticPuzzle));
+  roomlist->insert(new ItemRoom("Crawl Space", "",
+  {"", "", "End", "", "Attic", ""}, *pictureFrame));
+  roomlist->insert(new ItemRoom("Cellar", "",
+  {"Stairway", "", "", "", "", ""}, *will));
+  roomlist->insert(new DialogueRoom("End", "",
+  {"", "", "", "", "Crawl Space", ""}, *craig2));
   roomlist->solidify();
 }
 
@@ -44,7 +60,8 @@ Game::~Game() {}
 
 void Game::playGame() {
   std::string playAnswer;
-  std::cout << "Would you like to play a game? [y/n]" << std::endl;
+  std::cout << "Would you like to play a game? [y/n]"
+   << std::endl;
   std::cin >> playAnswer;
   setCurrentNode(roomlist->getHead());
   while(playAnswer == "y") {
@@ -54,18 +71,21 @@ void Game::playGame() {
                      " one? [m/i]" << std::endl;
         char takeActionChoice;
         std::cin >> takeActionChoice;
-      if (takeActionChoice = 'm') {
+      if (takeActionChoice == 'm') {
         moveRoom();
       } else {
         interact();
       }
     }
     int murderAnswer;
-    std::cout << "Who do you think did it?\n" << std::endl;
-    std::cout << "1 - Brent\n2 - Rose\n3 - Stephanie\n4 - Craig" << std::endl;
+    std::cout << "Who do you think did it?\n"
+     << std::endl;
+    std::cout << "1 - Brent\n2 - Rose\n3 - Stephanie\n4 - Craig"
+     << std::endl;
     std::cin >> murderAnswer;
     displaySplashScreen(murderAnswer);
-    std::cout << "Would you like to play again? [y/n]" << std::endl;
+    std::cout << "Would you like to play again? [y/n]"
+     << std::endl;
     std::cin >> playAnswer;
   }
 }
@@ -82,7 +102,8 @@ void Game::displaySplashScreen(int condition) {
         std::cout << "wrong" << std::endl;
         break;
       case 4:
-        std::cout << "Craig will remember this" << std::endl;
+        std::cout << "Craig will remember this"
+        << std::endl;
         break;
   }
 }
@@ -130,27 +151,35 @@ void Game::moveRoom() {
   }
 }
 
-void Game::getRoomOptions(std::vector<char> connectionLabels) {
-  std::cout << "Would you like to go to any of these rooms?\n";
+void Game::getRoomOptions
+(std::vector<char> connectionLabels) {
+  std::cout << "Would you like to go to"
+               " any of these rooms?\n";
   for(int i = 0; i < connectionLabels.size(); i++) {
     switch(connectionLabels[i]) {
       case 'u':
-        "The " + currentNode->getRoom()->getConnections()[0] + "[u]\n";
+        "The " + currentNode->getRoom()->
+        getConnections()[0] + "[u]\n";
       break;
       case 'd':
-        "The " + currentNode->getRoom()->getConnections()[1] + "[d]\n";
+        "The " + currentNode->getRoom()->
+        getConnections()[1] + "[d]\n";
       break;
       case 'n':
-        "The " + currentNode->getRoom()->getConnections()[2] + "[n]\n";
+        "The " + currentNode->getRoom()->
+        getConnections()[2] + "[n]\n";
       break;
       case 'e':
-        "The " + currentNode->getRoom()->getConnections()[3] + "[e]\n";
+        "The " + currentNode->getRoom()->
+        getConnections()[3] + "[e]\n";
       break;
       case 's':
-        "The " + currentNode->getRoom()->getConnections()[4] + "[s]\n";
+        "The " + currentNode->getRoom()->
+        getConnections()[4] + "[s]\n";
       break;
       case 'w':
-        "The " + currentNode->getRoom()->getConnections()[5] + "[w]\n";
+        "The " + currentNode->getRoom()->
+        getConnections()[5] + "[w]\n";
       break;
     }
   }
@@ -158,30 +187,39 @@ void Game::getRoomOptions(std::vector<char> connectionLabels) {
 
 std::vector<char> Game::getConnectionLabels() {
   std::vector<char> connectionLabels;
-    if (currentNode->getRoom()->getConnections()[0] != "")
+    if (currentNode->getRoom()->
+    getConnections()[0] != "")
       connectionLabels.push_back('u');
-    if (currentNode->getRoom()->getConnections()[1] != "")
+    if (currentNode->getRoom()->
+    getConnections()[1] != "")
       connectionLabels.push_back('d');
-    if (currentNode->getRoom()->getConnections()[2] != "")
+    if (currentNode->getRoom()->
+    getConnections()[2] != "")
       connectionLabels.push_back('n');
-    if (currentNode->getRoom()->getConnections()[3] != "")
+    if (currentNode->getRoom()->
+    getConnections()[3] != "")
       connectionLabels.push_back('e');
-    if (currentNode->getRoom()->getConnections()[4] != "")
+    if (currentNode->getRoom()->
+    getConnections()[4] != "")
       connectionLabels.push_back('s');
-    if (currentNode->getRoom()->getConnections()[5] != "")
+    if (currentNode->getRoom()->
+    getConnections()[5] != "")
       connectionLabels.push_back('w');
   return connectionLabels;
 }
 
 void Game::interact() {
-  currentNode->getRoom()->playerTakeAction(player);
+  currentNode->getRoom()->
+  playerTakeAction(player);
 }
 
-void Game::setCurrentNode(RoomNode* currentNode) {
+void Game::setCurrentNode
+(RoomNode* currentNode) {
   this->currentNode = currentNode;
 }
 
-void Game::setPreviousNode(RoomNode* previousNode) {
+void Game::setPreviousNode
+(RoomNode* previousNode) {
   this->previousNode = previousNode;
 }
 
@@ -195,10 +233,12 @@ RoomNode* Game::getPreviousNode() {
 
 
   
-// void Game::readData(std::string&, std::string&, std::string&
-//                   , std::string start, std::string end) {
+// void Game::readData(std::string&
+//                   , std::string&, std::string&
+//                   , std::string start
+//                   , std::string end) {
 // }
 
 // void Game::readData(std::string&, std::string&
-//                   , std::string start, std::string end) {
+//              , std::string start, std::string end) {
 //}

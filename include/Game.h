@@ -54,22 +54,44 @@ class Game {
 
 
   RoomList* roomlist = new RoomList();
-  Item* yellowKeyCard = new Item("Key Card", "East Hallway", "It opens doors");
-  Item* blueKeyCard = new Item("Key Card", "North Hallway", "It opens doors");
-  Item* redKeyCard = new Item("Key Card", "West Hallway", "It opens doors");
-  Item* knife = new Item("It's a knife", "Garden End", "It kills people");
-  Item* pictureFrame = new Item("It's a picture", "Garden End", "Hey is that brent");
-  Item* will = new Item("It's a will", "Garden End", "Hey is that brent");
-  Item* map = new Item("Its a map of the building", "Everywhere", "unset");
+  // Item declarations:
+  Item* yellowKeyCard = new Item
+  ("Key Card", "East Hallway", "It opens doors");
 
-  ItemPuzzle* yellowItemPuzzle = new ItemPuzzle("this lock requires a yellow key card", *yellowKeyCard);
-  ItemPuzzle* blueItemPuzzle = new ItemPuzzle("This lock requires a blue key card", *blueKeyCard);
-  ItemPuzzle* redItemPuzzle = new ItemPuzzle("This lock requires a red key card", *redKeyCard);
+  Item* blueKeyCard = new Item
+  ("Key Card", "North Hallway", "It opens doors");
 
+  Item* redKeyCard = new Item
+  ("Key Card", "West Hallway", "It opens doors");
+
+  Item* knife = new Item
+  ("It's a knife", "Garden End", "It kills people");
+
+  Item* pictureFrame = new Item
+  ("It's a picture", "Garden End", "Hey is that brent");
+
+  Item* will = new Item
+  ("It's a will", "Garden End", "Hey is that brent");
+
+  Item* map = new Item
+  ("Its a map of the building", "Everywhere", "unset");
+
+  // Item puzzle declarations:
+  ItemPuzzle* yellowItemPuzzle = new ItemPuzzle
+  ("this lock requires a yellow key card", *yellowKeyCard);
+
+  ItemPuzzle* blueItemPuzzle = new ItemPuzzle
+  ("This lock requires a blue key card", *blueKeyCard);
+
+  ItemPuzzle* redItemPuzzle = new ItemPuzzle
+  ("This lock requires a red key card", *redKeyCard);
+
+  // Dialogue Puzzle 
   DialoguePuzzle* studyPuzzle = new DialoguePuzzle("a", "a");
   DialoguePuzzle* libraryPuzzle = new DialoguePuzzle("b", "b");
   DialoguePuzzle* atticPuzzle = new DialoguePuzzle("c", "c");
 
+  // NPC declarations
   NPC* craig = new NPC("Craig", "Craig dialogue");
   NPC* steph = new NPC("Stephanie", "Steph dialogue");
   NPC* rose = new NPC("Rose", "Rose dialogue");
@@ -92,13 +114,13 @@ class Game {
 
   void interact();
 
-  void getRoomOptions(std::vector<char> connectionLabels);
+void getRoomOptions(std::vector<char> connectionLabels);
 
-  std::vector<char> getConnectionLabels();
+std::vector<char> getConnectionLabels();
   
-  void readData(std::string&, std::string&, std::string&, std::string start, std::string end);
+void readData(std::string&, std::string&, std::string&, std::string start, std::string end);
 
-  void readData(std::string&, std::string&, std::string start, std::string end);
+void readData(std::string&, std::string&, std::string start, std::string end);
 };
 
 
