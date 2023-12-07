@@ -24,7 +24,6 @@ Room::Room(std::string title, std::string description,
     this->description = description;
   if (!connections.empty())
     this->connections = connections;
-  
 }
 
 Room::~Room() {

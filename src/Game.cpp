@@ -110,7 +110,7 @@ void Game::displaySplashScreen(int condition) {
 
 void Game::moveRoom() {
   if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM) {
-    if(currentNode->getRoom()->getState().isExplored() &&
+    if (currentNode->getRoom()->getState().isExplored() &&
        !currentNode->getRoom()->getState().roomDone()) {
       std::cout << "The current room has not been finished you can"
                    " only move to the previous" << std::endl;
@@ -121,7 +121,7 @@ void Game::moveRoom() {
     getRoomOptions(connectionLabels);
     char newRoom;
     std::cin >> newRoom;
-    while(std::find(connectionLabels.begin(),
+    while (std::find(connectionLabels.begin(),
                     connectionLabels.end(), newRoom) ==
                     connectionLabels.end()) {
       std::cout << "Please enter a valid room:";
@@ -156,7 +156,7 @@ void Game::getRoomOptions
   std::cout << "Would you like to go to"
                " any of these rooms?\n";
   for (int i = 0; i < connectionLabels.size(); i++) {
-    switch(connectionLabels[i]) {
+    switch (connectionLabels[i]) {
       case 'u':
         "The " + currentNode->getRoom()->
         getConnections()[0] + "[u]\n";
