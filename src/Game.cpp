@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
 
 #include "Room.h"
 #include "RoomList.h"
@@ -123,96 +124,82 @@ void Game::moveRoom() {
       currentNode = previousNode;
     }
   } else {
-    std::vector<char> connectionLabels(getConnectionLabels());
-    getRoomOptions(connectionLabels);
-    char newRoom;
-    std::cin >> newRoom;
-    while (std::find(connectionLabels.begin(),
-                    connectionLabels.end(), newRoom) ==
-                    connectionLabels.end()) {
-      std::cout << "Please enter a valid room:";
-      std::cin >> newRoom;
+    std::vector<unsigned> pathways(getPathways());
+    listRoomOptions(pathways);
+    int move;
+    std::cin >> move;
+    if (move < UP || move > WEST) {
+      while (move < UP || move > WEST) {
+        std::cout << "Please enter a valid room:";
+        std::cin >> move;
+      }
     }
     previousNode = currentNode;
-    switch (newRoom) {
-      case 'u':
-        currentNode = currentNode->getUpNode();
-      break;
-      case 'd':
-        currentNode = currentNode->getDownNode();
-      break;
-      case 'n':
-        currentNode = currentNode->getNorthNode();
-      break;
-      case 'e':
-        currentNode = currentNode->getEastNode();
-      break;
-      case 's':
-        currentNode = currentNode->getSouthNode();
-      break;
-      case 'w':
-        currentNode = currentNode->getWestNode();
-      break;
+    if (move == UP) {
+      currentNode = currentNode->getUpNode();
+    } else if (move == DOWN) {
+      currentNode = currentNode->getDownNode();
+    } else if (move == NORTH) {
+      currentNode = currentNode->getNorthNode();
+    } else if (move == EAST) {
+      currentNode = currentNode->getEastNode();
+    } else if (move == SOUTH) {
+      currentNode = currentNode->getSouthNode();
+    } else {
+      currentNode = currentNode->getWestNode();
     }
   }
 }
 
-void Game::getRoomOptions
-(std::vector<char> connectionLabels) {
-  std::cout << "Would you like to go to"
-               " any of these rooms?\n";
-  for (int i = 0; i < connectionLabels.size(); i++) {
-    switch(connectionLabels[i]) {
-      case 'u':
-        "The " + currentNode->getRoom()->
-        getConnections()[0] + "[u]\n";
-      break;
-      case 'd':
-        "The " + currentNode->getRoom()->
-        getConnections()[1] + "[d]\n";
-      break;
-      case 'n':
-        "The " + currentNode->getRoom()->
-        getConnections()[2] + "[n]\n";
-      break;
-      case 'e':
-        "The " + currentNode->getRoom()->
-        getConnections()[3] + "[e]\n";
-      break;
-      case 's':
-        "The " + currentNode->getRoom()->
-        getConnections()[4] + "[s]\n";
-      break;
-      case 'w':
-        "The " + currentNode->getRoom()->
-        getConnections()[5] + "[w]\n";
-      break;
+std::vector<unsigned>& Game::getPathways() {
+  std::vector<unsigned> pathways;
+  for (int i = 0; i < 6; i++) {
+    if(currentNode->getRoom()->getConnections()[i] != "") {
+      pathways.push_back(i);
     }
   }
+  return pathways;
 }
 
-std::vector<char> Game::getConnectionLabels() {
-  std::vector<char> connectionLabels;
-    if (currentNode->getRoom()->
-    getConnections()[0] != "")
-      connectionLabels.push_back('u');
-    if (currentNode->getRoom()->
-    getConnections()[1] != "")
-      connectionLabels.push_back('d');
-    if (currentNode->getRoom()->
-    getConnections()[2] != "")
-      connectionLabels.push_back('n');
-    if (currentNode->getRoom()->
-    getConnections()[3] != "")
-      connectionLabels.push_back('e');
-    if (currentNode->getRoom()->
-    getConnections()[4] != "")
-      connectionLabels.push_back('s');
-    if (currentNode->getRoom()->
-    getConnections()[5] != "")
-      connectionLabels.push_back('w');
-  return connectionLabels;
+
+void Game::listRoomOptions(std::vector<unsigned> pathways) {
+  std::cout << "Would you like to go to any of these rooms?" << std::endl;
+  for(auto a : pathways) {
+    if (a == 0) {
+      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
+                << std::setw(15)
+                << std::left << " [" << UP << "]"
+                << std::endl;
+    } else if (a == 1) {
+      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
+                << std::setw(15)
+                << std::left << " [" << DOWN << "]"
+                << std::endl;
+    } else if (a == 2) {
+      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
+                << std::setw(15)
+                << std::left << " [" << NORTH << "]"
+                << std::endl;
+    } else if (a == 3) {
+      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
+                << std::setw(15)
+                << std::left << " [" << EAST << "]"
+                << std::endl;
+    } else if (a == 4) {
+      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
+                << std::setw(15)
+                << std::left << " [" << SOUTH << "]"
+                << std::endl;
+    } else {
+      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
+                << std::setw(15)
+                << std::left << " [" << WEST << "]"
+                << std::endl;
+    }
+  }  
 }
+
+
 
 void Game::interact() {
   currentNode->getRoom()->

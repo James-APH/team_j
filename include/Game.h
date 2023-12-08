@@ -53,6 +53,8 @@ class Game {
 
 
  private:
+  const int UP = 0, DOWN = 1, NORTH = 2, EAST = 3, SOUTH = 4, WEST = 5;
+
   Player* player;
 
   RoomNode* currentNode;
@@ -123,9 +125,10 @@ class Game {
 
   void interact();
 
-void getRoomOptions(std::vector<char> connectionLabels);
+  std::vector<unsigned>& Game::getPathways();
 
-std::vector<char> getConnectionLabels();
+
+  void Game::listRoomOptions(std::vector<unsigned> pathways);
 
 // void readData(std::string&, std::string&, std::string&
 //             , std::string start, std::string end);
