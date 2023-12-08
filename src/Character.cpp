@@ -1,5 +1,6 @@
 /**
 * @author James Huston [huston@uleth.ca]
+* @author Raven Huery [raven.huery@uleth.ca]
 * @date 2023-11
 */
 
@@ -40,22 +41,14 @@ NPC::NPC(std::string name, std::string dialogue) : Character(name) {
     fileName = "src/GameText/people/brent.txt";
   }
 
-  std::cout << "fileName is " << fileName << '\n';
-
-  int i = 0;
-
   std::ifstream fs;
   fs.open(fileName);
   std::string line;
   std::string temp;
-  std::cout << "this is before the while loop, if you see no text we are not in there" << '\n';
   while (!fs.eof()) {
     getline(fs, line);
-    std::cout << "We are getting the line! line is: " << line << '\n';
-    std::cout << "i is " << i << '\n';
     temp += line;
     temp.push_back('\n');
-    ++i;
   }
   this->dialogue = temp;
 
