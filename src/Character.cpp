@@ -130,11 +130,14 @@ Item& Player::useItem() {
   std::cout << "Enter the name of the item you'd like to use,\n"
                "Otherwise enter q to quit!" << std::endl;
   std::cin >> itemName;
-  if (!findItem(itemName) && itemName != "q") {
-    while (findItem(itemName) == false && itemName != "q") {
+  if (!findItem(itemName) && itemName != "q") { //item is not in inv or not q
+    while (!findItem(itemName) || itemName != "q") {
         std::cout << "Enter the name of the item you'd like to use\n"
                "Otherwise enter q to quit!" << std::endl;
         std::cin >> itemName;
+        if (itemName == "q") {
+          break;
+        }
     }
   }
   if (itemName != "q") {

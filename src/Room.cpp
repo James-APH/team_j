@@ -1,5 +1,6 @@
 /**
- * @Author James Huston [huston@uleth.ca]
+ * @author James Huston [huston@uleth.ca]
+ * @author Raven Huery [raven.huery@uleth.ca]
  * @date 2023-11
  */
 
@@ -153,6 +154,7 @@ void ThinkingPuzzleRoom::display() const {
 }
 
 //------------------------------------------------------------------------
+//You can't leave and you can't use item
 
 ItemPuzzleRoom::ItemPuzzleRoom(std::string title, std::string description,
     const std::vector<std::string>& connections, const ItemPuzzle &ip) :
@@ -165,36 +167,49 @@ ItemPuzzleRoom::~ItemPuzzleRoom() {
 }
 
 bool ItemPuzzleRoom::playerTakeAction(Player *player) {
-  char input;
-  std::cout << "Do you have the item required"
-    " detective? [y/n]" << std::endl;
+  std::string input;
+  std::cout << "Would you like to solve the puzzle or leave [s/l]" << std::endl;
   std::cin >> input;
-  if (input != 'y' && input != 'n') {
-    while (input != 'y' && input != 'n') {
-      std::cout << "Do you have the item required"
-        " detective? [y/n]" << std::endl;
+
+  if (input != "s" && input != "l") {
+    while (input != "s" && input != "l") {
+      std::cout << "Would you like to solve the puzzle or leave [s/l]" << std::endl;
       std::cin >> input;
     }
   }
-  if (input == 'y') {
-    std::cout << ip->toString() << std::endl;
+  if (input == "s") {
     std::string answer;
-    while (!ip->wasSolved()) {
-      std::cout << "Give the correct item or enter [q] to leave"
-        << std::endl;
-      if (answer == "q") {
-        break;
-      } else {
-        ip->checkItem(player->useItem());
+    std::cout << ip->toString() << std::endl;
+    std::cout << "Open inventory to use item, or exit [u/e]" << std::endl;
+    std::cin >> answer;
+    if (answer != "u" && answer != "e") {
+      while (answer != "u" && answer != "e") {
+        std::cout << "Enter [u] or [e]" << std::endl;
+        std::cin >> answer;
       }
     }
-    if (ip->wasSolved()) {
-      state = new FullyExploredRoom();
-      return true;
+    if (answer == "u") {
+      std::string quitCondition;
+      while (!ip->wasSolved()) {
+          ip->checkItem(player->useItem());
+          std::cout << "Enter [i] to inspect you inventory again\n"
+                       "Or enter [q] to quit" << std::endl;
+          std::cin >> quitCondition;
+          if (quitCondition == "q") {
+            break;
+          }
+      }
+      if (ip->wasSolved()) {
+        state = new FullyExploredRoom();
+        return true;
+      }
     }
   }
-    state = new ExploredRoom();
-    return false;
+
+
+
+  state = new ExploredRoom();
+  return false;
 }
 
 void ItemPuzzleRoom::display() const {
