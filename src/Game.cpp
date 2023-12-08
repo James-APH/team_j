@@ -79,9 +79,10 @@ void Game::playGame() {
         std::cin >> takeActionChoice;
       if (takeActionChoice == 'm') {
         moveRoom();
-      } else {
+      } else if (takeActionChoice == 'i'){
         interact();
-      }
+      } else if (takeActionChoice == 'v'){
+        inventory();
     }
     int murderAnswer;
     std::cout << "Who do you think did it?\n"
@@ -95,6 +96,11 @@ void Game::playGame() {
     std::cin >> playAnswer;
   }
   delete currentNode;
+}
+}
+
+void Game::inventory() {
+  player->listInventory();
 }
 
 void Game::displaySplashScreen(int condition) {
