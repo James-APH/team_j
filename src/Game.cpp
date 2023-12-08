@@ -151,14 +151,14 @@ void Game::moveRoom() {
   }
 }
 
-std::vector<unsigned>& Game::getPathways() {
-  std::vector<unsigned> pathways;
+std::vector<unsigned> Game::getPathways() {
+  std::vector<unsigned> path;
   for (int i = 0; i < 6; i++) {
     if(currentNode->getRoom()->getConnections()[i] != "") {
-      pathways.push_back(i);
+      path.push_back(i);
     }
   }
-  return pathways;
+  return path;
 }
 
 
@@ -166,34 +166,28 @@ void Game::listRoomOptions(std::vector<unsigned> pathways) {
   std::cout << "Would you like to go to any of these rooms?" << std::endl;
   for(auto a : pathways) {
     if (a == 0) {
-      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
-                << std::setw(15)
-                << std::left << " [" << UP << "]"
+      std::cout << std::setw(15) << std::right << currentNode->getUpNode()->getRoom()->getTitle()
+                << " [" << UP << "]"
                 << std::endl;
     } else if (a == 1) {
-      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
-                << std::setw(15)
-                << std::left << " [" << DOWN << "]"
+      std::cout << std::setw(15) << std::right <<  currentNode->getDownNode()->getRoom()->getTitle()
+                << " [" << DOWN << "]"
                 << std::endl;
     } else if (a == 2) {
-      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
-                << std::setw(15)
-                << std::left << " [" << NORTH << "]"
+      std::cout << std::setw(15) << std::right <<  currentNode->getNorthNode()->getRoom()->getTitle()
+                << " [" << NORTH << "]"
                 << std::endl;
     } else if (a == 3) {
-      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
-                << std::setw(15)
-                << std::left << " [" << EAST << "]"
+      std::cout << std::setw(15) << std::right << currentNode->getEastNode()->getRoom()->getTitle()
+                << " [" << EAST << "]"
                 << std::endl;
     } else if (a == 4) {
-      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
-                << std::setw(15)
-                << std::left << " [" << SOUTH << "]"
+      std::cout << std::setw(15) << std::right << currentNode->getSouthNode()->getRoom()->getTitle()
+                << " [" << SOUTH << "]"
                 << std::endl;
     } else {
-      std::cout << currentNode->getNorthNode()->getRoom()->getTitle()
-                << std::setw(15)
-                << std::left << " [" << WEST << "]"
+      std::cout << std::setw(15) << std::right << currentNode->getWestNode()->getRoom()->getTitle()
+                << " [" << WEST << "]"
                 << std::endl;
     }
   }  

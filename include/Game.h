@@ -125,10 +125,10 @@ class Game {
 
   void interact();
 
-  std::vector<unsigned>& Game::getPathways();
+  std::vector<unsigned> getPathways();
 
 
-  void Game::listRoomOptions(std::vector<unsigned> pathways);
+  void listRoomOptions(std::vector<unsigned> pathways);
 
 // void readData(std::string&, std::string&, std::string&
 //             , std::string start, std::string end);
