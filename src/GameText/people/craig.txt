@@ -1,0 +1,15 @@
+"Hello. I assume you are the detective I called. We have a small problem
+and we need you to fix it. The wife of the owner was found dead in the
+ballroom. The party is still going on so we need you to be discrete.
+
+There are nine rooms we need you to look into to find who did this.
+We are not sure who did or when it happened but that is what you do right?
+
+There is a help file when you need to reference things (ADD KEYBIND HERE).
+You are able to make your guess at the end of the game.
+
+Should you need anything you the owner Scott should be around somehwere.
+He always needs to be doing something.
+His wife's name was Diane.
+
+Good luck and thank you."
