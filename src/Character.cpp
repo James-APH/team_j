@@ -8,6 +8,8 @@
 #include <iomanip>
 #include <algorithm>
 #include <list>
+#include <fstream>
+#include <limits>
 
 #include "Item.h"
 #include "Character.h"
@@ -27,9 +29,37 @@ std::string Character::getName() {
 }
 
 NPC::NPC(std::string name, std::string dialogue) : Character(name) {
-  if (dialogue != "") {
-    this->dialogue = dialogue;
+  std::string fileName;
+  if (name == "Craig" || name == "Craig2") {
+    fileName = "src/GameText/people/craig.txt";
+  } else if (name == "Stephanie" || name == "stephanie") {
+    fileName = "src/GameText/people/stephanie.txt";
+  } else if (name == "Rose" || name == "rose") {
+    fileName = "src/GameText/people/rose.txt";
+  } else if (name == "Brent" || name == "brent") {
+    fileName = "src/GameText/people/brent.txt";
   }
+
+  std::cout << "fileName is " << fileName << '\n';
+
+  int i = 0;
+
+  std::ifstream fs;
+  fs.open(fileName);
+  std::string line;
+  std::string temp;
+  std::cout << "this is before the while loop, if you see no text we are not in there" << '\n';
+  while (!fs.eof()) {
+    getline(fs, line);
+    std::cout << "We are getting the line! line is: " << line << '\n';
+    std::cout << "i is " << i << '\n';
+    temp += line;
+    temp.push_back('\n');
+    ++i;
+  }
+  this->dialogue = temp;
+
+  fs.close();
 }
 
 NPC::NPC(const NPC &fella) {
@@ -45,6 +75,7 @@ void NPC::display() const {
   stringReader << "Hello detective, my name is "
    << name << "!" << '\n';
   stringReader << dialogue << std::endl;
+
   std::cout << stringReader.str() << std::endl;
 }
 

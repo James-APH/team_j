@@ -1,3 +1,20 @@
+/home/huer2720/team_j/include/Character.h:15: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Character.h:41: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Character.h:73: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Game.h:28: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/GameTypes.h:12: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Item.h:13: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Puzzle.h:16: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Puzzle.h:51: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Puzzle.h:98: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:20: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:95: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:137: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:178: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:218: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/RoomState.h:9: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/RoomList.h:174: warning: Compound RoomList is not documented.
+/home/huer2720/team_j/include/Puzzle.h:79: warning: Found unknown command '@detail'
 /home/huer2720/team_j/include/Character.h:28: warning: Member getName() (function) of class Character is not documented.
 /home/huer2720/team_j/include/Character.h:36: warning: Member name (variable) of class Character is not documented.
 /home/huer2720/team_j/include/Character.h:37: warning: Member dialogue (variable) of class Character is not documented.
@@ -21,38 +38,46 @@
   parameter 'player'
 /home/huer2720/team_j/include/Game.h:47: warning: Member Game(std::string playerName="Detective") (function) of class Game is not documented.
 /home/huer2720/team_j/include/Game.h:51: warning: Member playGame() (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:110: warning: Member setCurrentNode(RoomNode *currentNode) (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:112: warning: Member setPreviousNode(RoomNode *previousNode) (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:114: warning: Member getCurrentNode() (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:116: warning: Member getPreviousNode() (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:118: warning: Member displaySplashScreen(int condition) (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:120: warning: Member getRoomActionChoice() (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:122: warning: Member moveRoom() (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:124: warning: Member interact() (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:126: warning: Member getRoomOptions(std::vector< char > connectionLabels) (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:128: warning: Member getConnectionLabels() (function) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:56: warning: Member player (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:58: warning: Member currentNode (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:59: warning: Member previousNode (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:65: warning: Member roomlist (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:67: warning: Member yellowKeyCard (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:70: warning: Member blueKeyCard (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:73: warning: Member redKeyCard (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:76: warning: Member knife (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:79: warning: Member pictureFrame (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:82: warning: Member will (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:85: warning: Member map (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:89: warning: Member yellowItemPuzzle (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:92: warning: Member blueItemPuzzle (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:95: warning: Member redItemPuzzle (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:99: warning: Member studyPuzzle (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:100: warning: Member libraryPuzzle (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:101: warning: Member atticPuzzle (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:104: warning: Member craig (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:105: warning: Member steph (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:106: warning: Member rose (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:107: warning: Member brent (variable) of class Game is not documented.
-/home/huer2720/team_j/include/Game.h:108: warning: Member craig2 (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:112: warning: Member setCurrentNode(RoomNode *currentNode) (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:114: warning: Member setPreviousNode(RoomNode *previousNode) (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:116: warning: Member getCurrentNode() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:118: warning: Member getPreviousNode() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:120: warning: Member accuse() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:122: warning: Member inventory() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:124: warning: Member displaySplashScreen(int condition) (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:126: warning: Member getRoomActionChoice() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:128: warning: Member moveRoom() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:130: warning: Member interact() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:132: warning: Member getPathways() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:135: warning: Member listRoomOptions(std::vector< unsigned > pathways) (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member UP (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member DOWN (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member NORTH (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member EAST (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member SOUTH (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member WEST (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:58: warning: Member player (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:60: warning: Member currentNode (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:61: warning: Member previousNode (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:67: warning: Member roomlist (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:69: warning: Member yellowKeyCard (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:72: warning: Member blueKeyCard (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:75: warning: Member redKeyCard (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:78: warning: Member knife (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:81: warning: Member pictureFrame (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:84: warning: Member will (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:87: warning: Member map (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:91: warning: Member yellowItemPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:94: warning: Member blueItemPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:97: warning: Member redItemPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:101: warning: Member studyPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:102: warning: Member libraryPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:103: warning: Member atticPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:106: warning: Member craig (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:107: warning: Member steph (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:108: warning: Member rose (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:109: warning: Member brent (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:110: warning: Member craig2 (variable) of class Game is not documented.
 /home/huer2720/team_j/include/GameTypes.h:18: warning: Member PuzzleTypes (enumeration) of class GameTypes is not documented.
 /home/huer2720/team_j/include/GameTypes.h:23: warning: Member RoomTypes (enumeration) of class GameTypes is not documented.
 /home/huer2720/team_j/include/Item.h:74: warning: Member name (variable) of class Item is not documented.
