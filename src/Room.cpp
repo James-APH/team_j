@@ -8,6 +8,7 @@
 #include <vector>
 #include <iomanip>
 #include <sstream>
+#include <fstream>
 
 #include "Item.h"
 #include "Puzzle.h"
@@ -20,8 +21,43 @@ Room::Room(std::string title, std::string description,
     const std::vector<std::string>& connections) {
   if (title != "")
     this->title = title;
-  if (description != "")
-    this->description = description;
+
+  std::string fileName;
+  if (title == "Garden") {
+    fileName = "src/GameText/rooms/garden.txt";
+  } else if (title == "Ball Room") {
+    fileName = "src/GameText/rooms/ballroom.txt";
+  } else if (title == "Bed Room") {
+    fileName = "src/GameText/rooms/bedroom.txt";
+  } else if (title == "Cellar") {
+    fileName = "src/GameText/rooms/cellar.txt";
+  } else if (title == "Library") {
+    fileName = "src/GameText/rooms/library.txt";
+  } else if (title == "Stairway") {
+    fileName = "src/GameText/rooms/staircase.txt";
+  } else if (title == "Study Room") {
+    fileName = "src/GameText/rooms/study.txt";
+  } else if (title == "Crawl Space") {
+    fileName = "src/GameText/rooms/secretPassage.txt";
+  } else if (title == "Attic") {
+    fileName = "src/GameText/rooms/atticAfter.txt";
+  } else {
+    fileName = "src/GameText/rooms/hallway.txt";
+  }
+
+  std::ifstream fs;
+  fs.open(fileName);
+  std::string line;
+  std::string temp;
+  while (!fs.eof()) {
+    getline(fs, line);
+    temp += line;
+    temp.push_back('\n');
+  }
+  this->description = temp;
+
+  fs.close();
+
   if (!connections.empty())
     this->connections = connections;
 }
