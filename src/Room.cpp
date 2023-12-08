@@ -1,5 +1,5 @@
 /**
- * @author James Huston [huston@uleth.ca]
+ * @Author James Huston [huston@uleth.ca]
  * @date 2023-11
  */
 
@@ -17,7 +17,6 @@
 
 Room::Room(std::string title, std::string description,
     const std::vector<std::string>& connections) {
-  this->state = new UnexploredRoom();
   if (title != "")
     this->title = title;
   if (description != "")
