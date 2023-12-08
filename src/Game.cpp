@@ -62,19 +62,20 @@ Game::~Game() {}
 
 void Game::playGame() {
   setCurrentNode(roomlist->getHead());
-  std::cout << "Murder Mystery" << std::endl;
+  std::cout << "\n\n\nMurder Mystery" << std::endl;
 
   std::string playAnswer;
-  std::cout << "Would you like to play a game? [y/n]" << std::endl;
+  std::cout << "\nWould you like to play a game? [y/n]" << std::endl;
   std::cin >> playAnswer;
   setCurrentNode(roomlist->getHead());
-  while (playAnswer == "y") {
+ 
     while (currentNode->getRoom()->getTitle() != "End") {
         currentNode->getRoom()->display();
-        std::cout << "Would you like to:"
+        std::cout << "\nWould you like to:\n"
                      "\n* Move rooms [m]"
                      "\n* Interact   [i]"
-                     "\n* View Inven [v]" << std::endl;
+                     "\n* View Inven [v]" 
+                     "\n* Accuse     [a]"<< "\n" << std::endl;
         char takeActionChoice;
         std::cin >> takeActionChoice;
       if (takeActionChoice == 'm') {
@@ -83,20 +84,25 @@ void Game::playGame() {
         interact();
       } else if (takeActionChoice == 'v'){
         inventory();
-    }
-    int murderAnswer;
-    std::cout << "Who do you think did it?\n"
-     << std::endl;
-    std::cout << "1 - Brent\n2 - Rose\n3 - Stephanie\n4 - Craig"
-     << std::endl;
-    std::cin >> murderAnswer;
-    displaySplashScreen(murderAnswer);
-    std::cout << "Would you like to play again? [y/n]"
-     << std::endl;
-    std::cin >> playAnswer;
+      } else if (takeActionChoice == 'a'){
+        accuse();
+        break;
+      }
+
+
+
   }
   delete currentNode;
 }
+
+void Game::accuse() {
+    int murderAnswer;
+    std::cout << "\nWho do you think did it?\n"
+     << std::endl;
+    std::cout << "\n1 - Brent\n2 - Rose\n3 - Stephanie\n4 - Craig"
+     << std::endl;
+    std::cin >> murderAnswer;
+    displaySplashScreen(murderAnswer);
 }
 
 void Game::inventory() {
@@ -106,16 +112,16 @@ void Game::inventory() {
 void Game::displaySplashScreen(int condition) {
   switch (condition) {
       case 1:
-        std::cout << "No Duh" << std::endl;
+        std::cout << "\nNo Duh" << std::endl;
         break;
       case 2:
-        std::cout << "wrong" << std::endl;
+        std::cout << "\nwrong" << std::endl;
         break;
       case 3:
-        std::cout << "wrong" << std::endl;
+        std::cout << "\nwrong" << std::endl;
         break;
       case 4:
-        std::cout << "Craig will remember this"
+        std::cout << "\nCraig will remember this"
         << std::endl;
         break;
   }
@@ -125,7 +131,7 @@ void Game::moveRoom() {
   if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM) {
     if (currentNode->getRoom()->getState().isExplored() &&
        !currentNode->getRoom()->getState().roomDone()) {
-      std::cout << "The current room has not been finished you can"
+      std::cout << "\nThe current room has not been finished you can"
                    " only move to the previous" << std::endl;
       currentNode = previousNode;
     }

@@ -117,6 +117,8 @@ class Game {
 
   RoomNode* getPreviousNode();
 
+  void accuse();
+
   void inventory();
 
   void displaySplashScreen(int condition);

@@ -50,8 +50,8 @@ void NPC::display() const {
 
 Player::Player(std::string name, const Item& item)
   : Character(name) {
-  itemList.push_back(new Item("NullItem", "Null", "Null"));
-  itemList.push_back(new Item(item));
+  //itemList.push_back(new Item("NullItem", "Null", "Null"));
+  //itemList.push_back(new Item(item));
 }
 
 Player::~Player() {
@@ -64,10 +64,10 @@ Player::~Player() {
 
 void Player::pickUp(const Item& item) {
   if (findItem(item)) {
-    std::cout << "Item already exists in inventory!" << std::endl;
+    std::cout << "\nItem already exists in inventory!" << std::endl;
   } else {
       itemList.push_back(new Item(item));
-      std::cout << "Item added to inventory!" << std::endl;
+      std::cout << "\nItem added to inventory!" << std::endl;
   }
 }
 
@@ -95,12 +95,12 @@ void Player::drop() {
 
 void Player::InspectItem() const {
   std::string itemName;
-  std::cout << "Enter the name of the item you'd like to inspect,\n"
+  std::cout << "\nEnter the name of the item you'd like to inspect,\n"
                "Otherwise enter q to quit!" << std::endl;
   std::cin >> itemName;
   if (!findItem(itemName) && itemName != "q") {
     while (findItem(itemName) == false && itemName != "q") {
-        std::cout << "Enter the name of the item you'd like to inspect,\n"
+        std::cout << "\nEnter the name of the item you'd like to inspect,\n"
                "Otherwise enter q to quit!" << std::endl;
         std::cin >> itemName;
     }
@@ -116,9 +116,9 @@ void Player::InspectItem() const {
 //for viewing inventory
 void Player::listInventory() const {
   
-  std::cout << "You have the following itmes: \n";
+  std::cout << "\nYou have the following itmes: \n\n";
   for (auto it : itemList) {
-    std::cout << it->toString() << std::endl;
+    std::cout << it->toString() << "\n" <<std::endl;  
   }
     // for (const std::string& item : itemName) {
     //   std::cout << item << "\n" << std::endl;

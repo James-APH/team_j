@@ -56,10 +56,10 @@ bool Item::equals(const Item& item) const {
 std::string Item::toString() const {
   std::ostringstream stringReader;
   stringReader << name;
-  stringReader << '\n';
+  stringReader << " - ";
   stringReader << description;
-  stringReader << '\n';
+  stringReader << " - ";
   stringReader << useLocation;
-  stringReader << '\n';
+  stringReader << "\n";
   return stringReader.str();
 }
