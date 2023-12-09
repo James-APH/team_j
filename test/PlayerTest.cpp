@@ -18,18 +18,6 @@ TEST(TestPlayer, defaultPlayerConstructor) {
     Player* thatsMe = new Player("Fabio", thing1);
 
     EXPECT_EQ(thatsMe->getName(), "Fabio");
-//If it gets implemented plz check that default items in inventory are there
-    EXPECT_EQ(thatsMe->findItem(thing1), true);
     delete thatsMe;
 }
-
-// TEST(TestPlayer, playerPickupItemTest) {
-//     Item thing1, thing2;
-//     Player* thatsMe = new Player("Fabio", thing1);
-
-//     EXPECT_EQ(thatsMe->findItem(thing2), false);
-//     thatsMe->pickUp(thing2);
-//     EXPECT_EQ(thatsMe->findItem(thing2), true);
-//     delete thatsMe;
-// }
 

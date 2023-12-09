@@ -17,21 +17,36 @@
 #include "Room.h"
 #include "GameTypes.h"
 
-//I dunno if these tests will even work but its something
-
 TEST(RoomTest, DialogueRoomConstructorTest) {
     NPC* fella = new NPC("", "");
-    DialogueRoom* room1 = new DialogueRoom("", "", {""}, *fella);
-    EXPECT_EQ(room1->getTitle(), "room");
-    delete room1;
+    DialogueRoom* room = new DialogueRoom("", "", {""}, *fella);
+    EXPECT_EQ(room->getTitle(), "room");
+    delete room;
     delete fella;
 }
 
 TEST(RoomTest, ThinkingPuzzleConstructorTest) {
-    DialoguePuzzle* puzzle1 = new DialoguePuzzle("", "");
-    ThinkingPuzzleRoom* room2 = new ThinkingPuzzleRoom("", "", {""}, *puzzle1);
-    EXPECT_EQ(room2->getTitle(), "room");
-    delete room2;
-    delete puzzle1;
+    DialoguePuzzle* puzzle = new DialoguePuzzle("", "");
+    ThinkingPuzzleRoom* room = new ThinkingPuzzleRoom("", "", {""}, *puzzle1);
+    EXPECT_EQ(room->getTitle(), "room");
+    delete room;
+    delete puzzle;
 }
 
+TEST(RoomTest, ItemPuzzleConstructorTest) {
+    Item* object = new Item();
+    ItemPuzzle* puzzle = new ItemPuzzle("", *object);
+    ItemPuzzleRoom* room = new ItemPuzzleRoom("", "", {""}, *puzzle);
+    EXPECT_EQ(room->getTitle(), "room");
+    delete room;
+    delete puzzle;
+    delete object;
+}
+
+TEST(RoomTest, ItemRoomConstructorTest) {
+    Item* object = new Item();
+    ItemRoom* room = new ItemRoom("", "", {""}, *object);
+    EXPECT_EQ(room->getTitle(), "room");
+    delete room;
+    delete object;
+}

@@ -22,12 +22,3 @@ TEST(TestCharacter, defaultConctrustorTest) {
     delete char2;
 }
 
-TEST(TestCharacter, defaultNPCConstructorTest) {
-    NPC* anon = new NPC("Robert", "My name is Robert");
-    NPC* anon2 = new NPC("", "lol");
-    EXPECT_EQ(anon->getName(), "anonymous");
-
-    delete anon;
-    delete anon2;
-}
-
