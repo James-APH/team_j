@@ -108,9 +108,15 @@ RoomList::RoomList() {
 }
 
 RoomList::~RoomList() {
-    RoomNode *current = head;
-    while (current != nullptr) {
-        current = current->getNextNode();
+    if (head != nullptr) {
+        RoomNode *current = head;
+        RoomNode *temp;
+        while (current != head) {
+            temp = current;
+            current = current->getNextNode();
+            delete temp;
+        }
+        head = nullptr;
     }
 }
 

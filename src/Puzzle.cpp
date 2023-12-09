@@ -56,8 +56,6 @@ void DialoguePuzzle::getInput(std::string answer) {
     }
 }
 
-
-
 ItemPuzzle::ItemPuzzle(std::string description, const Item &item) :
                 Puzzle(description) {
                     expectedItem = new Item(item);

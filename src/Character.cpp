@@ -74,8 +74,6 @@ void NPC::display() const {
 
 Player::Player(std::string name, const Item& item)
   : Character(name) {
-  //itemList.push_back(new Item("NullItem", "Null", "Null"));
-  //itemList.push_back(new Item(item));
 }
 
 Player::~Player() {
@@ -137,16 +135,13 @@ void Player::InspectItem() const {
     }
   }
 }
-//for viewing inventory
+
 void Player::listInventory() const {
   std::cout << "\nYou have the following itmes: \n\n";
-  for (auto it : itemList) {
-    std::cout << it->toString() << "\n" <<std::endl;
-  }
-    // for (const std::string& item : itemName) {
-    //   std::cout << item << "\n" << std::endl;
-    // }
-  }
+    for (auto it : itemList) {
+      std::cout << it->toString() << "\n" <<std::endl;  
+    }
+}
 
 Item* Player::useItem() {
   std::string itemName = "";

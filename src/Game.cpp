@@ -59,7 +59,29 @@ Game::Game(std::string playerName) {
   roomlist->solidify();
 }
 
-Game::~Game() {}
+Game::~Game() {
+  delete roomlist;
+  delete player;
+  delete currentNode;
+  delete yellowKeyCard;
+  delete blueKeyCard;
+  delete redKeyCard;
+  delete knife;
+  delete pictureFrame;
+  delete will;
+  delete map;
+  delete yellowItemPuzzle;
+  delete blueItemPuzzle;
+  delete redItemPuzzle;
+  delete studyPuzzle;
+  delete libraryPuzzle;
+  delete atticPuzzle;
+  delete craig2;
+  delete craig;
+  delete steph;
+  delete rose;
+  delete brent;
+}
 
 void Game::playGame() {
   setCurrentNode(roomlist->getHead());
@@ -225,7 +247,6 @@ void Game::setCurrentNode
 (RoomNode* currentNode) {
   this->currentNode = currentNode;
 }
-
 
 RoomNode* Game::getCurrentNode() {
   return currentNode;
