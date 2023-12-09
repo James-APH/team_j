@@ -18,7 +18,7 @@
 #include "GameTypes.h"
 
 TEST(RoomTest, DialogueRoomConstructorTest) {
-    NPC* fella = new NPC("", "");
+    NPC* fella = new NPC("Rose", "");
     DialogueRoom* room = new DialogueRoom("Garden", "", {""}, *fella);
     EXPECT_EQ(room->getTitle(), "Garden");
     delete room;
@@ -26,8 +26,8 @@ TEST(RoomTest, DialogueRoomConstructorTest) {
 }
 
 TEST(RoomTest, ThinkingPuzzleConstructorTest) {
-    DialoguePuzzle* puzzle = new DialoguePuzzle("Library", "");
-    ThinkingPuzzleRoom* room = new ThinkingPuzzleRoom("", "", {""}, *puzzle);
+    DialoguePuzzle* puzzle = new DialoguePuzzle("", "");
+    ThinkingPuzzleRoom* room = new ThinkingPuzzleRoom("Library", "", {""}, *puzzle);
     EXPECT_EQ(room->getTitle(), "Library");
     delete room;
     delete puzzle;
