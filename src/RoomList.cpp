@@ -94,6 +94,14 @@ RoomNode *RoomNode::getNextNode() {
     return next;
 }
 
+  void RoomNode::setPreviousNode(RoomNode* previousNode) {
+    this->previousNode = previousNode;
+  }
+
+  RoomNode* RoomNode::getPreviousNode() {
+    return previousNode;
+  }
+
 RoomList::RoomList() {
     head = nullptr;
     tail = nullptr;

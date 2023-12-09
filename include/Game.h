@@ -58,7 +58,6 @@ class Game {
   Player* player;
 
   RoomNode* currentNode;
-  RoomNode* previousNode;
 
 
 

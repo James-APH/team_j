@@ -31,10 +31,10 @@ Game::Game(std::string playerName) {
   {"", "", "North Hall", "East Hall"
   , "South Hall", "Stairway"}, *rose));
   roomlist->insert(new ItemPuzzleRoom("East Hall", "",
-  {"", "", "", "Library", "Study Room", ""}, *yellowItemPuzzle));
+  {"", "", "", "Library", "Study Room", "Ball Room"}, *yellowItemPuzzle));
   roomlist->insert(new ThinkingPuzzleRoom("Study Room", "",
   {"", "", "East Hall", "", "Cabinet", ""}, *studyPuzzle));
-  roomlist->insert(new ItemRoom("Cabinent", "",
+  roomlist->insert(new ItemRoom("Cabinet", "",
   {"", "", "Study Room", "", "", ""}, *blueKeyCard));
   roomlist->insert(new ThinkingPuzzleRoom("Library", "",
   {"", "", "Secret Passage", "", "", "East Hall"}, *libraryPuzzle));
@@ -126,14 +126,13 @@ void Game::displaySplashScreen(int condition) {
 }
 
 void Game::moveRoom() {
-  if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM) {
-    if (currentNode->getRoom()->getState().isExplored() &&
-       !currentNode->getRoom()->getState().roomDone()) {
-      std::cout << "\nThe current room has not been finished you can"
-                   " only move to the previous" << std::endl;
-      currentNode = previousNode;
-    }
-  } else {
+//  if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM) {
+//     if (!currentNode->getRoom()->getState().roomDone()) {
+//       std::cout << "\nThe current room has not been finished you can"
+//                    " only move to the previous" << std::endl;
+//      currentNode = currentNode->getPreviousNode();
+//     }
+//  } else {
     std::vector<unsigned> pathways(getPathways());
     listRoomOptions(pathways);
     int move;
@@ -144,7 +143,7 @@ void Game::moveRoom() {
         std::cin >> move;
       }
     }
-    previousNode = currentNode;
+  //  RoomNode* temp = currentNode;
     if (move == UP) {
       currentNode = currentNode->getUpNode();
       currentNode->getRoom()->playerEnterRoom(player);
@@ -164,7 +163,8 @@ void Game::moveRoom() {
       currentNode = currentNode->getWestNode();
       currentNode->getRoom()->playerEnterRoom(player);
     }
-  }
+ //   currentNode->setPreviousNode(temp);
+  //}
 }
 
 std::vector<unsigned> Game::getPathways() {
@@ -224,18 +224,13 @@ void Game::setCurrentNode
   this->currentNode = currentNode;
 }
 
-void Game::setPreviousNode
-(RoomNode* previousNode) {
-  this->previousNode = previousNode;
-}
+
 
 RoomNode* Game::getCurrentNode() {
   return currentNode;
 }
 
-RoomNode* Game::getPreviousNode() {
-  return previousNode;
-}
+
 
 
 
