@@ -124,7 +124,7 @@ class Player : public Character {
    * 
    * 
   */
-  Item& useItem();
+  Item* useItem();
 
  private:
   std::list<Item*> itemList;

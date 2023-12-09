@@ -205,8 +205,10 @@ ItemPuzzleRoom::~ItemPuzzleRoom() {
 }
 
 bool ItemPuzzleRoom::playerTakeAction() {
-std::string takeAction = ""; 
-  std::string input = ""; 
+  std::string takeAction = ""; 
+  std::string input = "";
+  Item* temp;
+
   if (state->roomDone()) { 
     std::cout << "You've completed this puzzle already!" << std::endl; 
     return true; 
@@ -217,10 +219,17 @@ std::string takeAction = "";
   } 
   if (input == "s") { 
     while (!itemPuzzle->wasSolved() && takeAction != "q") { 
-      itemPuzzle->checkItem(player->useItem()); 
-      std::cout << "To inspect inventory enter [i]" 
+      std::cout << "To inspect inventory enter [i]\n" 
                    "To exit this loop enter    [q]" << std::endl; 
       std::cin >> takeAction; 
+      if (takeAction == "q")
+        break;
+      temp = player->useItem();
+      if(temp == nullptr) {
+        continue;
+      } else {
+        itemPuzzle->checkItem(*temp);
+      }
     } 
   } 
   if (itemPuzzle->wasSolved()) { 

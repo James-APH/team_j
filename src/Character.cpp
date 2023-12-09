@@ -148,29 +148,26 @@ void Player::listInventory() const {
     // }
   }
 
-Item& Player::useItem() {
-  std::string itemName;
-  std::cout << "Enter the name of the item you'd like to use,\n"
-               "Otherwise enter q to quit!" << std::endl;
-  std::getline(std::cin, itemName);
-  if (!findItem(itemName) && itemName != "q") { //item is not in inv or not q
-    while (!findItem(itemName) || itemName != "q") {
-        std::cout << "Enter the name of the item you'd like to use\n"
-               "Otherwise enter q to quit!" << std::endl;
-        std::getline(std::cin, itemName);
-        if (itemName == "q") {
-          break;
-        }
-    }
+Item* Player::useItem() {
+  std::string itemName = "";
+  while (!findItem(itemName)) {
+      std::cout << "Enter the name of the item you'd like to use\n"
+             "Otherwise enter q to quit!" << std::endl;
+
+
+      std::cout << "hey little man" << std::endl;       
+        std::cin >> itemName;
+      if (itemName == "q")
+        break;
   }
   if (itemName != "q") {
       for (auto it : itemList) {
         if (it->getName() == itemName) {
-          return *it;
+          return it;
       }
     }
   }
-  return *itemList.front();
+  return nullptr;
 }
 
 bool Player::findItem(const Item& item) const {
