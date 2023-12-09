@@ -112,7 +112,7 @@ DialogueRoom::~DialogueRoom() {
   delete fella;
 }
 
-bool DialogueRoom::playerTakeAction() {\
+bool DialogueRoom::playerTakeAction() {
   std::string input = "";
   while (input != "y" && input != "n") {
     std::cout << "Would you like to talk to " << fella->getName() << "? [y/n]" << std::endl;
@@ -127,7 +127,6 @@ bool DialogueRoom::playerTakeAction() {\
     return false;
   }
 }
-
 
 void DialogueRoom::display() const {
   std::ostringstream stringReader;
@@ -164,30 +163,36 @@ bool ThinkingPuzzleRoom::playerTakeAction() {
     std::cin >> input;
   }
   if (input == "s") {
+    std::cout << "Enter your answer to the puzzle or enter [q] to quit: " << std::endl;
+    std::cin >> takeAction;
     while (!dialoguePuzzle->wasSolved() && takeAction != "q") {
       dialoguePuzzle->getInput(takeAction);
+      if (dialoguePuzzle->wasSolved()) {
+        state = new FullyExploredRoom();
+        return true;
+      }
       std::cout << "Enter your answer to the puzzle or enter [q] to quit: " << std::endl;
       std::cin >> takeAction;
     }
   }
-  if (dialoguePuzzle->wasSolved()) {
-    state = new FullyExploredRoom();
-    return true;
-  }
+
   state = new ExploredRoom();
   return false;
 }
 
 void ThinkingPuzzleRoom::display() const {
+  if(state->isExplored() && !state->roomDone() ||
+    !state->isExplored() && !state->roomDone()) {
     std::ostringstream stringReader;
-  stringReader << std::setw(25);
-  stringReader << title;
-  stringReader << '\n' << '\n';
-  stringReader << description;
-  stringReader << '\n' << '\n';
-  stringReader << "This room is locked, solve a complicated"
+    stringReader << std::setw(25);
+    stringReader << title;
+    stringReader << '\n' << '\n';
+    stringReader << description;
+    stringReader << '\n' << '\n';
+    stringReader << "This room is locked, solve a complicated"
                   " question to unlock more rooms:\n";
-  std::cout << stringReader.str() << std::endl;
+    std::cout << stringReader.str() << std::endl;
+  }
 }
 
 //------------------------------------------------------------------------
@@ -241,17 +246,20 @@ bool ItemPuzzleRoom::playerTakeAction() {
 }
 
 void ItemPuzzleRoom::display() const {
-  std::ostringstream stringReader;
-  stringReader << std::setw(25);
-  stringReader << title;
-  stringReader << '\n' << '\n';
-  stringReader << description;
-  stringReader << '\n' << '\n';
-  stringReader << "This room is a dead end " <<
+  if(state->isExplored() && !state->roomDone() ||
+    !state->isExplored() && !state->roomDone()) {
+    std::ostringstream stringReader;
+    stringReader << std::setw(25);
+    stringReader << title;
+    stringReader << '\n' << '\n';
+    stringReader << description;
+    stringReader << '\n' << '\n';
+    stringReader << "This room is a dead end " <<
                    itemPuzzle->getExpectedItemName() <<
               " required to unlock more rooms!";
-  stringReader << '\n' << '\n';
-  std::cout << stringReader.str() << std::endl;
+    stringReader << '\n' << '\n';
+    std::cout << stringReader.str() << std::endl;
+  }
 }
 
 //------------------------------------------------------------------------
@@ -284,16 +292,18 @@ std::string input = "";
   }
 }
 
-
 void ItemRoom::display() const {
-  std::ostringstream stringReader;
-  stringReader << std::setw(25);
-  stringReader << title;
-  stringReader << '\n' << '\n';
-  stringReader << description;
-  stringReader << '\n' << '\n';
-  stringReader << "In this room you see a" << item->getName();
-  std::cout << stringReader.str() << std::endl;
+  if(state->isExplored() && !state->roomDone() ||
+    !state->isExplored() && !state->roomDone()) {
+    std::ostringstream stringReader;
+    stringReader << std::setw(25);
+    stringReader << title;
+    stringReader << '\n' << '\n';
+    stringReader << description;
+    stringReader << '\n' << '\n';
+    stringReader << "In this room you see a " << item->getName();
+    std::cout << stringReader.str() << std::endl;
+  }
 }
 
 Item &ItemRoom::giveItem() {
