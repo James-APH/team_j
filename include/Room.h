@@ -63,6 +63,7 @@ class Room {
   */
   virtual GameTypes::RoomTypes getRoomType() const;
 
+  virtual bool isDone();
   /**
    * @brief a function to allow the player to manipulate data in the rooms
    * -> cannot be const, in the case that the user picks up an item.

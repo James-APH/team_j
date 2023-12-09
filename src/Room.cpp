@@ -19,6 +19,7 @@
 
 Room::Room(std::string title, std::string description,
     const std::vector<std::string>& connections) {
+      state = new UnexploredRoom();
   if (title != "")
     this->title = title;
 
@@ -84,6 +85,10 @@ std::vector<std::string> Room::getConnections() {
 
 GameTypes::RoomTypes Room::getRoomType() const {
   return roomtype;
+}
+
+bool Room::isDone() {
+  return state->roomDone();
 }
 
 void Room::setState(RoomState *state) {

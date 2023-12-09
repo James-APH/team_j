@@ -7,6 +7,7 @@
 #include <vector>
 #include <algorithm>
 #include <iomanip>
+#include <stdexcept>
 
 #include "Room.h"
 #include "RoomList.h"
@@ -126,13 +127,14 @@ void Game::displaySplashScreen(int condition) {
 }
 
 void Game::moveRoom() {
-//  if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM) {
-//     if (!currentNode->getRoom()->getState().roomDone()) {
-//       std::cout << "\nThe current room has not been finished you can"
-//                    " only move to the previous" << std::endl;
-//      currentNode = currentNode->getPreviousNode();
-//     }
-//  } else {
+  
+ if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM) {
+    if (!currentNode->getRoom()->isDone()) {
+      std::cout << "\nThe current room has not been finished you can"
+                   " only move to the previous" << std::endl;
+     currentNode = currentNode->getPreviousNode();
+    }
+  } else {
     std::vector<unsigned> pathways(getPathways());
     listRoomOptions(pathways);
     int move;
@@ -143,7 +145,9 @@ void Game::moveRoom() {
         std::cin >> move;
       }
     }
-  //  RoomNode* temp = currentNode;
+    RoomNode* temp = currentNode;
+    std::cout << "temp node title: " << temp->getRoom()->getTitle() << std::endl;
+    std::cout << "temp in memory: " << temp << std::endl;
     if (move == UP) {
       currentNode = currentNode->getUpNode();
       currentNode->getRoom()->playerEnterRoom(player);
@@ -163,8 +167,10 @@ void Game::moveRoom() {
       currentNode = currentNode->getWestNode();
       currentNode->getRoom()->playerEnterRoom(player);
     }
- //   currentNode->setPreviousNode(temp);
-  //}
+    currentNode->setPreviousNode(temp);
+    std::cout << "previous node title: " << currentNode->getPreviousNode()->getRoom()->getTitle() << std::endl;
+    std::cout << "previous in memory: " << currentNode->getPreviousNode() << std::endl;
+  }
 }
 
 std::vector<unsigned> Game::getPathways() {
@@ -223,7 +229,6 @@ void Game::setCurrentNode
 (RoomNode* currentNode) {
   this->currentNode = currentNode;
 }
-
 
 
 RoomNode* Game::getCurrentNode() {
