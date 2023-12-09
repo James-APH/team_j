@@ -1,7 +1,10 @@
 /**
  * @author James Huston [huston@uleth.ca]
+ * @author Raven Huery [raven.huery@uleth.ca]
+ * @author Parker Regier [tyre.regier@uleth.ca]
  * @date 2023-11
  */
+
 #ifndef ROOMSTATE_H_INCLUDED
 #define ROOMSTATE_H_INCLUDED
 

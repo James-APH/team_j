@@ -1,6 +1,8 @@
 /**
  * @author James Huston [huston@uleth.ca]
- * @date 12/2023
+ * @author Raven Huery [raven.huery@uleth.ca]
+ * @author Parker Regier [tyre.regier@uleth.ca]
+ * @date 2023-11
  */
 
 #include <vector>

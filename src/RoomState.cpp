@@ -1,7 +1,9 @@
 /**
-* @author James Huston [huston@uleth.ca]
-* @date 11/2023
-*/
+ * @author James Huston [huston@uleth.ca]
+ * @author Raven Huery [raven.huery@uleth.ca]
+ * @author Parker Regier [tyre.regier@uleth.ca]
+ * @date 2023-11
+ */
 
 
 #include "RoomState.h"

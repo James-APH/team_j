@@ -1,5 +1,9 @@
 /**
+ /**
+ * @author James Huston [huston@uleth.ca]
  * @author Raven Huery [raven.huery@uleth.ca]
+ * @author Parker Regier [tyre.regier@uleth.ca]
+ * 
  * @author Nicole Wilson [n.wilson@uleth.ca]
  * @author Dr. Anvik [john.anvik@uleth.ca]
  * @date 12/2023
