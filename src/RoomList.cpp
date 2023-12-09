@@ -94,15 +94,29 @@ RoomNode *RoomNode::getNextNode() {
     return next;
 }
 
+  void RoomNode::setPreviousNode(RoomNode* previousNode) {
+    this->previousNode = previousNode;
+  }
+
+  RoomNode* RoomNode::getPreviousNode() {
+    return previousNode;
+  }
+
 RoomList::RoomList() {
     head = nullptr;
     tail = nullptr;
 }
 
 RoomList::~RoomList() {
-    RoomNode *current = head;
-    while (current != nullptr) {
-        current = current->getNextNode();
+    if (head != nullptr) {
+        RoomNode *current = head;
+        while (current != head) {
+            RoomNode *temp;
+            temp = current;
+            current = current->getNextNode();
+            delete temp;
+        }
+        head = nullptr;
     }
 }
 
@@ -141,7 +155,7 @@ void RoomList::solidify() {
             std::string tempTitle = temp->getRoom()->getTitle();
             auto a = (std::find(tempCons.begin(), tempCons.end(), tempTitle));
             int index = a - tempCons.begin();
-            switch(index) {
+            switch (index) {
                 case 0:
                     current->setUpNode(temp);
                     break;
@@ -163,7 +177,6 @@ void RoomList::solidify() {
             }
             temp = temp->getNextNode();
         } while (temp != current);
-        
         current = current->getNextNode();
     } while (current != head);
 }

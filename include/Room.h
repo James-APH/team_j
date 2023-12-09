@@ -26,6 +26,13 @@ class Room {
    * @brief constructor
    * @param [in] title the title of the room
    * @param [in] description the description of the room
+   * @param [in] connections a list of the rooms that 
+   * "this" room is connected to
+   * @throw empty_string if title is empty
+   * @throw empty_string if description is empty
+   * @throw invalid_size if connections size != 6
+   * @throw empty_string if all strings in connections
+   * are empty strings.
    */
   Room(std::string title = "room"
        , std::string description = "description"
@@ -43,6 +50,14 @@ class Room {
   virtual RoomState &getState();
 
   /**
+   * @brief adds the player to the current room
+   * @param [in] player the player in question
+   * @throw de_trop_nullptr if player is nullptr
+  */
+  void playerEnterRoom(Player* player);
+
+
+  /**
    * @brief returns the title of the room
    * @return title the title of the room
   */
@@ -56,11 +71,17 @@ class Room {
   virtual std::vector<std::string> getConnections();
 
   /**
+   * @brief sets the state to explored, when the player enters a room
+  */
+  void entered();
+
+  /**
    * @brief getter for roomtype
    * @return roomtype the type of room the current is
   */
   virtual GameTypes::RoomTypes getRoomType() const;
 
+  virtual bool isDone();
   /**
    * @brief a function to allow the player to manipulate data in the rooms
    * -> cannot be const, in the case that the user picks up an item.
@@ -69,7 +90,7 @@ class Room {
    * @return true if the player did the action i.e. used item,
    * talked to an npc, solved a thinking puzzle, took an item.
   */
-  virtual bool playerTakeAction(Player* player) = 0;
+  virtual bool playerTakeAction() = 0;
 
   /**
    * @brief descibes/shows the room to the player
@@ -77,6 +98,7 @@ class Room {
   virtual void display() const = 0;
 
  protected:
+  Player* player;
   std::string title;
   std::string description;
   std::vector<std::string> connections;
@@ -87,6 +109,7 @@ class Room {
    * @brief depending on the players interactions with
    * the room sets the state of the room accordingly.
    * @param[in] state the new state of the room;
+   * @throw de_trop_nullptr if state is nullptr
    */
   void setState(RoomState *state);
 };
@@ -101,10 +124,16 @@ class DialogueRoom : public Room {
   /**
    * @brief constructor
    * @param [in] title the title of the room
-   * @param [in] description the description of
-   * the room.
+   * @param [in] description the description of the room.Player *player
+   * @param [in] connections a list of the rooms that 
+   * "this" room is connected to
    * @param [in] fella the NPC that exists in the
    * room
+   * @throw empty_string if title is empty
+   * @throw empty_string if description is empty
+   * @throw invalid_size if connections size != 6
+   * @throw bad_input if all strings in connections
+   * are empty strings.
    */
   DialogueRoom(std::string title
                , std::string description
@@ -119,10 +148,9 @@ class DialogueRoom : public Room {
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
-   * @param in [player] a reference to player to access their data
    * @return true if the player did the action i.e.talked to an npc
    */
-  bool playerTakeAction(Player* player);
+  bool playerTakeAction();
 
   /**
    * @brief descibes/shows the room to the player
@@ -144,12 +172,19 @@ class ThinkingPuzzleRoom : public Room {
    * @brief constructor
    * @param [in] title the title of the room
    * @param [in] description the description of the room
-   * @param [in] dp the object for the dialogue puzzle
+   * @param [in] connections a list of the rooms that 
+   * "this" room is connected to
+   * @param [in] dialoguePuzzle the object for the dialogue puzzle
+   * @throw empty_string if title is empty
+   * @throw empty_string if description is empty
+   * @throw invalid_size if connections size != 6
+   * @throw empty_string if all strings in connections
+   * are empty strings.
    */
   ThinkingPuzzleRoom(std::string title
                      , std::string description
                      , const std::vector<std::string>& connections
-                     , const DialoguePuzzle &dp);
+                     , const DialoguePuzzle &dialoguePuzzle);
 
   /**
    * @brief destructor
@@ -159,11 +194,10 @@ class ThinkingPuzzleRoom : public Room {
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
-   * @param in [player] a reference to player to access their data
    * @return true if the player did the right action i.e. entered the correct input
    * false otherwise
   */
-  bool playerTakeAction(Player* player);
+  bool playerTakeAction();
 
   /**
    * describes/shows the room to the player
@@ -171,7 +205,7 @@ class ThinkingPuzzleRoom : public Room {
   void display() const;
 
  private:
-  DialoguePuzzle* dp;
+  DialoguePuzzle* dialoguePuzzle;
 };
 
 /**
@@ -185,12 +219,19 @@ class ItemPuzzleRoom : public Room {
    * @brief constructor
    * @param [in] title the title of the room
    * @param [in] description the description of the room
+   * @param [in] connections a list of the rooms that 
+   * "this" room is connected to
    * @param [in] ip the object of an item puzzle for the room
+   * @throw empty_string if title is empty
+   * @throw empty_string if description is empty
+   * @throw invalid_size if connections size != 6
+   * @throw empty_string if all strings in connections
+   * are empty strings.
    */
   ItemPuzzleRoom(std::string title
                  , std::string description
                  , const std::vector<std::string>& connections
-                 , const ItemPuzzle &ip);
+                 , const ItemPuzzle &itemPuzzle);
 
   /**
    * @brief destructor
@@ -199,11 +240,10 @@ class ItemPuzzleRoom : public Room {
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
-   * @param in [player] a reference to player to access their data
    * @return true if the player did the action i.e. input the correct item
    * false otherwise
   */
-  bool playerTakeAction(Player* player);
+  bool playerTakeAction();
 
   /**
    * @brief describes/shows the room to the player
@@ -211,7 +251,7 @@ class ItemPuzzleRoom : public Room {
   void display() const;
 
  private:
-  ItemPuzzle* ip;
+  ItemPuzzle* itemPuzzle;
 };
 
 /**
@@ -224,12 +264,19 @@ class ItemRoom : public Room {
    * @brief constructor
    * @param [in] title the title of the room
    * @param [in] description the description of the room
-   * @param [in] ip the object of an item puzzle for the room
+   * @param [in] connections a list of the rooms that 
+   * "this" room is connected to
+   * @param [in] item the object of an item puzzle for the room
+   * @throw empty_string if title is empty
+   * @throw empty_string if description is empty
+   * @throw invalid_size if connections size != 6
+   * @throw emptry_string if all strings in connections
+   * are empty strings.
    */
   ItemRoom(std::string title
                  , std::string description
                  , const std::vector<std::string>& connections
-                 , const Item &i);
+                 , const Item &item);
 
   /**
    * @brief destructor
@@ -238,10 +285,9 @@ class ItemRoom : public Room {
 
   /**
    * @brief a function to allow the player to manipulate data in the rooms
-   * @param in [player] a reference to player to access their data
    * @return true if the player did the action i.e. pick up an item
   */
-  bool playerTakeAction(Player* player);
+  bool playerTakeAction();
 
   /**
    * @brief describes/shows the room to the player

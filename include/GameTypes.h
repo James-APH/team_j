@@ -20,6 +20,10 @@ class GameTypes {
     ITEM,
   };
 
+  /**
+   * @enum RoomTypes in GameTypes "GameTypes.h"
+   * @brief enum for the three main types of rooms
+  */
   enum RoomTypes {
     PUZZLE_ROOM,
     DIALOGUE_ROOM,

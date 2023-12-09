@@ -1,127 +1,188 @@
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:14: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:63: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:116: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Game.h:15: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Inventory.h:16: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Item.h:17: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:17: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:62: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:128: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:17: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:81: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:153: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:223: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:291: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomState.h:9: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:171: warning: Compound RoomList is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:85: warning: Found unknown command '@detail'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:16: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Game.h:14: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:13: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:13: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:42: warning: Member name (variable) of class Character is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:43: warning: Member dialogue (variable) of class Character is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:13: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:56: warning: return type of member Character::toString is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:85: warning: Found unknown command '@detail'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:117: warning: Member hasAttempts() (function) of class DialoguePuzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:110: warning: Member expectedInput (variable) of class DialoguePuzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:50: warning: Member description (variable) of class Puzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:51: warning: Member solved (variable) of class Puzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:70: warning: argument 'attemptLimit' of command @param is not found in the argument list of DialoguePuzzle::DialoguePuzzle(std::string description, std::string expectedInput)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:85: warning: Found unknown command '@detail'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:54: warning: return type of member DialoguePuzzle::toString is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:135: warning: Member fella (variable) of class DialogueRoom is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:136: warning: Member state (variable) of class DialogueRoom is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:61: warning: Member title (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:62: warning: Member description (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:63: warning: Member connections (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:89: warning: The following parameter of DialogueRoom::DialogueRoom(std::string title, std::string description, const std::vector< std::string > connections, const NPC &fella) is not documented:
+/home/huer2720/team_j/include/Character.h:15: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Character.h:41: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Character.h:73: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Game.h:28: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/GameTypes.h:12: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Item.h:13: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Puzzle.h:16: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Puzzle.h:51: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Puzzle.h:98: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:20: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:95: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:137: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:178: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/Room.h:218: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/RoomState.h:9: warning: the name 'in' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/huer2720/team_j/include/RoomList.h:174: warning: Compound RoomList is not documented.
+/home/huer2720/team_j/include/Puzzle.h:79: warning: Found unknown command '@detail'
+/home/huer2720/team_j/include/Character.h:28: warning: Member getName() (function) of class Character is not documented.
+/home/huer2720/team_j/include/Character.h:36: warning: Member name (variable) of class Character is not documented.
+/home/huer2720/team_j/include/Character.h:37: warning: Member dialogue (variable) of class Character is not documented.
+/home/huer2720/team_j/include/Puzzle.h:79: warning: Found unknown command '@detail'
+/home/huer2720/team_j/include/Puzzle.h:42: warning: return type of member Puzzle::toString is not documented
+/home/huer2720/team_j/include/Puzzle.h:45: warning: Member description (variable) of class Puzzle is not documented.
+/home/huer2720/team_j/include/Puzzle.h:46: warning: Member solved (variable) of class Puzzle is not documented.
+/home/huer2720/team_j/include/Puzzle.h:94: warning: Member expectedInput (variable) of class DialoguePuzzle is not documented.
+/home/huer2720/team_j/include/Puzzle.h:58: warning: argument 'attemptLimit' of command @param is not found in the argument list of DialoguePuzzle::DialoguePuzzle(std::string description, std::string expectedInput)
+/home/huer2720/team_j/include/Puzzle.h:79: warning: Found unknown command '@detail'
+/home/huer2720/team_j/include/Room.h:80: warning: Member title (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:81: warning: Member description (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:82: warning: Member connections (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:83: warning: Member state (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:84: warning: Member roomtype (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:133: warning: Member fella (variable) of class DialogueRoom is not documented.
+/home/huer2720/team_j/include/Room.h:109: warning: The following parameter of DialogueRoom::DialogueRoom(std::string title, std::string description, const std::vector< std::string > &connections, const NPC &fella) is not documented:
   parameter 'connections'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:106: warning: return type of member DialogueRoom::getState is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Game.h:14: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Game.h:14: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Inventory.h:84: warning: Member itemList (variable) of class Inventory is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Inventory.h:85: warning: Member size (variable) of class Inventory is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Inventory.h:29: warning: parameters of member Inventory::Inventory are not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Inventory.h:96: warning: parameters of member Inventory::addItemDescription are not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Item.h:76: warning: Member name (variable) of class Item is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Item.h:77: warning: Member description (variable) of class Item is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Item.h:78: warning: Member useLocation (variable) of class Item is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Item.h:27: warning: parameters of member Item::Item are not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Item.h:35: warning: argument 'the' of command @param is not found in the argument list of Item::Item(const Item &item)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Item.h:58: warning: return type of member Item::getUselocation is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Item.h:70: warning: parameters of member Item::operator== are not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:171: warning: Member expectedItem (variable) of class ItemPuzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:50: warning: Member description (variable) of class Puzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:51: warning: Member solved (variable) of class Puzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:153: warning: Found unknown command '@detail'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:275: warning: Member ip (variable) of class ItemPuzzleRoom is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:276: warning: Member state (variable) of class ItemPuzzleRoom is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:61: warning: Member title (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:62: warning: Member description (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:63: warning: Member connections (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:231: warning: The following parameter of ItemPuzzleRoom::ItemPuzzleRoom(std::string title, std::string description, const std::vector< std::string > connections, const ItemPuzzle &ip) is not documented:
+/home/huer2720/team_j/include/Room.h:121: warning: argument 'in' of command @param is not found in the argument list of DialogueRoom::playerTakeAction(Player *player)
+/home/huer2720/team_j/include/Room.h:125: warning: The following parameter of DialogueRoom::playerTakeAction(Player *player) is not documented:
+  parameter 'player'
+/home/huer2720/team_j/include/Game.h:47: warning: Member Game(std::string playerName="Detective") (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:51: warning: Member playGame() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:112: warning: Member setCurrentNode(RoomNode *currentNode) (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:114: warning: Member setPreviousNode(RoomNode *previousNode) (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:116: warning: Member getCurrentNode() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:118: warning: Member getPreviousNode() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:120: warning: Member accuse() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:122: warning: Member inventory() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:124: warning: Member displaySplashScreen(int condition) (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:126: warning: Member getRoomActionChoice() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:128: warning: Member moveRoom() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:130: warning: Member interact() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:132: warning: Member getPathways() (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:135: warning: Member listRoomOptions(std::vector< unsigned > pathways) (function) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member UP (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member DOWN (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member NORTH (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member EAST (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member SOUTH (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:56: warning: Member WEST (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:58: warning: Member player (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:60: warning: Member currentNode (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:61: warning: Member previousNode (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:67: warning: Member roomlist (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:69: warning: Member yellowKeyCard (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:72: warning: Member blueKeyCard (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:75: warning: Member redKeyCard (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:78: warning: Member knife (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:81: warning: Member pictureFrame (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:84: warning: Member will (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:87: warning: Member map (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:91: warning: Member yellowItemPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:94: warning: Member blueItemPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:97: warning: Member redItemPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:101: warning: Member studyPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:102: warning: Member libraryPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:103: warning: Member atticPuzzle (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:106: warning: Member craig (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:107: warning: Member steph (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:108: warning: Member rose (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:109: warning: Member brent (variable) of class Game is not documented.
+/home/huer2720/team_j/include/Game.h:110: warning: Member craig2 (variable) of class Game is not documented.
+/home/huer2720/team_j/include/GameTypes.h:18: warning: Member PuzzleTypes (enumeration) of class GameTypes is not documented.
+/home/huer2720/team_j/include/GameTypes.h:23: warning: Member RoomTypes (enumeration) of class GameTypes is not documented.
+/home/huer2720/team_j/include/Item.h:74: warning: Member name (variable) of class Item is not documented.
+/home/huer2720/team_j/include/Item.h:75: warning: Member description (variable) of class Item is not documented.
+/home/huer2720/team_j/include/Item.h:76: warning: Member useLocation (variable) of class Item is not documented.
+/home/huer2720/team_j/include/Item.h:27: warning: parameters of member Item::Item are not (all) documented
+/home/huer2720/team_j/include/Item.h:31: warning: argument 'the' of command @param is not found in the argument list of Item::Item(const Item &item)
+/home/huer2720/team_j/include/Item.h:65: warning: parameters of member Item::equals are not (all) documented
+/home/huer2720/team_j/include/Item.h:58: warning: return type of member Item::getUselocation is not documented
+/home/huer2720/team_j/include/Puzzle.h:124: warning: return type of member ItemPuzzle::getExpectedItemName is not documented
+/home/huer2720/team_j/include/Puzzle.h:42: warning: return type of member Puzzle::toString is not documented
+/home/huer2720/team_j/include/Puzzle.h:45: warning: Member description (variable) of class Puzzle is not documented.
+/home/huer2720/team_j/include/Puzzle.h:46: warning: Member solved (variable) of class Puzzle is not documented.
+/home/huer2720/team_j/include/Puzzle.h:144: warning: Member expectedItem (variable) of class ItemPuzzle is not documented.
+/home/huer2720/team_j/include/Puzzle.h:115: warning: argument 'ip' of command @param is not found in the argument list of ItemPuzzle::ItemPuzzle(const ItemPuzzle &itemPuzzle)
+/home/huer2720/team_j/include/Puzzle.h:119: warning: The following parameter of ItemPuzzle::ItemPuzzle(const ItemPuzzle &itemPuzzle) is not documented:
+  parameter 'itemPuzzle'
+/home/huer2720/team_j/include/Puzzle.h:135: warning: Found unknown command '@detail'
+/home/huer2720/team_j/include/Room.h:80: warning: Member title (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:81: warning: Member description (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:82: warning: Member connections (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:83: warning: Member state (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:84: warning: Member roomtype (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:214: warning: Member ip (variable) of class ItemPuzzleRoom is not documented.
+/home/huer2720/team_j/include/Room.h:190: warning: The following parameter of ItemPuzzleRoom::ItemPuzzleRoom(std::string title, std::string description, const std::vector< std::string > &connections, const ItemPuzzle &ip) is not documented:
   parameter 'connections'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:332: warning: parameters of member ItemRoom::playerUseItem are not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:352: warning: return type of member ItemRoom::giveItem is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:343: warning: Member ip (variable) of class ItemRoom is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:344: warning: Member state (variable) of class ItemRoom is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:61: warning: Member title (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:62: warning: Member description (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:63: warning: Member connections (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:298: warning: argument 'ip' of command @param is not found in the argument list of ItemRoom::ItemRoom(std::string title, std::string description, const std::vector< std::string > connections, const Item &i)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:298: warning: The following parameters of ItemRoom::ItemRoom(std::string title, std::string description, const std::vector< std::string > connections, const Item &i) are not documented:
+/home/huer2720/team_j/include/Room.h:201: warning: argument 'in' of command @param is not found in the argument list of ItemPuzzleRoom::playerTakeAction(Player *player)
+/home/huer2720/team_j/include/Room.h:206: warning: The following parameter of ItemPuzzleRoom::playerTakeAction(Player *player) is not documented:
+  parameter 'player'
+/home/huer2720/team_j/include/Room.h:80: warning: Member title (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:81: warning: Member description (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:82: warning: Member connections (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:83: warning: Member state (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:84: warning: Member roomtype (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:257: warning: return type of member ItemRoom::giveItem is not documented
+/home/huer2720/team_j/include/Room.h:252: warning: Member item (variable) of class ItemRoom is not documented.
+/home/huer2720/team_j/include/Room.h:224: warning: argument 'ip' of command @param is not found in the argument list of ItemRoom::ItemRoom(std::string title, std::string description, const std::vector< std::string > &connections, const Item &i)
+/home/huer2720/team_j/include/Room.h:229: warning: The following parameters of ItemRoom::ItemRoom(std::string title, std::string description, const std::vector< std::string > &connections, const Item &i) are not documented:
   parameter 'connections'
   parameter 'i'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:83: warning: return type of member NPC::giveItem is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:94: warning: Member item (variable) of class NPC is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:95: warning: Member name (variable) of class NPC is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:96: warning: Member dialogue (variable) of class NPC is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:109: warning: return type of member NPC::toString is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:204: warning: Member inventory (variable) of class Player is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:205: warning: Member name (variable) of class Player is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:206: warning: Member dialogue (variable) of class Player is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:220: warning: return type of member Player::toString is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:50: warning: Member description (variable) of class Puzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:51: warning: Member solved (variable) of class Puzzle is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Puzzle.h:54: warning: return type of member Puzzle::toString is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:16: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:61: warning: Member title (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:62: warning: Member description (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:63: warning: Member connections (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:64: warning: Member state (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:16: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:24: warning: The following parameter of Room::Room(std::string title, std::string description, const std::vector< std::string > connections) is not documented:
+/home/huer2720/team_j/include/Room.h:240: warning: argument 'in' of command @param is not found in the argument list of ItemRoom::playerTakeAction(Player *player)
+/home/huer2720/team_j/include/Room.h:244: warning: The following parameter of ItemRoom::playerTakeAction(Player *player) is not documented:
+  parameter 'player'
+/home/huer2720/team_j/include/Character.h:28: warning: Member getName() (function) of class Character is not documented.
+/home/huer2720/team_j/include/Character.h:36: warning: Member name (variable) of class Character is not documented.
+/home/huer2720/team_j/include/Character.h:37: warning: Member dialogue (variable) of class Character is not documented.
+/home/huer2720/team_j/include/Character.h:47: warning: argument 'item' of command @param is not found in the argument list of NPC::NPC(std::string name, std::string dialogue)
+/home/huer2720/team_j/include/Character.h:53: warning: The following parameter of NPC::NPC(std::string name, std::string dialogue) is not documented:
+  parameter 'dialogue'
+/home/huer2720/team_j/include/Character.h:112: warning: Member InspectItem() const (function) of class Player is not documented.
+/home/huer2720/team_j/include/Character.h:119: warning: Member listInventory() const (function) of class Player is not documented.
+/home/huer2720/team_j/include/Character.h:127: warning: return type of member Player::useItem is not documented
+/home/huer2720/team_j/include/Character.h:28: warning: Member getName() (function) of class Character is not documented.
+/home/huer2720/team_j/include/Character.h:36: warning: Member name (variable) of class Character is not documented.
+/home/huer2720/team_j/include/Character.h:37: warning: Member dialogue (variable) of class Character is not documented.
+/home/huer2720/team_j/include/Character.h:136: warning: Member findItem(const Item &item) const (function) of class Player is not documented.
+/home/huer2720/team_j/include/Character.h:143: warning: Member findItem(std::string itemName) const (function) of class Player is not documented.
+/home/huer2720/team_j/include/Character.h:130: warning: Member itemList (variable) of class Player is not documented.
+/home/huer2720/team_j/include/Character.h:83: warning: The following parameter of Player::Player(std::string name, const Item &item) is not documented:
+  parameter 'item'
+/home/huer2720/team_j/include/Puzzle.h:42: warning: return type of member Puzzle::toString is not documented
+/home/huer2720/team_j/include/Puzzle.h:45: warning: Member description (variable) of class Puzzle is not documented.
+/home/huer2720/team_j/include/Puzzle.h:46: warning: Member solved (variable) of class Puzzle is not documented.
+/home/huer2720/team_j/include/Room.h:80: warning: Member title (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:81: warning: Member description (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:82: warning: Member connections (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:83: warning: Member state (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:84: warning: Member roomtype (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:30: warning: The following parameter of Room::Room(std::string title="room", std::string description="description", const std::vector< std::string > &connections={""}) is not documented:
   parameter 'connections'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:204: warning: Member head (variable) of class RoomList is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:205: warning: Member tail (variable) of class RoomList is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:161: warning: Member room (variable) of class RoomNode is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:162: warning: Member up (variable) of class RoomNode is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:163: warning: Member down (variable) of class RoomNode is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:164: warning: Member north (variable) of class RoomNode is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:165: warning: Member east (variable) of class RoomNode is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:166: warning: Member south (variable) of class RoomNode is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:167: warning: Member west (variable) of class RoomNode is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:168: warning: Member next (variable) of class RoomNode is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:118: warning: argument 'down' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:118: warning: argument 'north' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:118: warning: argument 'east' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:118: warning: argument 'south' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:118: warning: argument 'west' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/RoomList.h:118: warning: argument 'up' from the argument list of RoomNode::setUpNode has multiple @param documentation sections
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:207: warning: Member dp (variable) of class ThinkingPuzzleRoom is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:208: warning: Member state (variable) of class ThinkingPuzzleRoom is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:61: warning: Member title (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:62: warning: Member description (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:63: warning: Member connections (variable) of class Room is not documented.
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:161: warning: The following parameter of ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title, std::string description, const std::vector< std::string > connections, const DialoguePuzzle &dp) is not documented:
+/home/huer2720/team_j/include/Room.h:66: warning: argument 'in' of command @param is not found in the argument list of Room::playerTakeAction(Player *player)=0
+/home/huer2720/team_j/include/Room.h:72: warning: The following parameter of Room::playerTakeAction(Player *player)=0 is not documented:
+  parameter 'player'
+/home/huer2720/team_j/include/RoomList.h:212: warning: Member getHead() (function) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:215: warning: Member UP (variable) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:215: warning: Member DOWN (variable) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:215: warning: Member NORTH (variable) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:215: warning: Member EAST (variable) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:215: warning: Member SOUTH (variable) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:215: warning: Member WEST (variable) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:216: warning: Member head (variable) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:217: warning: Member tail (variable) of class RoomList is not documented.
+/home/huer2720/team_j/include/RoomList.h:160: warning: Member setNodeByIndex(RoomNode *node, int direction) (function) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:164: warning: Member room (variable) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:165: warning: Member up (variable) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:166: warning: Member down (variable) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:167: warning: Member north (variable) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:168: warning: Member east (variable) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:169: warning: Member south (variable) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:170: warning: Member west (variable) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:171: warning: Member next (variable) of class RoomNode is not documented.
+/home/huer2720/team_j/include/RoomList.h:119: warning: argument 'down' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
+/home/huer2720/team_j/include/RoomList.h:119: warning: argument 'north' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
+/home/huer2720/team_j/include/RoomList.h:119: warning: argument 'east' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
+/home/huer2720/team_j/include/RoomList.h:119: warning: argument 'south' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
+/home/huer2720/team_j/include/RoomList.h:119: warning: argument 'west' of command @param is not found in the argument list of RoomNode::setUpNode(RoomNode *up)
+/home/huer2720/team_j/include/RoomList.h:123: warning: argument 'up' from the argument list of RoomNode::setUpNode has multiple @param documentation sections
+/home/huer2720/team_j/include/Room.h:80: warning: Member title (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:81: warning: Member description (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:82: warning: Member connections (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:83: warning: Member state (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:84: warning: Member roomtype (variable) of class Room is not documented.
+/home/huer2720/team_j/include/Room.h:174: warning: Member dp (variable) of class ThinkingPuzzleRoom is not documented.
+/home/huer2720/team_j/include/Room.h:149: warning: The following parameter of ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title, std::string description, const std::vector< std::string > &connections, const DialoguePuzzle &dp) is not documented:
   parameter 'connections'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:176: warning: return type of member ThinkingPuzzleRoom::getState is not documented
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:197: warning: argument 'the' of command @param is not found in the argument list of ThinkingPuzzleRoom::playerTryPuzzle(std::string answer)
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:13: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Game.h:14: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:16: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Character.h:13: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Game.h:14: warning: Found unknown command '@Author'
-/Users/jameshuston/Desktop/6_CODING/1_C_Plus_Plus/2_School/2720/team_j/include/Room.h:16: warning: Found unknown command '@Author'
+/home/huer2720/team_j/include/Room.h:161: warning: argument 'in' of command @param is not found in the argument list of ThinkingPuzzleRoom::playerTakeAction(Player *player)
+/home/huer2720/team_j/include/Room.h:166: warning: The following parameter of ThinkingPuzzleRoom::playerTakeAction(Player *player) is not documented:
+  parameter 'player'

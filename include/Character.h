@@ -46,6 +46,7 @@ class NPC : public Character {
   /**
   * @brief constructor
   * @param [in] name the name of the NPC
+  * @param [in] dialogue the dialogue of the NPC
   * @param [in] &item an item the NPC is holding
   * @throw bad_input if name is empty
   * @throw bad_input if the item is a nullptr
@@ -78,6 +79,7 @@ class Player : public Character {
   /**
   * @brief constructor
   * @param [in] name the name of the character
+  * @param [in] item the default starting item of the character
   * @throw bad_input if name is empty
   */
   Player(std::string name, const Item& item);
@@ -91,54 +93,46 @@ class Player : public Character {
   * @brief function to allow user to pickUp items
   * from ground and NPC's
   * @param [in] &item the item that is being picked up
-  * @throw bad_input if the item reference is a
-  * nullptr
   */
   void pickUp(const Item& item);
 
   /**
    * @brief function to allow user to drop items
-   * @param [in] name the name of the item that 
-   * the user would like to drop
-   * @throw bad_input if the name is empty
    */
   void drop();
 
   /**
-   * 
-   * 
-   * 
+  * @brief function to allow user to inspect a specific item
   */
   void InspectItem() const;
 
   /**
-   * 
-   * 
-   * 
+  * @brief function to allow user to see all of the items in their inventory
   */
   void listInventory() const;
 
 
   /**
-   * @brief function to allow the user to use an item
-   * 
-   * 
+  * @brief function to allow the user to use an item
   */
-  Item& useItem();
+  Item* useItem();
 
  private:
   std::list<Item*> itemList;
 
   /**
-   * 
-   * 
+  * @brief function to find if an item is in the player's inventory
+  * based off of the name of the item.
+  * @param [in] item a refernece to the item
   */
   bool findItem(const Item& item) const;
 
 
   /**
-   * 
-   * 
+  * @brief function to find if an item is in the player's inventory
+  * based off of the name of the item.
+  * @param [in] itemName the name of the item
+  * @throw de_trop_nullptr if itemName is nullptr
   */
   bool findItem(std::string itemName) const;
 };

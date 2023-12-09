@@ -16,6 +16,7 @@ class RoomNode {
   /**
    * @brief constructor for RoomNodes
    * @param r pointer to Room object
+   * @throw de_trop_nullptr if r is nullptr
    */
   RoomNode(Room* r);
 
@@ -104,61 +105,60 @@ class RoomNode {
    */
   RoomNode* getNextNode();
 
-
-  /**
-   * @brief setters for connected rooms:
-   * @param [in] up the room ? above the current room
-   * @param [in] down the room ? below the current room
-   * @param [in] north the room ? north to the current room
-   * @param [in] east the room ? east of the current room
-   * @param [in] south the room ? south of the current room
-   * @param [in] west the room ? west of the current room
-   */
-
   /**
    * @brief sets the current rooms up pointer
    * @param [in] up the pointer to the room above the current
-   *
+   * @throw de_trop_nullptr if up is nullptr
    */
     void setUpNode(RoomNode* up);
 
   /**
    * @brief sets the current rooms down pointer
    * @param [in] down the pointer to the room below the current
-   *
+   * @throw de_trop_nullptr if up is nullptr
    */
   void setDownNode(RoomNode* down);
 
   /**
    * @brief sets the current rooms north pointer
    * @param [in] north the pointer to the room north of the current
-   *
+   * @throw de_trop_nullptr if up is nullptr
    */
   void setNorthNode(RoomNode* north);
 
   /**
    * @brief sets the current rooms east pointer
    * @param [in] east the pointer to the room east of the current
-   *
+   * @throw de_trop_nullptr if up is nullptr
    */
   void setEastNode(RoomNode* east);
 
   /**
    * @brief sets the current rooms south pointer
    * @param south the pointer to the room south of the current
-   *
+   * @throw de_trop_nullptr if up is nullptr
    */
   void setSouthNode(RoomNode* south);
 
   /**
    * @brief sets the current rooms west pointer
    * @param west the pointer to the room west of the current
-   *
+   * @throw de_trop_nullptr if up is nullptr
    */
   void setWestNode(RoomNode* west);
 
-  void setNodeByIndex(RoomNode* node, int direction);
-    
+  /**
+  * @brief sets the previousNode
+  * @param previousNode the previousNode
+  * @throw de_trop_nullptr if previousNode is nullptr
+  */
+  void setPreviousNode(RoomNode* previousNode);
+
+  /**
+   * @brief getter for previousNode
+  */
+  RoomNode* getPreviousNode();
+
  private:
   // up down nesw
   Room* room;
@@ -169,6 +169,7 @@ class RoomNode {
   RoomNode* south;
   RoomNode* west;
   RoomNode* next;
+  RoomNode* previousNode;
 };
 
 class RoomList {
@@ -186,6 +187,7 @@ class RoomList {
   /**
    * @brief inserts new rooms into the list
    * @param[in] room the room to be added
+   * @throw de_trop_nullptr if room is nullptr
    */
   void insert(Room* room);
 
@@ -208,7 +210,10 @@ class RoomList {
    * false otherwise.
    */
   bool RoomsDone();
-    
+
+  /**
+   * @brief getter for head
+  */
   RoomNode* getHead();
 
  private:

@@ -111,7 +111,7 @@ class UnexploredRoom : public RoomState {
 
   /**
   * @brief In this state the room has not been explored
-  * @return ralse.
+  * @return false.
   */
   bool isExplored();
 
