@@ -14,7 +14,7 @@
  * @brief Useless nullpointer as input
 */
 class de_trop_nullptr: public std::runtime_error {
-    public:
+ public:
     /**
      * @param errMessage An error message
     */
@@ -27,7 +27,7 @@ class de_trop_nullptr: public std::runtime_error {
  * @brief Received bad input from user
 */
 class bad_input: public std::runtime_error {
-    public:
+ public:
     /**
      * @param errMessage An error message
     */
@@ -40,7 +40,7 @@ class bad_input: public std::runtime_error {
  * @brief Received empty string as input
 */
 class empty_string: public std::runtime_error {
-    public:
+ public:
     /**
      * @param errMessage An error message
     */

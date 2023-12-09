@@ -53,8 +53,8 @@ Game::Game(std::string playerName) {
   {"", "", "", "", "Attic", ""}, *pictureFrame));
   roomlist->insert(new ItemRoom("Cellar", "",
   {"Stairway", "", "", "", "", ""}, *will));
- // roomlist->insert(new DialogueRoom("End", "",
-  //{"", "", "", "", "Crawl Space", ""}, *craig2));
+// roomlist->insert(new DialogueRoom("End", "",
+//{"", "", "", "", "Crawl Space", ""}, *craig2));
   roomlist->circley();
   roomlist->solidify();
 }
