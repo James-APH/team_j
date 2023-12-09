@@ -226,6 +226,7 @@ bool ItemPuzzleRoom::playerTakeAction(Player *player) {
         std::cin >> answer;
       }
     }
+
     if (answer == "u") {
       std::string quitCondition;
       while (!ip->wasSolved()) {
@@ -236,11 +237,12 @@ bool ItemPuzzleRoom::playerTakeAction(Player *player) {
           if (quitCondition == "q") {
             break;
           }
+          if (ip->wasSolved()) {
+            state = new FullyExploredRoom();
+            return true;
       }
-      if (ip->wasSolved()) {
-        state = new FullyExploredRoom();
-        return true;
       }
+     
     }
   }
 

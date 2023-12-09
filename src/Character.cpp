@@ -99,12 +99,12 @@ void Player::drop() {
   std::string itemName;
   std::cout << "Enter the name of the item you'd like to drop,\n"
                "Otherwise enter q to quit!" << std::endl;
-  std::cin >> itemName;
+  std::getline(std::cin, itemName);
   if (!findItem(itemName) && itemName != "q") {
     while (findItem(itemName) == false && itemName != "q") {
         std::cout << "Enter the name of the item you'd like to drop,\n"
                      "Otherwise enter q to quit!" << std::endl;
-        std::cin >> itemName;
+        std::getline(std::cin, itemName);
     }
   }
   if (itemName != "q") {
@@ -121,12 +121,12 @@ void Player::InspectItem() const {
   std::string itemName;
   std::cout << "\nEnter the name of the item you'd like to inspect,\n"
                "Otherwise enter q to quit!" << std::endl;
-  std::cin >> itemName;
+  std::getline(std::cin, itemName);
   if (!findItem(itemName) && itemName != "q") {
     while (findItem(itemName) == false && itemName != "q") {
         std::cout << "\nEnter the name of the item you'd like to inspect,\n"
                "Otherwise enter q to quit!" << std::endl;
-        std::cin >> itemName;
+        std::getline(std::cin, itemName);
     }
   }
   if (itemName != "q") {
@@ -152,12 +152,12 @@ Item& Player::useItem() {
   std::string itemName;
   std::cout << "Enter the name of the item you'd like to use,\n"
                "Otherwise enter q to quit!" << std::endl;
-  std::cin >> itemName;
+  std::getline(std::cin, itemName);
   if (!findItem(itemName) && itemName != "q") { //item is not in inv or not q
     while (!findItem(itemName) || itemName != "q") {
         std::cout << "Enter the name of the item you'd like to use\n"
                "Otherwise enter q to quit!" << std::endl;
-        std::cin >> itemName;
+        std::getline(std::cin, itemName);
         if (itemName == "q") {
           break;
         }
