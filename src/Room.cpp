@@ -83,6 +83,10 @@ std::vector<std::string> Room::getConnections() {
   return connections;
 }
 
+void Room::entered() {
+  state = new ExploredRoom();
+}
+
 GameTypes::RoomTypes Room::getRoomType() const {
   return roomtype;
 }

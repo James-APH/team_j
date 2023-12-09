@@ -133,6 +133,8 @@ class Game {
 
   void listRoomOptions(std::vector<unsigned> pathways);
 
+
+  void setRoomState();
 // void readData(std::string&, std::string&, std::string&
 //             , std::string start, std::string end);
 

@@ -58,6 +58,11 @@ class Room {
   virtual std::vector<std::string> getConnections();
 
   /**
+   * @brief sets the state to explored, when the player enters a room
+  */
+  void entered();
+
+  /**
    * @brief getter for roomtype
    * @return roomtype the type of room the current is
   */
