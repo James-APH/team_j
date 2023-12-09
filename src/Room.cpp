@@ -221,7 +221,6 @@ ItemPuzzleRoom::~ItemPuzzleRoom() {
 bool ItemPuzzleRoom::playerTakeAction() {
   std::string takeAction = "";
   std::string input = "";
-  //Item* temp;
 
   if (state->roomDone()) {
     std::cout << "You've completed this puzzle already!" << std::endl;

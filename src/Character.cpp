@@ -151,10 +151,7 @@ Item* Player::useItem() {
   while (!findItem(itemName)) {
       std::cout << "Enter the name of the item you'd like to use\n"
              "Otherwise enter q to quit!" << std::endl;
-
-
-      std::cout << "hey little man" << std::endl;
-      std::cin >> itemName;
+        std::cin >> itemName;
       if (itemName == "q")
         break;
   }
