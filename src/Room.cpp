@@ -209,7 +209,8 @@ bool ItemPuzzleRoom::playerTakeAction(Player *player) {
 
   if (input != "s" && input != "l") {
     while (input != "s" && input != "l") {
-      std::cout << "Would you like to solve the puzzle or leave [s/l]" << std::endl;
+      std::cout << "Would you like to solve the puzzle or leave [s/l]"
+                << std::endl;
       std::cin >> input;
     }
   }

@@ -4,11 +4,11 @@
  * @date 2023-11
  */
 
+#include <gtest/gtest.h>
 #include <string>
 #include <vector>
 #include <iomanip>
 #include <sstream>
-#include <gtest/gtest.h>
 
 #include "Item.h"
 #include "Puzzle.h"
@@ -19,19 +19,19 @@
 
 //I dunno if these tests will even work but its something
 
-TEST(RoomTest, defaultConstructorTest) {
-    Room* theRoom = new Room();
-    EXPECT_EQ(theRoom->getTitle(), "room");
-    delete theRoom;
+TEST(RoomTest, DialogueRoomConstructorTest) {
+    NPC* fella = new NPC("", "");
+    DialogueRoom* room1 = new DialogueRoom("", "", {""}, *fella);
+    EXPECT_EQ(room1->getTitle(), "room");
+    delete room1;
+    delete fella;
 }
 
-TEST(RoomTest, changeRoomStateTest) {
-    Room* theRoom = new Room("Lab", "This is a Lab", {""});
-    FullyExploredRoom* room = new FullyExploredRoom();
-    ExploredRoom* room2 = new ExploredRoom();
-    UnexploredRoom* room3 = new UnexploredRoom();
-    theRoom->setState(room);
-    EXPECT_EQ(theRoom->getState(), room);
-    theRoom->setState(room2);
+TEST(RoomTest, ThinkingPuzzleConstructorTest) {
+    DialoguePuzzle* puzzle1 = new DialoguePuzzle("", "");
+    ThinkingPuzzleRoom* room2 = new ThinkingPuzzleRoom("", "", {""}, *puzzle1);
+    EXPECT_EQ(room2->getTitle(), "room");
+    delete room2;
+    delete puzzle1;
 }
 

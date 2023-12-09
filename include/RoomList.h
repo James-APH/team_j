@@ -158,7 +158,7 @@ class RoomNode {
   void setWestNode(RoomNode* west);
 
   void setNodeByIndex(RoomNode* node, int direction);
-    
+
  private:
   // up down nesw
   Room* room;
@@ -208,7 +208,7 @@ class RoomList {
    * false otherwise.
    */
   bool RoomsDone();
-    
+
   RoomNode* getHead();
 
  private:

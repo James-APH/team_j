@@ -139,10 +139,9 @@ void Player::InspectItem() const {
 }
 //for viewing inventory
 void Player::listInventory() const {
-  
   std::cout << "\nYou have the following itmes: \n\n";
   for (auto it : itemList) {
-    std::cout << it->toString() << "\n" <<std::endl;  
+    std::cout << it->toString() << "\n" <<std::endl;
   }
     // for (const std::string& item : itemName) {
     //   std::cout << item << "\n" << std::endl;

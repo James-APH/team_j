@@ -141,7 +141,7 @@ void RoomList::solidify() {
             std::string tempTitle = temp->getRoom()->getTitle();
             auto a = (std::find(tempCons.begin(), tempCons.end(), tempTitle));
             int index = a - tempCons.begin();
-            switch(index) {
+            switch (index) {
                 case 0:
                     current->setUpNode(temp);
                     break;
@@ -163,7 +163,6 @@ void RoomList::solidify() {
             }
             temp = temp->getNextNode();
         } while (temp != current);
-        
         current = current->getNextNode();
     } while (current != head);
 }
