@@ -150,16 +150,22 @@ void Game::moveRoom() {
     std::cout << "temp in memory: " << temp << std::endl;
     if (move == UP) {
       currentNode = currentNode->getUpNode();
+      currentNode->getRoom()->playerEnterRoom(player); 
     } else if (move == DOWN) {
       currentNode = currentNode->getDownNode();
+      currentNode->getRoom()->playerEnterRoom(player); 
     } else if (move == NORTH) {
       currentNode = currentNode->getNorthNode();
+      currentNode->getRoom()->playerEnterRoom(player); 
     } else if (move == EAST) {
       currentNode = currentNode->getEastNode();
+      currentNode->getRoom()->playerEnterRoom(player); 
     } else if (move == SOUTH) {
       currentNode = currentNode->getSouthNode();
+      currentNode->getRoom()->playerEnterRoom(player); 
     } else {
       currentNode = currentNode->getWestNode();
+      currentNode->getRoom()->playerEnterRoom(player); 
     }
     currentNode->setPreviousNode(temp);
     std::cout << "previous node title: " << currentNode->getPreviousNode()->getRoom()->getTitle() << std::endl;
@@ -215,8 +221,7 @@ void Game::listRoomOptions(std::vector<unsigned> pathways) {
 }
 
 void Game::interact() {
-  currentNode->getRoom()->
-  playerTakeAction(player);
+  currentNode->getRoom()->playerTakeAction();
 }
 
 void Game::setCurrentNode

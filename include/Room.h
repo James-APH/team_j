@@ -42,6 +42,9 @@ class Room {
    */
   virtual RoomState &getState();
 
+  void playerEnterRoom(Player* player);
+
+
   /**
    * @brief returns the title of the room
    * @return title the title of the room
@@ -75,7 +78,7 @@ class Room {
    * @return true if the player did the action i.e. used item,
    * talked to an npc, solved a thinking puzzle, took an item.
   */
-  virtual bool playerTakeAction(Player* player) = 0;
+  virtual bool playerTakeAction() = 0;
 
   /**
    * @brief descibes/shows the room to the player
@@ -129,7 +132,7 @@ class DialogueRoom : public Room {
    * @param in [player] a reference to player to access their data
    * @return true if the player did the action i.e.talked to an npc
    */
-  bool playerTakeAction(Player* player);
+  bool playerTakeAction();
 
   /**
    * @brief descibes/shows the room to the player
@@ -170,7 +173,7 @@ class ThinkingPuzzleRoom : public Room {
    * @return true if the player did the right action i.e. entered the correct input
    * false otherwise
   */
-  bool playerTakeAction(Player* player);
+  bool playerTakeAction();
 
   /**
    * describes/shows the room to the player
@@ -210,7 +213,7 @@ class ItemPuzzleRoom : public Room {
    * @return true if the player did the action i.e. input the correct item
    * false otherwise
   */
-  bool playerTakeAction(Player* player);
+  bool playerTakeAction();
 
   /**
    * @brief describes/shows the room to the player
@@ -248,7 +251,7 @@ class ItemRoom : public Room {
    * @param in [player] a reference to player to access their data
    * @return true if the player did the action i.e. pick up an item
   */
-  bool playerTakeAction(Player* player);
+  bool playerTakeAction();
 
   /**
    * @brief describes/shows the room to the player
