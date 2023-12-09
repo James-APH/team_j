@@ -68,6 +68,8 @@ void Game::playGame() {
   std::cout << "\nWould you like to play a game? [y/n]" << std::endl;
   std::cin >> playAnswer;
   setCurrentNode(roomlist->getHead());
+  currentNode->getRoom()->playerEnterRoom(player);
+ 
     while (currentNode->getRoom()->getTitle() != "End") {
         currentNode->getRoom()->display();
         std::cout << "\nWould you like to:\n"
@@ -145,16 +147,22 @@ void Game::moveRoom() {
     previousNode = currentNode;
     if (move == UP) {
       currentNode = currentNode->getUpNode();
+      currentNode->getRoom()->playerEnterRoom(player);
     } else if (move == DOWN) {
       currentNode = currentNode->getDownNode();
+      currentNode->getRoom()->playerEnterRoom(player);
     } else if (move == NORTH) {
       currentNode = currentNode->getNorthNode();
+      currentNode->getRoom()->playerEnterRoom(player);
     } else if (move == EAST) {
       currentNode = currentNode->getEastNode();
+      currentNode->getRoom()->playerEnterRoom(player);
     } else if (move == SOUTH) {
       currentNode = currentNode->getSouthNode();
+      currentNode->getRoom()->playerEnterRoom(player);
     } else {
       currentNode = currentNode->getWestNode();
+      currentNode->getRoom()->playerEnterRoom(player);
     }
   }
 }
@@ -168,7 +176,6 @@ std::vector<unsigned> Game::getPathways() {
   }
   return path;
 }
-
 
 void Game::listRoomOptions(std::vector<unsigned> pathways) {
   std::cout << "Would you like to go to any of these rooms?" << std::endl;
@@ -207,11 +214,9 @@ void Game::listRoomOptions(std::vector<unsigned> pathways) {
   }
 }
 
-
-
 void Game::interact() {
   currentNode->getRoom()->
-  playerTakeAction(player);
+  playerTakeAction();
 }
 
 void Game::setCurrentNode

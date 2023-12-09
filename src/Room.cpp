@@ -70,6 +70,10 @@ RoomState &Room::getState() {
   return *state;
 }
 
+void Room::playerEnterRoom(Player* player) {
+  this->player = player;
+}
+
 std::string Room::getTitle() const {
   return title;
 }
@@ -99,19 +103,14 @@ DialogueRoom::~DialogueRoom() {
   delete fella;
 }
 
-bool DialogueRoom::playerTakeAction(Player *player) {
-  char input;
-  std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]"
-    << std::endl;
-  std::cin >> input;
-  if (input != 'y' && input != 'n') {
-      while (input != 'y' && input != 'n') {
-      std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]"
-        << std::endl;
-      std::cin >> input;
-    }
+bool DialogueRoom::playerTakeAction() {
+  std::string input = "";
+  while (input != "y" && input != "n") {
+    std::cout << "Would you like to talk to " + fella->getName() + "? [y/n]"
+              << std::endl;
+    std::cin >> input;
   }
-  if (input == 'y') {
+  if (input == "y") {
     fella->display();
     state = new FullyExploredRoom();
     return true;
@@ -135,46 +134,39 @@ void DialogueRoom::display() const {
 
 ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title,
     std::string description, const std::vector<std::string>& connections,
-    const DialoguePuzzle &dp) : Room(title, description, connections) {
+    const DialoguePuzzle &dialoguePuzzle) : Room(title, description, connections) {
   this->roomtype = GameTypes::PUZZLE_ROOM;
-  this->dp = new DialoguePuzzle(dp);
+  this->dialoguePuzzle = new DialoguePuzzle(dialoguePuzzle);
 }
 
 ThinkingPuzzleRoom::~ThinkingPuzzleRoom() {
-  delete dp;
+  delete dialoguePuzzle;
 }
 
-bool ThinkingPuzzleRoom::playerTakeAction(Player *player) {
-  char input;
-  std::cout << "Would you like to attempt to solve the puzzle"
-               " detective? [y/n]" << std::endl;
-  std::cin >> input;
-  if (input != 'y' && input != 'n') {
-    while (input != 'y' && input != 'n') {
-      std::cout << "Would you like to attempt to attempt to"
-                   " solve the puzzle? [y/n]" << std::endl;
-        std::cin >> input;
+bool ThinkingPuzzleRoom::playerTakeAction() {
+  std::string takeAction = "";
+  std::string input = "";
+  if (state->roomDone()) {
+    std::cout << "You have completed this puzzle already!" << std::endl;
+    return true;
+  }
+  while (input != "s" && input != "l") {
+    std::cout << "Would you like to solve the puzzle or leave? [s/l]" << std::endl;
+    std::cin >> input;
+  }
+  if (input == "s") {
+    while (!dialoguePuzzle->wasSolved() && takeAction != "q") {
+      dialoguePuzzle->getInput(takeAction);
+      std::cout << "Enter your answer to the puzzle or enter [q] to quit: " << std::endl;
+      std::cin >> takeAction;
     }
   }
-  if (input == 'y') {
-    std::cout << dp->toString() << std::endl;
-    std::string answer;
-    while (!dp->wasSolved()) {
-      std::cout << "Enter your answer to the puzzle or enter [q] to quit"
-        << std::endl;
-      if (answer == "q") {
-        break;
-      } else {
-        dp->getInput(answer);
-      }
-    }
-    if (dp->wasSolved()) {
-      state = new FullyExploredRoom();
-      return true;
-    }
+  if (dialoguePuzzle->wasSolved()) {
+    state = new FullyExploredRoom();
+    return true;
   }
-    state = new ExploredRoom();
-    return false;
+  state = new ExploredRoom();
+  return false;
 }
 
 void ThinkingPuzzleRoom::display() const {
@@ -193,27 +185,26 @@ void ThinkingPuzzleRoom::display() const {
 //You can't leave and you can't use item
 
 ItemPuzzleRoom::ItemPuzzleRoom(std::string title, std::string description,
-    const std::vector<std::string>& connections, const ItemPuzzle &ip) :
+    const std::vector<std::string>& connections, const ItemPuzzle &itemPuzzle) :
     Room(title, description, connections) {
   this->roomtype = GameTypes::PUZZLE_ROOM;
-  this->ip = new ItemPuzzle(ip);
+  this->itemPuzzle = new ItemPuzzle(itemPuzzle);
 }
 
 ItemPuzzleRoom::~ItemPuzzleRoom() {
-  delete ip;
+  delete itemPuzzle;
 }
 
-bool ItemPuzzleRoom::playerTakeAction(Player *player) {
-  std::string input;
-  std::cout << "Would you like to solve the puzzle or leave [s/l]" << std::endl;
-  std::cin >> input;
-
-  if (input != "s" && input != "l") {
-    while (input != "s" && input != "l") {
-      std::cout << "Would you like to solve the puzzle or leave [s/l]"
-                << std::endl;
-      std::cin >> input;
-    }
+bool ItemPuzzleRoom::playerTakeAction() {
+  std::string takeAction = "";
+  std::string input = "";
+  if (state->roomDone()) {
+    std::cout << "You've completed this puzzle already!" << std::endl;
+    return true;
+  }
+  while (input != "s" && input != "l") {
+    std::cout << "Would you like to solve the puzzle or leave? [s/l]" << std::endl;
+    std::cin >> input;
   }
   if (input == "s") {
     std::string answer;
@@ -260,7 +251,7 @@ void ItemPuzzleRoom::display() const {
   stringReader << description;
   stringReader << '\n' << '\n';
   stringReader << "This room is a dead end " <<
-                   ip->getExpectedItemName() <<
+                   itemPuzzle->getExpectedItemName() <<
               " required to unlock more rooms!";
   stringReader << '\n' << '\n';
   std::cout << stringReader.str() << std::endl;
@@ -279,19 +270,13 @@ ItemRoom::~ItemRoom() {
   delete item;
 }
 
-bool ItemRoom::playerTakeAction(Player* player) {
-  char input;
-  std::cout << "Would you like to pick up this: " +
-    item->getName() + "? [y/n]" << std::endl;
-  std::cin >> input;
-  if (input != 'y' && input != 'n') {
-    while (input != 'y' && input != 'n') {
-      std::cout <<  "Would you like to pick up this: " +
-        item->getName() + "? [y/n]" << std::endl;
-      std::cin >> input;
-    }
+bool ItemRoom::playerTakeAction() {
+  std::string input = "";
+  while (input != "y" && input != "n") {
+    std::cout << "Would you like to pick up this: " + item->getName() + "? [y/n]" << std::endl;
+    std::cin >> input;
   }
-  if (input == 'y') {
+  if (input == "y") {
     std::cout << item->toString() << std::endl;
     player->pickUp(giveItem());
     state = new FullyExploredRoom();
