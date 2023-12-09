@@ -22,10 +22,11 @@ TEST(TestNPC, defaultNPCConstructorTest) {
 }
 
 TEST(TestNPC, copyNPCConstructorTest) {
-    NPC solidAnon = NPC("Jhonfrey", "Ur ded kiddo :3");
-    NPC* liquidAnon = new NPC(solidAnon);
+    NPC* solidAnon = new NPC("Jhonfrey", "Ur ded kiddo :3");
+    NPC* liquidAnon = new NPC(*solidAnon);
 
     EXPECT_EQ(liquidAnon->getName(), "Jhonfrey");
 
     delete liquidAnon;
+    delete solidAnon;
 }
