@@ -27,7 +27,8 @@ TEST(RoomTest, DialogueRoomConstructorTest) {
 
 TEST(RoomTest, ThinkingPuzzleConstructorTest) {
     DialoguePuzzle* puzzle = new DialoguePuzzle("", "");
-    ThinkingPuzzleRoom* room = new ThinkingPuzzleRoom("Library", "", {""}, *puzzle);
+    ThinkingPuzzleRoom* room = new ThinkingPuzzleRoom("Library", "", 
+                                                      {""}, *puzzle);
     EXPECT_EQ(room->getTitle(), "Library");
     delete room;
     delete puzzle;
