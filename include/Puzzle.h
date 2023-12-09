@@ -21,6 +21,7 @@ class Puzzle {
   /**
   * @brief default constructor
   * @param [in] description the description of the puzzle
+  * @throw empty_string is description is an empty string
   */
   Puzzle(std::string description = "No puzzle");
 
@@ -37,7 +38,7 @@ class Puzzle {
 
   /**
   * @brief creates string of all attributes of the puzzle
-  * return string string of all attributes of the puzzle
+  * @return string string of all attributes of the puzzle
   */
   std::string toString();
 
@@ -57,14 +58,9 @@ class DialoguePuzzle : public Puzzle {
   /**
   * @brief constructor
   * @param [in] description the description of the puzzle
-  * @param [in] expectedInput the input required to solve the
-  * puzzle
-  * @param [in] attemptLimit the amount of attempts allowed
-  * to solve a puzzle.
-  * @throw bad_input if description string is empty
-  * @throw bad_input if expectedInput string is empty
-  * @throw bad_input if attemptLimit is less than or
-  * equal to zero.
+  * @param [in] expectedInput the input required to solve the puzzle
+  * @throw empty_string if description string is empty
+  * @throw empty_string if expectedInput string is empty
   */
   DialoguePuzzle(std::string description
                , std::string expectedInput);
@@ -107,13 +103,13 @@ class ItemPuzzle : public Puzzle {
   * puzzle
   * @param [in] item the item needed to solve the
   * puzzle
-  * @throw bad_input if item is nullptr
+  * @throw empty_string if description is an empty string
   */
   ItemPuzzle(std::string description, const Item &item);
 
   /**
    * @brief copy constructor
-   * @param [in] ip the itempuzzle being copied
+   * @param [in] itemPuzzle the itempuzzle being copied
    * 
    */
   ItemPuzzle(const ItemPuzzle& itemPuzzle);
@@ -133,7 +129,7 @@ class ItemPuzzle : public Puzzle {
   * @brief checks if the item the user uses
   * solves the puzzle.
   * @param [in] item the item that the user enters
-  * @detail if the item is correct solved will be
+  * @details if the item is correct solved will be
   * set to true and the item will be removed from 
   * the players inventory
   */

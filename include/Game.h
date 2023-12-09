@@ -44,10 +44,20 @@
  */
 class Game {
  public:
+  /**
+   * @brief default constructor
+   * @param [in] playerName the name of the Player
+  */
   Game(std::string playerName = "Detective");
 
+  /**
+   * @brief destructor
+  */
   virtual ~Game();
 
+  /**
+   * @brief function to initiate and run the game. 
+  */
   void playGame();
 
 
@@ -75,13 +85,15 @@ class Game {
   ("RedKeyCard", "West Hallway", "It opens doors");
 
   Item* knife = new Item
-  ("It's a knife", "Garden End", "That crest look complicated (a rearing lion in front of crossed swords)");
+  ("It's a knife", "Garden End", "That crest look complicated (a rearing"
+   " lion in front of crossed swords)");
 
   Item* pictureFrame = new Item
   ("It's a picture", "Garden End", "Hey is that brent standing beside Scott?");
 
   Item* will = new Item
-  ("It's a will", "Garden End", "It was drafted a long time ago. Looks like Scott is the one to inherit everything");
+  ("It's a will", "Garden End", "It was drafted a long time ago. Looks like"
+   " Scott is the one to inherit everything");
 
   Item* map = new Item
   ("Its a map of the building", "Everywhere", "unset");
@@ -108,29 +120,73 @@ class Game {
   NPC* brent = new NPC("Brent", "Brent dialogue");
   NPC* craig2 = new NPC("Craig", "Craig dialogue 2");
 
+  /**
+   * @brief setter for currentNode
+   * @param [in] current node the current room
+   * @throw de_trop_nullptr if currentNode is nullptr
+  */
   void setCurrentNode(RoomNode* currentNode);
 
+  /**
+   * @brief setter for previousNode
+   * @param [in] previous node the previous room
+   * 
+  */
   void setPreviousNode(RoomNode* previousNode);
 
+  /**
+  * @brief getter for currentNode
+  */
   RoomNode* getCurrentNode();
 
+  /**
+   * @brief getter for previousNode
+  */
   RoomNode* getPreviousNode();
 
+  /**
+   * @brief function to allow player to make an
+   * accusation.
+  */
   void accuse();
 
+  /**
+   * @brief function to allow the user to interact with the inventory
+  */
   void inventory();
 
+  /**
+   * @brief function to output a splash screen depending on
+   *  what stage of the game they are on
+   * @param [in] condition the number value corresponding to stage
+   * 
+  */
   void displaySplashScreen(int condition);
 
   char getRoomActionChoice();
 
+  /**
+   * @brief function to change the current room the player is in
+  */
   void moveRoom();
 
+  /**
+   * @brief function to allow the user to interact with the room
+  */
   void interact();
 
+  /**
+   * @brief function to get a list of rooms that the current one is
+   * actually connected to.
+  */
   std::vector<unsigned> getPathways();
 
-
+  /**
+   * @brief function to list the possible rooms the player could move to.
+   * @param [in] pathways a list of unsigned values corresponding to the
+   * rooms the current room is connected to.
+   * @throw bad_input if an element in pathways is greater than 5.
+  */
   void listRoomOptions(std::vector<unsigned> pathways);
 
 

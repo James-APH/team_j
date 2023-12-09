@@ -110,8 +110,8 @@ RoomList::RoomList() {
 RoomList::~RoomList() {
     if (head != nullptr) {
         RoomNode *current = head;
-        RoomNode *temp;
         while (current != head) {
+            RoomNode *temp;
             temp = current;
             current = current->getNextNode();
             delete temp;

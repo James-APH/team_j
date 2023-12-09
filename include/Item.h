@@ -17,12 +17,9 @@ class Item {
  public:
   /**
   * @brief Constructor initializes name, and image of item
-  * @ param[in] name the name of the item
-  * @ param[in] useLocation the location the item will be used
-  * @ param[in] description the description of the item
-  * @throw bad_input if the 
-  * @throw bad_input if name is empty
-  * @throw bad_input if description is empty
+  * @param[in] name the name of the item
+  * @param[in] useLocation the location the item will be used
+  * @param[in] description the description of the item
   */
   Item(std::string name = "name", std::string useLocation = "location",
        std::string description = "description");
@@ -30,7 +27,6 @@ class Item {
   /**
   * @brief copy constructor
   * @param[in] item, the item that is being copied
-  * @throw bad_input if item is nullptr
   */
   Item(const Item &item);
 
@@ -60,7 +56,6 @@ class Item {
   /**
   * @brief checks if two items are equivalent
   * @return true if the items are equivalent
-  * @throw bad_input if item is nullptr
   */ 
   bool equals(const Item& item) const;
 

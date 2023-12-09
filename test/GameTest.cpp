@@ -17,8 +17,8 @@
 #include "Character.h"
 #include "Game.h"
 
-TEST(GameTest, defaultConstructorTest) {
-    Game* videoGame = new Game();
-    videoGame->player
-}
+// TEST(GameTest, defaultConstructorTest) {
+//     Game* videoGame = new Game();
+//     videoGame->player
+// }
 

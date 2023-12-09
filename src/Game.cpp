@@ -93,7 +93,6 @@ void Game::playGame() {
   std::cin >> playAnswer;
   setCurrentNode(roomlist->getHead());
   //currentNode->getRoom()->playerEnterRoom();
- 
     while (currentNode->getRoom()->getTitle() != "End") {
         currentNode->getRoom()->display();
         std::cout << "\nWould you like to:\n"
@@ -105,13 +104,11 @@ void Game::playGame() {
         std::cin >> takeActionChoice;
       if (takeActionChoice == "m") {
         moveRoom();
-      } else if (takeActionChoice == "i"){
+      } else if (takeActionChoice == "i") {
         interact();
-     
-      } else if (takeActionChoice == "v"){
+      } else if (takeActionChoice == "v") {
         inventory();
-      
-      } else if (takeActionChoice == "a"){
+      } else if (takeActionChoice == "a") {
         accuse();
         break;
       }
@@ -151,7 +148,7 @@ void Game::displaySplashScreen(int condition) {
 }
 
 void Game::moveRoom() {
-  if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM 
+  if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM
   && !currentNode->getRoom()->isDone()) {
       std::cout << "\nThe current room has not been finished you can"
                    " only move to the previous\n" << std::endl;
@@ -170,22 +167,22 @@ void Game::moveRoom() {
     RoomNode* temp = currentNode;
     if (move == UP) {
       currentNode = currentNode->getUpNode();
-      currentNode->getRoom()->playerEnterRoom(player); 
+      currentNode->getRoom()->playerEnterRoom(player);
     } else if (move == DOWN) {
       currentNode = currentNode->getDownNode();
-      currentNode->getRoom()->playerEnterRoom(player); 
+      currentNode->getRoom()->playerEnterRoom(player);
     } else if (move == NORTH) {
       currentNode = currentNode->getNorthNode();
-      currentNode->getRoom()->playerEnterRoom(player); 
+      currentNode->getRoom()->playerEnterRoom(player);
     } else if (move == EAST) {
       currentNode = currentNode->getEastNode();
-      currentNode->getRoom()->playerEnterRoom(player); 
+      currentNode->getRoom()->playerEnterRoom(player);
     } else if (move == SOUTH) {
       currentNode = currentNode->getSouthNode();
-      currentNode->getRoom()->playerEnterRoom(player); 
+      currentNode->getRoom()->playerEnterRoom(player);
     } else {
       currentNode = currentNode->getWestNode();
-      currentNode->getRoom()->playerEnterRoom(player); 
+      currentNode->getRoom()->playerEnterRoom(player);
     }
     currentNode->setPreviousNode(temp);
   }

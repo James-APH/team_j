@@ -139,7 +139,7 @@ void Player::InspectItem() const {
 void Player::listInventory() const {
   std::cout << "\nYou have the following itmes: \n\n";
     for (auto it : itemList) {
-      std::cout << it->toString() << "\n" <<std::endl;  
+      std::cout << it->toString() << "\n" <<std::endl;
     }
 }
 
@@ -153,8 +153,8 @@ Item* Player::useItem() {
              "Otherwise enter q to quit!" << std::endl;
 
 
-      std::cout << "hey little man" << std::endl;       
-        std::cin >> itemName;
+      std::cout << "hey little man" << std::endl;
+      std::cin >> itemName;
       if (itemName == "q")
         break;
   }
