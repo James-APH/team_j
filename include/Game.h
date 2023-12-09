@@ -109,9 +109,18 @@ class Game {
   ("This lock requires a red key card", *redKeyCard);
 
   // Dialogue Puzzle
-  DialoguePuzzle* studyPuzzle = new DialoguePuzzle("a", "a");
-  DialoguePuzzle* libraryPuzzle = new DialoguePuzzle("b", "b");
-  DialoguePuzzle* atticPuzzle = new DialoguePuzzle("c", "c");
+  DialoguePuzzle* studyPuzzle = new DialoguePuzzle("1. The first digit is"
+  " prime\n2. The second digit is even\n3. The third digit is a prime"
+  " is the square of the first digit\n4. The sum of all three digits"
+  " is 20", "389");
+  DialoguePuzzle* libraryPuzzle = new DialoguePuzzle("1. The first digit is"
+  " the largest prime number under 10\n2. The second digit is the sum of the"
+  " first and third digits\n3. the third digit is half of the first and"
+  " must be whole number\n4. The product of all three is 6", "231");
+  DialoguePuzzle* atticPuzzle = new DialoguePuzzle("1. The first digit is a"
+  " multiple of 3\n2. The second digit is one less than first digit\n3. The"
+  " third digit is the sum of the first and second digits\n4. The product of"
+  " akk three is 30", "325");
 
   // NPC declarations
   NPC* craig = new NPC("Craig", "Craig dialogue");

@@ -161,7 +161,7 @@ bool ThinkingPuzzleRoom::playerTakeAction() {
   std::string takeAction = "";
   std::string input = "";
   if (state->roomDone()) {
-    std::cout << "You have completed this puzzle aalready!" << std::endl;
+    std::cout << "You have completed this puzzle already!" << std::endl;
     return true;
   }
   while (input != "s" && input != "l") {
@@ -199,7 +199,8 @@ void ThinkingPuzzleRoom::display() const {
     stringReader << description;
     stringReader << '\n' << '\n';
     stringReader << "This room is locked, solve a complicated"
-                  " question to unlock more rooms:\n";
+                  " question to unlock more rooms:\n" <<
+                  dialoguePuzzle->toString();
     std::cout << stringReader.str() << std::endl;
   }
 }
