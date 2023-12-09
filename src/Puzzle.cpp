@@ -82,6 +82,6 @@ void ItemPuzzle::checkItem(const Item &item) {
         std::cout << "Correct!\n";
         solved = true;
         } else {
-            std::cout << "Incorrect.\n";
+        std::cout << "Incorrect.\n";
     }
 }

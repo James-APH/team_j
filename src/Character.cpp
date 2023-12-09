@@ -150,6 +150,9 @@ void Player::listInventory() const {
 
 Item* Player::useItem() {
   std::string itemName = "";
+  std::cout << "Enter the name of the item you'd like to use\n"
+               "Otherwise enter q to quit" << std::endl;
+  std::cin >> itemName;
   while (!findItem(itemName)) {
       std::cout << "Enter the name of the item you'd like to use\n"
              "Otherwise enter q to quit!" << std::endl;

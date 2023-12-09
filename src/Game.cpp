@@ -64,6 +64,7 @@ Game::~Game() {}
 void Game::playGame() {
   setCurrentNode(roomlist->getHead());
   std::cout << "\n\n\nMurder Mystery" << std::endl;
+  std::string takeActionChoice;
 
   std::string playAnswer;
   std::cout << "\nWould you like to play a game? [y/n]" << std::endl;
@@ -78,20 +79,22 @@ void Game::playGame() {
                      "\n* Interact   [i]"
                      "\n* View Inven [v]"
                      "\n* Accuse     [a]"<< "\n" << std::endl;
-        char takeActionChoice;
+
         std::cin >> takeActionChoice;
-      if (takeActionChoice == 'm') {
+      if (takeActionChoice == "m") {
         moveRoom();
       } else if (takeActionChoice == 'i') {
+      } else if (takeActionChoice == "i"){
         interact();
       } else if (takeActionChoice == 'v') {
+      } else if (takeActionChoice == "v"){
         inventory();
       } else if (takeActionChoice == 'a') {
+      } else if (takeActionChoice == "a"){
         accuse();
         break;
       }
   }
-  delete currentNode;
 }
 
 void Game::accuse() {
@@ -127,13 +130,11 @@ void Game::displaySplashScreen(int condition) {
 }
 
 void Game::moveRoom() {
-  
- if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM) {
-    if (!currentNode->getRoom()->isDone()) {
+  if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM 
+  && !currentNode->getRoom()->isDone()) {
       std::cout << "\nThe current room has not been finished you can"
                    " only move to the previous" << std::endl;
      currentNode = currentNode->getPreviousNode();
-    }
   } else {
     std::vector<unsigned> pathways(getPathways());
     listRoomOptions(pathways);
@@ -146,8 +147,6 @@ void Game::moveRoom() {
       }
     }
     RoomNode* temp = currentNode;
-    std::cout << "temp node title: " << temp->getRoom()->getTitle() << std::endl;
-    std::cout << "temp in memory: " << temp << std::endl;
     if (move == UP) {
       currentNode = currentNode->getUpNode();
       currentNode->getRoom()->playerEnterRoom(player); 
@@ -168,8 +167,6 @@ void Game::moveRoom() {
       currentNode->getRoom()->playerEnterRoom(player); 
     }
     currentNode->setPreviousNode(temp);
-    std::cout << "previous node title: " << currentNode->getPreviousNode()->getRoom()->getTitle() << std::endl;
-    std::cout << "previous in memory: " << currentNode->getPreviousNode() << std::endl;
   }
 }
 

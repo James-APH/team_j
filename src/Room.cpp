@@ -218,24 +218,24 @@ bool ItemPuzzleRoom::playerTakeAction() {
     std::cin >> input; 
   } 
   if (input == "s") { 
-    while (!itemPuzzle->wasSolved() && takeAction != "q") { 
+    while (!itemPuzzle->wasSolved()) { 
       std::cout << "To inspect inventory enter [i]\n" 
                    "To exit this loop enter    [q]" << std::endl; 
       std::cin >> takeAction; 
-      if (takeAction == "q")
-        break;
-      temp = player->useItem();
-      if(temp == nullptr) {
-        continue;
+      if (takeAction != "q") {
+        temp = player->useItem();
+        if(temp != nullptr)
+          itemPuzzle->checkItem(*temp);
+          if (itemPuzzle->wasSolved()) { 
+            state = new FullyExploredRoom();
+            return true; 
+          } 
       } else {
-        itemPuzzle->checkItem(*temp);
+        break;
       }
     } 
   } 
-  if (itemPuzzle->wasSolved()) { 
-    state = new FullyExploredRoom(); 
-    return true; 
-  } 
+
   state = new ExploredRoom(); 
   return false;
 }

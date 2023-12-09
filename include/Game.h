@@ -66,13 +66,13 @@ class Game {
   RoomList* roomlist = new RoomList();
   // Item declarations:
   Item* yellowKeyCard = new Item
-  ("Key Card", "East Hallway", "It opens doors");
+  ("YellowKeyCard", "East Hallway", "It opens doors");
 
   Item* blueKeyCard = new Item
-  ("Key Card", "North Hallway", "It opens doors");
+  ("BlueKeyCard", "North Hallway", "It opens doors");
 
   Item* redKeyCard = new Item
-  ("Key Card", "West Hallway", "It opens doors");
+  ("RedKeyCard", "West Hallway", "It opens doors");
 
   Item* knife = new Item
   ("It's a knife", "Garden End", "It kills people");
