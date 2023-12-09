@@ -200,6 +200,7 @@ ItemPuzzleRoom::ItemPuzzleRoom(std::string title, std::string description,
 }
 
 ItemPuzzleRoom::~ItemPuzzleRoom() {
+  delete ip;
 }
 
 bool ItemPuzzleRoom::playerTakeAction(Player *player) {
