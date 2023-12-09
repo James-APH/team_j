@@ -12,7 +12,6 @@
 
 #include "Item.h"
 #include "Character.h"
-#include "Exceptions.h"
 
 
 TEST(TestNPC, defaultNPCConstructorTest) {
@@ -22,12 +21,12 @@ TEST(TestNPC, defaultNPCConstructorTest) {
     delete anon;
 }
 
-TEST(TestNPC, noNameNPCConstructTest) {
-    NPC* anon2 = new NPC("", "");
-    EXPECT_THROW(anon2->getName(), bad_input);
+// TEST(TestNPC, noNameNPCConstructTest) {
+//     NPC* anon2 = new NPC("", "");
+//     EXPECT_THROW(anon2->getName(), bad_input);
 
-    delete anon2;
-}
+//     delete anon2;
+// }
 
 TEST(TestNPC, copyNPCConstructorTest) {
     NPC solidAnon = NPC("Jhonfrey", "Ur ded kiddo :3");

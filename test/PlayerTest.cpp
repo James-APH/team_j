@@ -12,7 +12,6 @@
 
 #include "Item.h"
 #include "Character.h"
-#include "Exceptions.h"
 
 TEST(TestPlayer, defaultPlayerConstructor) {
     Item thing1;
