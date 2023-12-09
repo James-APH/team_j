@@ -65,7 +65,7 @@ NPC::~NPC() {}
 void NPC::display() const {
   std::ostringstream stringReader;
   stringReader << std::setw(25);
-  stringReader << "Hello detective, my name is "
+  stringReader << "\n\nHello detective, my name is "
    << name << "!" << '\n';
   stringReader << dialogue << std::endl;
 

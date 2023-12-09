@@ -121,14 +121,18 @@ bool DialogueRoom::playerTakeAction() {
   if (input == "y") {
     fella->display();
     state = new FullyExploredRoom();
+    std::cout << "\n";
     return true;
   } else {
     state = new ExploredRoom();
+    std::cout << "\n";
     return false;
   }
 }
 
 void DialogueRoom::display() const {
+  if(state->isExplored() && !state->roomDone() ||
+    !state->isExplored() && !state->roomDone()) {
   std::ostringstream stringReader;
   stringReader << std::setw(25);
   stringReader << title;
@@ -137,7 +141,7 @@ void DialogueRoom::display() const {
   stringReader << '\n' << '\n';
   std::cout << stringReader.str() << std::endl;
 }
-
+}
 //------------------------------------------------------------------
 
 ThinkingPuzzleRoom::ThinkingPuzzleRoom(std::string title,

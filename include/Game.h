@@ -75,13 +75,13 @@ class Game {
   ("RedKeyCard", "West Hallway", "It opens doors");
 
   Item* knife = new Item
-  ("It's a knife", "Garden End", "It kills people");
+  ("It's a knife", "Garden End", "That crest look complicated (a rearing lion in front of crossed swords)");
 
   Item* pictureFrame = new Item
-  ("It's a picture", "Garden End", "Hey is that brent");
+  ("It's a picture", "Garden End", "Hey is that brent standing beside Scott?");
 
   Item* will = new Item
-  ("It's a will", "Garden End", "Hey is that brent");
+  ("It's a will", "Garden End", "It was drafted a long time ago. Looks like Scott is the one to inherit everything");
 
   Item* map = new Item
   ("Its a map of the building", "Everywhere", "unset");

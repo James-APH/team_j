@@ -60,6 +60,6 @@ std::string Item::toString() const {
   stringReader << description;
   stringReader << " - ";
   stringReader << useLocation;
-  stringReader << "\n";
+  //stringReader << "\n";
   return stringReader.str();
 }

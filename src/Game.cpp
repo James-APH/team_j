@@ -85,7 +85,7 @@ Game::~Game() {
 
 void Game::playGame() {
   setCurrentNode(roomlist->getHead());
-  std::cout << "\n\n\nMurder Mystery" << std::endl;
+  std::cout << "\n\nMurder Mystery" << std::endl;
   std::string takeActionChoice;
 
   std::string playAnswer;
@@ -105,13 +105,12 @@ void Game::playGame() {
         std::cin >> takeActionChoice;
       if (takeActionChoice == "m") {
         moveRoom();
-      } else if (takeActionChoice == 'i') {
       } else if (takeActionChoice == "i"){
         interact();
-      } else if (takeActionChoice == 'v') {
+     
       } else if (takeActionChoice == "v"){
         inventory();
-      } else if (takeActionChoice == 'a') {
+      
       } else if (takeActionChoice == "a"){
         accuse();
         break;
@@ -136,16 +135,16 @@ void Game::inventory() {
 void Game::displaySplashScreen(int condition) {
   switch (condition) {
       case 1:
-        std::cout << "\nNo Duh" << std::endl;
+        std::cout << "\nNo Duh\n" << std::endl;
         break;
       case 2:
-        std::cout << "\nwrong" << std::endl;
+        std::cout << "\nwrong\n" << std::endl;
         break;
       case 3:
-        std::cout << "\nwrong" << std::endl;
+        std::cout << "\nwrong\n" << std::endl;
         break;
       case 4:
-        std::cout << "\nCraig will remember this"
+        std::cout << "\nCraig will remember this\n"
         << std::endl;
         break;
   }
@@ -155,7 +154,7 @@ void Game::moveRoom() {
   if (currentNode->getRoom()->getRoomType() == GameTypes::PUZZLE_ROOM 
   && !currentNode->getRoom()->isDone()) {
       std::cout << "\nThe current room has not been finished you can"
-                   " only move to the previous" << std::endl;
+                   " only move to the previous\n" << std::endl;
      currentNode = currentNode->getPreviousNode();
   } else {
     std::vector<unsigned> pathways(getPathways());
@@ -164,7 +163,7 @@ void Game::moveRoom() {
     std::cin >> move;
     if (move < UP || move > WEST) {
       while (move < UP || move > WEST) {
-        std::cout << "Please enter a valid room:";
+        std::cout << "\nPlease enter a valid room:";
         std::cin >> move;
       }
     }
@@ -203,7 +202,7 @@ std::vector<unsigned> Game::getPathways() {
 }
 
 void Game::listRoomOptions(std::vector<unsigned> pathways) {
-  std::cout << "Would you like to go to any of these rooms?" << std::endl;
+  std::cout << "\nWould you like to go to any of these rooms?" << std::endl;
   for (auto a : pathways) {
     if (a == 0) {
       std::cout << std::setw(15) << std::right
