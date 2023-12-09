@@ -27,7 +27,7 @@ Game::Game(std::string playerName) {
   roomlist->insert(new DialogueRoom("Garden", "",
   {"", "", "South Hall", "", "", ""}, *craig));
   roomlist->insert(new ItemRoom("South Hall", "",
-  {"", "", "Ball Room", "", "", ""}, *yellowKeyCard));
+  {"", "", "Ball Room", "", "Garden", ""}, *yellowKeyCard));
   roomlist->insert(new DialogueRoom("Ball Room", "",
   {"", "", "North Hall", "East Hall"
   , "South Hall", "Stairway"}, *rose));
@@ -50,11 +50,11 @@ Game::Game(std::string playerName) {
   roomlist->insert(new ThinkingPuzzleRoom("Attic", "",
   {"", "Stairway", "Crawl Space", "", "", ""}, *atticPuzzle));
   roomlist->insert(new ItemRoom("Crawl Space", "",
-  {"", "", "End", "", "Attic", ""}, *pictureFrame));
+  {"", "", "", "", "Attic", ""}, *pictureFrame));
   roomlist->insert(new ItemRoom("Cellar", "",
   {"Stairway", "", "", "", "", ""}, *will));
-  roomlist->insert(new DialogueRoom("End", "",
-  {"", "", "", "", "Crawl Space", ""}, *craig2));
+ // roomlist->insert(new DialogueRoom("End", "",
+  //{"", "", "", "", "Crawl Space", ""}, *craig2));
   roomlist->circley();
   roomlist->solidify();
 }
