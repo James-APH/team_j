@@ -19,16 +19,16 @@
 
 TEST(RoomTest, DialogueRoomConstructorTest) {
     NPC* fella = new NPC("", "");
-    DialogueRoom* room = new DialogueRoom("", "", {""}, *fella);
-    EXPECT_EQ(room->getTitle(), "room");
+    DialogueRoom* room = new DialogueRoom("Garden", "", {""}, *fella);
+    EXPECT_EQ(room->getTitle(), "Garden");
     delete room;
     delete fella;
 }
 
 TEST(RoomTest, ThinkingPuzzleConstructorTest) {
-    DialoguePuzzle* puzzle = new DialoguePuzzle("", "");
+    DialoguePuzzle* puzzle = new DialoguePuzzle("Library", "");
     ThinkingPuzzleRoom* room = new ThinkingPuzzleRoom("", "", {""}, *puzzle);
-    EXPECT_EQ(room->getTitle(), "room");
+    EXPECT_EQ(room->getTitle(), "Library");
     delete room;
     delete puzzle;
 }
@@ -36,8 +36,8 @@ TEST(RoomTest, ThinkingPuzzleConstructorTest) {
 TEST(RoomTest, ItemPuzzleConstructorTest) {
     Item* object = new Item();
     ItemPuzzle* puzzle = new ItemPuzzle("", *object);
-    ItemPuzzleRoom* room = new ItemPuzzleRoom("", "", {""}, *puzzle);
-    EXPECT_EQ(room->getTitle(), "room");
+    ItemPuzzleRoom* room = new ItemPuzzleRoom("East Hall", "", {""}, *puzzle);
+    EXPECT_EQ(room->getTitle(), "East Hall");
     delete room;
     delete puzzle;
     delete object;
@@ -45,8 +45,8 @@ TEST(RoomTest, ItemPuzzleConstructorTest) {
 
 TEST(RoomTest, ItemRoomConstructorTest) {
     Item* object = new Item();
-    ItemRoom* room = new ItemRoom("", "", {""}, *object);
-    EXPECT_EQ(room->getTitle(), "room");
+    ItemRoom* room = new ItemRoom("Crawl Space", "", {""}, *object);
+    EXPECT_EQ(room->getTitle(), "Crawl Space");
     delete room;
     delete object;
 }
